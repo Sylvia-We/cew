@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F060F3F-31C5-40BB-9E21-C3134CE9D893}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>frz</RootNamespace>
+    <AssemblyName>CEW</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="ExpressionEvaluator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=90d9f15d622e2348">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Trie.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Allomorph.cs" />
+    <Compile Include="AlloTbl.cs" />
+    <Compile Include="LexTbl.cs" />
+    <Compile Include="FlexTbl.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="SyllableRule.cs" />
+    <Compile Include="SymbolNotFoundException.cs" />
+    <Compile Include="AttributeValue.cs" />
+    <Compile Include="GraphPhon.cs" />
+    <Compile Include="Wordform.cs" />
+    <Compile Include="AlloRule.cs" />
+    <Compile Include="FlexRule.cs" />
+    <Compile Include="MyTreeNode.cs" />
+    <Compile Include="AccentRule.cs" />
+    <Compile Include="Condition.cs" />
+    <Compile Include="Syllable.cs" />
+    <Compile Include="Sign.cs" />
+    <Compile Include="SignEqualityComparer.cs" />
+    <Compile Include="SoundChangeRule.cs" />
+    <Compile Include="SignMapping.cs" />
+    <Compile Include="ReadFiles.cs" />
+    <Compile Include="StressPattern.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="Splash.cs" />
+    <Compile Include="gtk-gui\frz.MainWindow.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\logo_a2.png" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <GtkDesignInfo generateGettext="False" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,1518 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Globalization;
+using Gtk;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Diagnostics;
+
+namespace frz
+{
+	public static class Functions
+	{
+
+		/// <summary>
+		/// Variablendeklarationen
+		/// </summary>
+		public static MainWindow win_ = null;
+		//TODO:
+		public static string InputDir = "../../../../Input-Daten";
+		public static string detail = "";
+		public static string nameLang1 = "";
+		public static string nameLang2 = "";
+		public static int timeLang1 = 0;
+		public static int timeLang2 = 0;
+		/* Listen mit allen Tabellen (Lexikon, Flexion, Allo, finalCat) */
+		public static List<AlloTbl> alloListLang1 = new List<AlloTbl> ();
+		public static List<AlloTbl> alloListLang2 = new List<AlloTbl> ();
+		public static List<FlexTbl> flexListLang1 = new List<FlexTbl> ();
+		public static List<FlexTbl> flexListLang2 = new List<FlexTbl> ();
+		public static List<LexTbl> lexListLang1 = new List<LexTbl> ();
+		public static List<LexTbl> lexListLang2 = new List<LexTbl> ();
+		public static List<String> finalCatListLang1 = new List<String> ();
+		public static List<String> finalCatListLang2 = new List<String> ();
+		public static Dictionary<String,List<String>> newCatDict = new Dictionary<String, List<String>> ();
+		public static List<GraphemePhoneme> TransListLang1 = new List<GraphemePhoneme> ();
+		public static List<Variable> varListLang1 = new List<Variable> ();
+		public static List<SyllableRuleList> syllRuleList = new List<SyllableRuleList> ();
+		public static List<AccentRule> accListLang1 = new List<AccentRule> ();
+		public static List<SoundChangeRule> rulListLang1 = new List<SoundChangeRule> ();
+		public static Dictionary<String,String> phonOutListLang1 = new Dictionary<String,String> ();
+		public static Dictionary<String,String> phonOutDiaListLang1 = new Dictionary<String,String> ();
+		public static int longestPhon = 0;
+		public static int longestGraph = 0;
+		public static Dictionary<String,String> graphOutListLang1 = new Dictionary<String,String> ();
+		public static Dictionary<String,String> graphOutDiaListLang1 = new Dictionary<String,String> ();
+		public static Trie stemTrieLang1 = new Trie ();
+		public static Trie stemTrieLang2 = new Trie ();
+		public static Trie affixTrieLang1 = new Trie ();
+		public static Trie affixTrieLang2 = new Trie ();
+		public static Trie suffixTrieLang1 = new Trie ();
+		public static Trie suffixTrieLang2 = new Trie ();
+		public static bool diacriticInput = true;
+		/* Debug */
+		public static StringBuilder debugText = new StringBuilder ();
+		public static int tabNum = 0;
+		public static Stopwatch allWatch = new Stopwatch ();
+		public static TimeSpan allTs = new TimeSpan ();
+		public static String timeText = "";
+		public static List<String> nuclei = new List<String> ();
+		public static List<Wordform> multiChangePaths = new List<Wordform> ();
+
+		public static void SetMW (MainWindow value)
+		{
+			win_ = value;
+		}
+
+		/// <summary>
+		/// Vorverarbeitung:
+		/// - ruft Einlesen der Projektdatei auf
+		/// - ruft Allomorphgenerierung auf
+		/// </summary>
+		public static void Preprocess ()
+		{
+			/* Leeren der Debug-Dateien */
+			foreach (string f in Directory.GetFiles (InputDir + "/Debug/")) {
+				System.IO.File.WriteAllText (f, string.Empty);
+			}
+
+			/* Einlesen der Projektdatei */
+			ReadProjectFile (InputDir + "/lat-frz.project");
+
+//			/* Debug-Dateien füllen */
+//			foreach (AlloTbl at in alloListLang1) {
+//				WriteToFile (at.Print (), "allo", "lang1");
+//			}
+//			foreach (AlloTbl at in alloListLang2) {
+//				WriteToFile (at.Print (), "allo", "lang2");
+//			}
+//			foreach (FlexTbl ft in flexListLang1) {
+//				WriteToFile (ft.Print (), "flex", "lang1");
+//			}
+//			foreach (FlexTbl ft in flexListLang2) {
+//				WriteToFile (ft.Print (), "flex", "lang2");
+//			}
+//			foreach (LexTbl lt in lexListLang1) {
+//				WriteToFile (lt.Print (), "lex", "lang1");
+//			}
+//			foreach (LexTbl lt in lexListLang2) {
+//				WriteToFile (lt.Print (), "lex", "lang2");
+//			}
+//			foreach (string s in finalCatListLang1) {
+//				WriteToFile (s, "cat", "lang1");
+//			}
+//			foreach (string s in finalCatListLang2) {
+//				WriteToFile (s, "cat", "lang2");
+//			}
+//			foreach (GraphemePhoneme gp in TransListLang1) {
+//				WriteToFile (gp.Print (), "trans", "lang1");
+//			}
+//			foreach (string key in phonOutListLang1.Keys) {
+//				WriteToFile (String.Format ("{0} : {1}", key, phonOutListLang1 [key]), "phonout", "lang1");
+//			}
+//			foreach (string key in graphOutListLang1.Keys) {
+//				WriteToFile (String.Format ("{0} : {1}", key, graphOutListLang1 [key]), "graphout", "lang1");
+//			}
+//			foreach (string key in graphOutDiaListLang1.Keys) {
+//				WriteToFile (String.Format ("{0} : {1}", key, graphOutDiaListLang1 [key]), "graphoutdia", "lang1");
+//			}
+//			foreach (Variable v in varListLang1) {
+//				WriteToFile (v.Print (), "var", "lang1");
+//			}
+//			foreach (SyllableRule sr in syllListLang1) {
+//				WriteToFile (sr.Print (), "syll", "lang1");
+//			}
+			//			// Affixe und Suffixe drucken?
+
+
+			/* Allomorphgenerierung*/
+			GenerateAllomorphs ();
+		}
+
+		/// <summary>
+		/// Projektdatei einlesen
+		/// und Einlesen der restlichen Dateien starten
+		/// </summary>
+		/// <param name="file">File.</param>
+		public static void ReadProjectFile (string file)
+		{
+			StreamReader objReader = new StreamReader (file);
+			string sLine = "";
+			Dictionary<Tuple<string,string>,string> typeLangPath = new Dictionary<Tuple<string, string>, string> ();
+
+			while (true) {
+
+				sLine = objReader.ReadLine ();
+
+				if (sLine != null) {
+
+					Match comment = Regex.Match (sLine, @"^\s*(#)");
+					Match empty = Regex.Match (sLine, @"^\s*$");
+
+					/* Zeilen, die verarbeitet werden */
+					if ((!comment.Success) && (!empty.Success)) {
+
+						string[] langFuncPath = sLine.Split (':');
+						string langFromFile = langFuncPath [0].Trim ();
+						string typeFromFile = langFuncPath [1].Trim ();
+						string path = langFuncPath [2].Trim ();
+
+
+						if (typeFromFile.Equals ("name")) {
+							if (langFromFile.Equals ("lang1")) {
+								nameLang1 = path.Trim ('"');
+							} else if (langFromFile.Equals ("lang2")) {
+								nameLang2 = path.Trim ('"');
+							}
+						} else if (typeFromFile.Equals ("time")) {
+							if (langFromFile.Equals ("lang1")) {
+								timeLang1 = Int32.Parse (path.Trim ('"'));
+							} else if (langFromFile.Equals ("lang2")) {
+								timeLang2 = Int32.Parse (path.Trim ('"'));
+							}
+						} else {
+							Tuple<string,string> typeLang = new Tuple<string, string> (typeFromFile, langFromFile);
+							typeLangPath.Add (typeLang, path);
+						}
+					}
+				} else {
+					break;
+				}
+			}
+
+			objReader.Close ();
+
+			/* .graph zuerst einlesen, um Output-Text-Zuordnung zur Verfügung zu haben  */
+			Tuple<string,string> graphLang1 = new Tuple<string, string> ("graph", "lang1");
+			if (typeLangPath.ContainsKey (graphLang1)) {
+				foreach (string f in Directory.GetFiles (InputDir + "/" + typeLangPath[graphLang1], "*.graph")) {
+					//ReadFile (f, "graph", "lang1");
+					ReadFiles.ReadGraph (f, "lang1");
+				}
+			}
+
+			Tuple<string,string> phonLang1 = new Tuple<string, string> ("phon", "lang1");
+			if (typeLangPath.ContainsKey (phonLang1)) {
+				foreach (string f in Directory.GetFiles (InputDir + "/" + typeLangPath[phonLang1], "*.phon")) {
+					//ReadFile (f, "phon", "lang1");
+					ReadFiles.ReadPhon (f, "lang1");
+				}
+			}
+
+			foreach (KeyValuePair<Tuple<string,string>,string> kvp in typeLangPath) {
+				if (!kvp.Key.Equals (graphLang1) && !kvp.Key.Equals (phonLang1)) {
+					foreach (string f in Directory.GetFiles (InputDir + "/" + kvp.Value, "*." + kvp.Key.Item1)) {
+						switch (kvp.Key.Item1) {
+						case "allo":
+							ReadFiles.ReadAllo (f, kvp.Key.Item2);
+							break;
+						case "flex":
+							ReadFiles.ReadFlex (f, kvp.Key.Item2);
+							break;
+						case "lex":
+							ReadFiles.ReadLex (f, kvp.Key.Item2);
+							break;
+						case "cat":
+							ReadFiles.ReadCat (f, kvp.Key.Item2);
+							break;
+						case "suffix":
+							ReadFiles.ReadSuffix (f, kvp.Key.Item2);
+							break;
+						case "affix":
+							ReadFiles.ReadAffix (f, kvp.Key.Item2);
+							break;
+						case "trans":
+							ReadFiles.ReadTrans (f, kvp.Key.Item2);
+							break;
+						case "acc":
+							ReadFiles.ReadAcc (f, kvp.Key.Item2);
+							break;
+						case "var":
+							ReadFiles.ReadVar (f, kvp.Key.Item2);
+							break;
+						case "syll":
+							ReadFiles.ReadSyll (f, kvp.Key.Item2);
+							break;
+						case "rul":
+							ReadFiles.ReadRul (f, kvp.Key.Item2);
+							break;
+						case "ncat":
+							ReadFiles.ReadNCat (f, kvp.Key.Item2);
+							break;
+						default:
+							throw new SymbolNotFoundException ("Dateierweiterung ist unbekannt: " + kvp.Key.Item1);
+						}
+
+					}
+				}
+			}
+
+		}
+
+		/// <summary>
+		/// Schreibt Text in bestimmte Dateien.
+		/// </summary>
+		public static void WriteToFile (string s, string file, string lang)
+		{
+			string fileName = InputDir + "/Debug/" + file + "-" + lang + ".txt";
+
+			using (FileStream fs = new FileStream(fileName,FileMode.Append, FileAccess.Write))
+			using (StreamWriter sw = new StreamWriter(fs)) {
+				sw.WriteLine (s);
+			}
+		}
+
+		/// <summary>
+		/// Allomorphe generieren
+		/// </summary>
+		public static void GenerateAllomorphs ()
+		{
+
+			string warningStr = "";
+
+			foreach (AlloTbl atbl in Functions.alloListLang1) {
+
+
+				if (Functions.GetLexTable (lexListLang1, atbl.Tbl) == null) {
+					warningStr += "Lexikontabelle " + atbl.Tbl + " fehlt\n";
+				} else {
+					LexTbl aktTb = new LexTbl (Functions.GetLexTable (lexListLang1, atbl.Tbl));
+				
+
+					Dictionary<string,string> additional = aktTb.Additional;
+					additional.AddRange (atbl.Additional);
+
+					/* für jeden Lexikoneintrag: Musterabgleich mit Allo-Regeln und ersetzen*/
+					foreach (AlloRule ar in atbl.ArList) {
+						foreach (List<Sign> entry in aktTb.Entries) {
+		
+							ar.PatBefore.Trim ();
+							Match m = Regex.Match (ConvertSignListToGraphText (entry), ar.PatBefore); /* Lemma und pat_before abgleichen*/
+
+							string allomorph = ar.PatAfter;
+		
+							if (m.Success) {
+								/* in pat_after $1, $2... durch die Werte in runden Klammern (aus Abgleich mit Lemma) ersetzen*/
+								for (int i=1; i<=m.Groups.Count; i++) {
+									string allopart = m.Groups [i].Value;
+									allomorph = allomorph.Replace ("$" + i, allopart);
+								}
+							}
+							stemTrieLang1.Insert (ConvertStringToSignList (allomorph), "", atbl, entry, ar.Cats, additional);
+
+						}
+					}
+				}
+			}
+
+			if (warningStr != "") {
+				ShowWarningMessage (warningStr);
+			}
+		}
+
+		/// <summary>
+		/// Startet für das Eingabewort die Wortformerkennung.
+		/// Falls vom Benutzer keine Quantitäten eingegeben werden, 
+		/// wird die Wortformerkennung für alle Möglichkeiten gestartet.
+		/// </summary>
+		public static bool PrepareForRecognition (string word, ref int numWellf, String comment)
+		{
+
+			word = Functions.PrepareInput (word);
+			Functions.printDebugText ("\n---> #" + word + "# <---\n", true);
+
+			if (word == null)
+				return false;
+			Wordform input = new Wordform (word);
+			List<Wordform> allWordForms = new List<Wordform> ();
+
+			bool found_one = false;
+
+			/* Wortformerkennung*/
+
+			List<Wordform> wfList = Functions.RecognizeWord (input, "lang1");
+			allWordForms.AddRange (wfList);
+
+			if (wfList.Count != 0) {
+				found_one = true;
+				int nAmbig = 0;
+
+
+				foreach (Wordform wf in wfList) {
+					if (wfList.Count > 1) {
+						nAmbig++;
+						win_.AddToTextView (new List<string> { "", nAmbig.ToString() + ".", "", comment }, "Honeydew");
+					}
+
+					win_.AddToTextView (wf, false, comment);
+					bool otherChanges = false;
+
+					/* Regelliste */
+
+					wf.SortedRuleList = Functions.rulListLang1.OrderBy (o => o.StartDate).ToList ();
+					wf.SortedRuleList.RemoveAll (x => x.EndDate < wf.Time);
+
+					wf.ChangeSound (win_, 0, 0, true, otherChanges, sortedRulList);
+					win_.AddToTextView (new List<String> { "", "", "", "" }, "White");
+
+					List<Wordform> oldMultiChangePaths = Functions.DeepClone (Functions.multiChangePaths);
+
+					for (int i=oldMultiChangePaths.Count - 1; i>= 0; i--) {
+
+						Wordform wf2 = oldMultiChangePaths [i].CloneWfObjectExtensions ();
+
+						sortedRulList = Functions.rulListLang1.OrderBy (o => o.StartDate).ToList ();
+						sortedRulList.RemoveAll (x => x.EndDate < wf2.Time);
+
+						if (wf2.PrintRule != null) {
+							wf2.PrintSoundChange (wf2.PrintRule, wf2, win_);
+							wf2.PrintRule = null;
+						}
+						wf2.ChangeSound (win_, 0, 0, true, otherChanges, sortedRulList);
+						win_.AddToTextView (new List<String> { "", "", "", "" }, "White");
+
+						Functions.multiChangePaths.RemoveAt (i);
+					}
+				}
+			}
+
+			/* Ausgabe */
+
+			if (found_one == false) {
+
+				/* alle Leerzeichen entfernen */
+
+				string output_not_found = input.PrintWord ("GraphOutputWord");
+				win_.AddToTextView (new List<string> { "\u25b6", output_not_found, "nicht erkannt", comment }, "Lavender Blush");
+				win_.AddToTextView (new List<string> { "", "", "", "" }, "White");
+
+			} else {
+				numWellf++;
+			}
+
+			File.WriteAllText ("/home/sylvia/Uni/Dissertation/Programm/Debug/rheinfelder.debug", Functions.debugText.ToString ());
+			return true;
+		}
+
+		/// <summary>
+		/// Wortform erkennen:
+		/// durchläuft das Wort und sucht nach einem passenden Allomporh
+		/// wurde ein Allomorph gefunden, dann wird die restliche Zeichenkette geprüft:
+		/// ob ein Infix und ein Suffix oder nur ein Suffix folgen
+		/// </summary>
+		public static List<Wordform> RecognizeWord (Wordform word, string lang)
+		{
+
+			List<Wordform> wfList = new List<Wordform> ();
+			Trie stemTrie = new Trie ();
+			Trie suffixTrie = new Trie ();
+			Trie affixTrie = new Trie ();
+
+			if (lang == "lang2") {
+				stemTrie = stemTrieLang2;
+				affixTrie = affixTrieLang2;
+				suffixTrie = suffixTrieLang2;
+			} else if (lang == "lang1") {
+				stemTrie = stemTrieLang1;
+				affixTrie = affixTrieLang1;
+				suffixTrie = suffixTrieLang1;
+			}
+
+			Allomorph possAllo = new Allomorph ();
+
+			/* jeden einzelnen Buchstaben durchlaufen*/
+			for (int i=0; i<word.Word.Count; i++) {	
+				possAllo.Allo.Add (ObjectExtensions.Copy (word.Word [i]));
+
+				/* überprüfen, ob die Buchstabenfolge als Allomorph existiert*/
+				List<Allomorph> amList = stemTrie.Search (possAllo.Allo);
+				if (amList != null) {
+					List<Sign> suffix = word.Word.GetRange (i + 1, word.Word.Count - (i + 1)); // DeepClone entfernt
+
+					/* Wort = Stamm (Zeichenkette ist komplett eingelesen)*/
+					if (i == word.Word.Count - 1) {
+
+						List<Wordform> wfListPart = new List<Wordform> ();
+
+						foreach (Allomorph am in amList) {
+
+
+							wfListPart.AddRange (Wellformed (word, am, null, null, lang));
+						}
+
+						wfList.AddRange (wfListPart);
+					}
+
+					/* Wort = Allo + Suffix (restliche Buchstabenfolge ist ein Suffix)*/
+					if (suffixTrie.Search (suffix) != null) {
+
+						List<Wordform> wfListPart = new List<Wordform> ();
+
+						foreach (Allomorph am in amList) {
+							wfListPart.AddRange (Wellformed (word, am, null, suffix, lang));
+						}
+
+						wfList.AddRange (wfListPart);
+						wfListPart = new List<Wordform> ();
+					}
+
+					/* Wort = Allo + Infixe + Suffix (Zeichenkette ist noch nicht komplett eingelesen)*/
+					if (i != word.Word.Count - 1) {
+						List<List<Sign>> affixList = new List<List<Sign>> ();
+						RecognizeWordWithAffix (word, wfList, amList, suffix, affixTrie, suffixTrie, affixList, lang);
+
+					}					
+				} else {
+					//string ausgabe = potAllo + " NICHT gefunden";
+				}
+			}
+
+			List<Wordform> removeList = new List<Wordform> ();
+
+			foreach (Wordform wortf in wfList) {
+				if (wortf.Cat == null) {
+					removeList.Add (wortf);
+				}
+			}
+
+			foreach (Wordform wortf in removeList) {
+				wfList.Remove (wortf);
+			}
+
+			return wfList;
+
+		}
+
+		/// <summary>
+		/// Rekursive Funktion für Wörter mit nichtfinalen Affixen.
+		/// </summary>
+
+		public static void RecognizeWordWithAffix (Wordform word, List<Wordform> wfList, List<Allomorph> amList, List<Sign> suffix, Trie affixTrie, Trie suffixTrie, 
+		                                           List<List<Sign>> affixList, string lang)
+		{
+			List<Sign> affix = new List<Sign> ();
+
+			/* erstes Infix finden*/
+			for (int x=0; x<suffix.Count-1; x++) {
+
+				List<List<Sign>> affixListCopy = new List<List<Sign>> (affixList); // DeepClone entfernt
+				affixListCopy.Add (affix);
+
+				affix.Add (suffix [x]); // DeepClone entfernt
+
+				if (affixTrie.Search (affix) != null) {
+
+					List<Sign> suffix2 = new List<Sign> (suffix.GetRange (x + 1, suffix.Count - (x + 1))); // DeepClone entfernt
+
+					if (suffixTrie.Search (suffix2) != null) {
+						/* Abbruchbedingung */
+
+						List<Wordform> wfListPart = new List<Wordform> ();						
+
+						foreach (Allomorph am in amList) {
+							wfListPart.AddRange (Wellformed (word, am, affixListCopy, suffix2, lang));
+						}
+
+						wfList.AddRange (wfListPart);
+						wfListPart = new List<Wordform> ();
+					}
+					RecognizeWordWithAffix (word, wfList, amList, suffix2, affixTrie, suffixTrie, affixListCopy, lang);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Prüft, ob die Kombination zulässig ist.
+		/// </summary>
+		public static List<Wordform> Wellformed (Wordform word, Allomorph am, List<List<Sign>> affixList, List<Sign> suffix, string lang)
+		{
+			/* Attribute für Wortform:
+			 * string word;
+			 * string lemma;
+			 * string cat;
+			 * string mood;
+			 * string tense;
+			 * string voice;
+			 * string tbl;
+			 * string pos;
+			 * string lang;
+			 */
+
+			List<Wordform> wfList1Allo = new List<Wordform> ();	
+			List<FlexTbl> ftbls = new List<FlexTbl> ();
+			List<String> finalCat = new List<String> ();
+			int time = 0;
+
+			if (lang == "lang1") {
+
+				ftbls = Functions.GetFlexTable (flexListLang1, am.Tbl);
+				finalCat = Functions.finalCatListLang1;
+				time = timeLang1;
+
+			} else if (lang == "lang2") {
+
+				ftbls = Functions.GetFlexTable (flexListLang2, am.Tbl);
+				finalCat = Functions.finalCatListLang2;
+			}		
+
+			/* Allo*/
+			if ((affixList == null) && (suffix == null)) {
+				/* [
+				 * L_coin
+				 * cat: f Sg
+				 * pos: noun
+				 * ]
+				 */	
+
+				foreach (string cat in am.Cats) {
+					if (finalCat.Contains (cat)) {
+
+						Allomorph amCopy = DeepClone (am);
+						Wordform wordCopy = new Wordform (word);
+						wordCopy.AddAttributes (amCopy.Lemma, cat, amCopy.Tbl, lang, time, amCopy.Additional, win_, amCopy.Allo, null, ref suffix);
+						wfList1Allo.Add (wordCopy);
+					}
+				}
+
+				/* Allo + Suffix*/
+			} else if ((affixList == null) && (suffix != null)) {
+				/*	[
+				*	F_femme
+				* 	]
+				*	{f Sg} s -> {f Pl}
+				*/
+
+				foreach (FlexTbl ftbl in ftbls) {
+					foreach (FlexRule fr in ftbl.Frlist) {
+
+						string am_cat = "";
+						foreach (string s in am.Cats) {
+							am_cat += s + " / ";
+						}
+
+						if ((IsEqual (fr.Affix, suffix)) && (am.CatsEqual (fr.CatBefore)) && (finalCat.Contains (fr.CatAfter))) {
+
+							Allomorph amCopy = DeepClone (am);
+							Wordform wordCopy = new Wordform (word);
+							List<Sign> suffixCopy = wordCopy.Word.GetRange (wordCopy.Word.Count - suffix.Count, suffix.Count);
+							wordCopy.AddAttributes (amCopy.Lemma, fr.CatAfter, amCopy.Tbl, lang, time, amCopy.Additional, win_, amCopy.Allo, null, 
+							                        ref suffixCopy);
+
+							wordCopy.Word [amCopy.Allo.Count - 1].SegmEnd = true;
+							wordCopy.Word [amCopy.Allo.Count].SegmStart = true;
+							wordCopy.Additional.AddRange (ftbl.Additional);
+
+							wfList1Allo.Add (wordCopy);								
+						}
+					}
+				}	
+
+			} else {
+				/* [
+				 * F_joli
+				 * ]
+				 * {m Sg} e -> {f Sg}
+				 * {m Sg} s -> {m Pl}
+				 * {f Sg} s -> {f Pl}
+				 */
+
+				foreach (FlexTbl ftbl in ftbls) {
+					foreach (FlexRule fr in ftbl.Frlist) {
+
+						/* Kategorie Allomorph und Anfangskategorie FlexPattern (Infix1) abgleichen,
+						 * Affix der FlexRule = Affix aus Liste
+						 */
+
+						if ((Array.Exists (am.Cats, element => element == fr.CatBefore)) && (Functions.IsEqual (fr.Affix, affixList [0]))) {
+
+							/* Zähler für Rekursion,
+							 * Position für Segmentierung */
+							int count = 0;
+							int position = am.Allo.Count + affixList [0].Count;
+
+							/* Wordform kopieren, falls FlexRule in Sackgasse führt */
+							Wordform wordCopy = new Wordform (word);
+							List<Sign> suffixCopy = wordCopy.Word.GetRange (wordCopy.Word.Count - suffix.Count, suffix.Count);
+							wordCopy.Word [am.Allo.Count - 1].SegmEnd = true;
+							wordCopy.Word [am.Allo.Count].SegmStart = true;
+							wordCopy.Word [position - 1].SegmEnd = true;
+							wordCopy.Word [position].SegmStart = true;
+
+							WellformedWithAffix (wordCopy, am, ftbls, fr.CatAfter, affixList, suffixCopy,
+							                     finalCat, lang, count, position, wfList1Allo, time);
+						}
+						/* falls nicht: weitersuchen */
+					}
+				}
+			}
+			return wfList1Allo;			
+		}
+
+		/// <summary>
+		/// Rekursive Funktion zum Überprüfen, ob Wortformen mit mindestens einem nichtfinalen Affix wohlgeformt sind.
+		/// Logik: 
+		/// </summary>
+		public static void WellformedWithAffix (Wordform wordCopy, Allomorph am, List<FlexTbl> ftbls, string catAfter, 
+		                                        List<List<Sign>> affixList, List<Sign> suffix, List<String> finalCat, 
+		                                        string lang, int count, int position, List<Wordform> wfList1Allo, int time)
+		{
+
+			foreach (FlexTbl ftbl in ftbls) {
+				foreach (FlexRule fr in ftbl.Frlist) {
+
+
+					if (catAfter == fr.CatBefore) {
+
+						if ((affixList.Count == count + 1) && (Functions.IsEqual (fr.Affix, suffix)) && finalCat.Contains (fr.CatAfter)) {
+							/* Abbruchbedingung */
+
+							Allomorph amCopy = DeepClone (am);
+							wordCopy.AddAttributes (amCopy.Lemma, fr.CatAfter, amCopy.Tbl, lang, time, amCopy.Additional, win_, amCopy.Allo, affixList, 
+							                        ref suffix);
+							wordCopy.Additional.AddRange (ftbl.Additional);
+
+							wfList1Allo.Add (wordCopy);
+
+						} else if ((affixList.Count > count + 1) && (Functions.IsEqual (fr.Affix, affixList [count + 1]))) {
+							/* aktuelles Affix ist noch nicht das Suffix */
+							count++;
+							position += affixList [count].Count;
+							/* Wordform kopieren, falls FlexRule in Sackgasse führt */
+							Wordform wordCopyCopy = new Wordform (wordCopy);
+							wordCopyCopy.Word [position - 1].SegmEnd = true;
+							wordCopyCopy.Word [position].SegmStart = true;								
+							WellformedWithAffix (wordCopyCopy, am, ftbls, fr.CatAfter, affixList, suffix, finalCat, lang, count, position, wfList1Allo, time);
+						}
+						/* falls nicht: weitersuchen */
+					}
+					/* falls nicht: weitersuchen */
+				}
+			}
+		}
+
+		/// <summary>
+		/// Prüfen, ob Bedingungen für Graphem-Phonem-Umwandlung wahr sind.
+		/// </summary>
+		public static bool CheckConditions (GraphemePhoneme gp, int position, List<Sign> word, List<Sign> startOfPhoneticWord)
+		{
+			if (gp.AttributeValue.Count == 0) { /* keine Bedingungen*/
+				return true;
+			} else { /* Bedingungen*/
+
+				bool allConditions = true;
+
+				foreach (AttributeValue aw in gp.AttributeValue) {
+					if (CheckTransCondition (word, aw.Attribute, aw.Value, position, startOfPhoneticWord) == false) {
+						allConditions = false;
+						return false;
+					}
+				}
+				if (allConditions == true) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// Diakritische Sonderzeichen aus Eingabe durch Textsymbole ersetzen
+		/// </summary>
+		public static string PrepareInput (string stIn)
+		{
+
+			String textString = "";
+
+			if (diacriticInput == true) {
+				/* Input mit Diakritika */
+
+				foreach (char c in stIn) {
+					var myKey = graphOutListLang1.FirstOrDefault (x => x.Value == c.ToString ().Normalize ()).Key;
+					if (myKey != null) {
+						/* falls Key gefunden wird */
+						textString += myKey;
+					} else {
+						ShowWarningMessage ("Zeichen " + c.ToString () + " in " + stIn + " wurde nicht als Graphem in .graph gefunden.");
+						return null;
+					}
+				}
+			} else {
+				/* Input in Notation der Textdateien */
+				textString = stIn;
+
+			}
+			return textString;
+
+//			string stFormD = stIn.Normalize (NormalizationForm.FormD);
+//			StringBuilder sb = new StringBuilder ();
+//
+//			for (int ich = 0; ich < stFormD.Length; ich++) {
+//				UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory (stFormD [ich]);
+//				if (uc != UnicodeCategory.NonSpacingMark) {
+//					sb.Append (stFormD [ich]);
+//				} 
+//				//else {
+//				//	string unicodeStr = ConvertStringToUnicode (stFormD [ich].ToString ()).Replace ("\\u", "U+");
+//				//}
+//			}
+//
+//			return(sb.ToString ().Normalize (NormalizationForm.FormC));
+		}
+
+		/// <summary>
+		/// Gibt alle Flex-Tabellen der Liste mit dem vorgegebenen Namen zurück
+		/// </summary>
+		public static List<FlexTbl> GetFlexTable (List<FlexTbl> ftlist, string tblname)
+		{
+
+			List<FlexTbl> ftbls = new List<FlexTbl> ();
+
+			foreach (FlexTbl ft in ftlist) {
+
+				if (ft.Tbl == tblname) {				
+					ftbls.Add (ft);
+				}
+			}
+
+			return ftbls;
+		}
+
+		/// <summary>
+		/// Gibt alle Lex-Tabellen der Liste mit dem vorgegebenen Namen zurück
+		/// </summary>
+		public static LexTbl GetLexTable (List<LexTbl> lexlist, string tblname)
+		{
+			foreach (LexTbl el in lexlist) {
+				if (el.Tbl == tblname) {
+					return el;	
+				}
+			}
+			return null;
+		}
+
+		/// <summary>
+		/// Sucht Graphem in Liste von Graphem-Phonem-Paaren.
+		/// </summary>
+		public static List<GraphemePhoneme> SearchGraphInList (List<GraphemePhoneme> gplist, string graph)
+		{
+			// TODO: findet auch "re" soll es aber nicht
+			List<GraphemePhoneme> list = gplist.FindAll (item => item.Grapheme == graph);
+			return list;
+		}
+
+		/// <summary>
+		/// Prüft, ob Phonem in Liste existiert.
+		/// </summary>
+		public static bool IsPhonInList (List<GraphemePhoneme> gplist, string phon)
+		{
+			GraphemePhoneme graphon = gplist.Find (item => item.Phoneme == phon);
+			if (graphon != null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Überprüft die Bedingungen für die Graphem-Phonem-Zuordnung.
+		/// z.B. {Linker Kontext: /V_PHON/; Rechter Kontext: <V_GRAPH>}
+		/// </summary>
+		public static bool CheckTransCondition (List<Sign> word, string attribute, string value, int position, List<Sign> startOfPhoneticWord)
+		{
+			List<string> conditionValuesVariables = new List<string> (value.Split (' '));
+
+			bool allTrue = true;
+
+			/* für alle aufeinanderfolgende Wertvariablen (/V_PHON/ <LIQUIDA>) */
+			/* alle Zweige müssen true sein */
+			for (int i = 0; i < conditionValuesVariables.Count; i++) {
+
+				int positionShift = conditionValuesVariables.Count - i;
+
+				Match graphemeOrPhoneme = Regex.Match (conditionValuesVariables [i], @"^[</](.*?)[>/]$");
+				Match grapheme = Regex.Match (conditionValuesVariables [i], @"<(.*?)>");
+				Match phoneme = Regex.Match (conditionValuesVariables [i], @"/(.*?)/");
+
+				if (graphemeOrPhoneme.Success) {
+
+					List<string> conditionValues = new List<string> ();
+					Match name = Regex.Match (graphemeOrPhoneme.Groups [1].Value, @"^(\$.*)$");
+
+					/* falls Listenelement eine Variable ist (z.B. V_GRAPH) */
+					if (name.Success) {
+						Variable found = Functions.varListLang1.Find (x => x.Name == name.Groups [1].Value);
+						if (found != null) {
+							conditionValues.AddRange (found.Values);
+						} else {
+							ShowErrorMessage ("Variable " + name.Groups [1].Value + " aus .trans ist nicht definiert.");
+						}
+					} else {
+						conditionValues.Add (graphemeOrPhoneme.Groups [1].Value);
+					}
+
+					if (attribute == "Rechter Kontext") {
+
+						if (phoneme.Success) {
+							throw new SymbolNotFoundException ("Phoneme sind für den rechten Kontext noch nicht bekannt.");
+						} else if (grapheme.Success) {
+
+							int shiftedPosition = position + positionShift;
+
+							foreach (string s in conditionValues) {
+
+
+
+								if (shiftedPosition < word.Count) { /* noch kein Wortende */
+
+									if ((shiftedPosition > word.Count) && (s == "#")) { /* rechter Kontext ist Wortende */
+										allTrue = true;
+										goto nextConditionValuesVariable;
+									} else if (word [shiftedPosition].Symbol == s) {
+										allTrue = true;
+										goto nextConditionValuesVariable;
+									}
+								} else if (s == "#") { /* Wortende */
+									allTrue = true;
+									goto nextConditionValuesVariable;
+								}
+							}
+						} else {
+							throw new SymbolNotFoundException ("Bedingungen müssen als Grapheme \"<>\" oder Phoneme \"//\" gekennzeichnet sein.");
+						}
+					} else if (attribute == "Linker Kontext") {
+
+						int shiftedPosition = position - positionShift;
+
+						foreach (string s in conditionValues) {
+
+							if (shiftedPosition < 0) { /* Wortanfang */
+
+								if (s == "#") {
+									allTrue = true;
+									goto nextConditionValuesVariable;
+								} else {
+									allTrue = false;
+									goto nextConditionValuesVariable;
+								}
+							} else {
+
+								if (grapheme.Success && (word [shiftedPosition].Symbol == s)) {
+									allTrue = true;
+									goto nextConditionValuesVariable;
+								} else if (phoneme.Success && (startOfPhoneticWord [shiftedPosition].Symbol == s)) {
+									allTrue = true;
+									goto nextConditionValuesVariable;
+								}
+							}
+						}
+
+						allTrue = false;
+						goto nextConditionValuesVariable;
+
+					} else {
+						throw new SymbolNotFoundException ("Attribut nicht gefunden: " + attribute);
+					}
+				} else {
+					throw new SymbolNotFoundException ("Wert nicht gefunden: " + value);
+				}
+				return false;
+
+				nextConditionValuesVariable:
+				if (allTrue == true) {
+					continue;
+				} else {
+					return false;
+				}
+			}
+
+			if (allTrue == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Fügt ein Dictionary zu einem anderen Dictionary hinzu
+		/// und prüft, ob Attribute doppelt definiert sind.
+		/// </summary>
+		public static void AddRange<T, S> (this Dictionary<T, S> source, Dictionary<T, S> collection)
+		{
+
+			if (collection != null) {
+				foreach (var item in collection) {
+					if (!source.ContainsKey (item.Key)) { 
+						source.Add (item.Key, item.Value);
+					} else {
+						ShowWarningMessage ("Attribut ist doppelt definiert: " + item.Key);
+					}  
+				} 
+			}
+		}
+
+		/// <summary>
+		/// Gibt Eingabestrings als formattierten String zurück.
+		/// Dient der formattierten Ausgabe der Attribute und Werte.
+		/// </summary>
+		public static string PrintFormatted (string s1, string s2, string s3)
+		{
+			return String.Format ("{0,-40}{1,-18}{2,-20}", s1, s2, s3) + "\n";
+
+		}
+
+		/// <summary>
+		/// Zeigt einen MessageDialog mit einer Warnung an.
+		/// </summary>
+		public static void ShowWarningMessage (string s)
+		{
+			MessageDialog msdSame = new MessageDialog (win_, DialogFlags.Modal, MessageType.Warning, ButtonsType.Close, s);
+			msdSame.Title = "Warning";
+			if ((ResponseType)msdSame.Run () == ResponseType.Close) {
+				msdSame.Destroy ();
+			}
+		}
+
+		/// <summary>
+		/// Zeigt einen MessageDialog mit einem Fehler an.
+		/// </summary>
+		public static void ShowErrorMessage (string s)
+		{
+			MessageDialog msdSame = new MessageDialog (win_, DialogFlags.Modal, MessageType.Error, ButtonsType.Close, s);
+			msdSame.Title = "Error";
+			if ((ResponseType)msdSame.Run () == ResponseType.Close) {
+				msdSame.Destroy ();
+				throw new SymbolNotFoundException (s);
+			}
+		}
+
+		/// <summary>
+		/// Konvertiert einen Unicode-String (U+0304) in einen string.
+		/// </summary>
+		public static String ConvertUnicodeToString (string unicode)
+		{
+			String codePoint = unicode.ToString ().Replace ("U+", "").ToString ();
+			int code = int.Parse (codePoint, System.Globalization.NumberStyles.HexNumber);
+			return char.ConvertFromUtf32 (code).ToString ();
+		}
+
+		/// <summary>
+		/// Wandelt string in Unicode (\u0304) um.
+		/// </summary>
+		public static String ConvertStringToUnicode (string str)
+		{
+
+			byte[] stringBytes = Encoding.Unicode.GetBytes (str);
+			char[] stringChars = Encoding.Unicode.GetChars (stringBytes);
+			StringBuilder builder = new StringBuilder ();
+			Array.ForEach<char> (stringChars, c => builder.AppendFormat ("\\u{0:X4}", (int)c));
+
+			return builder.ToString ();
+		}
+
+		/// <summary>
+		/// Wandelt die Symbole einer List<Sign> in einen String (GraphText) um.
+		/// </summary>
+		public static string ConvertSignListToGraphText (List<Sign> ll)
+		{
+
+			string str = "";
+			foreach (Sign l in ll) {
+
+				str += l.Symbol;
+			}
+			return str;
+		}
+
+		/// <summary>
+		/// Wandelt die Symbole einer List<Sign> in einen String (Graph) um.
+		/// </summary>
+		public static string ConvertSignListToGraph (List<Sign> ll)
+		{
+
+			string str = "";
+			foreach (Sign l in ll) {
+
+				str += l.PrintGraph ();
+			}
+			return str;
+		}
+
+		/// <summary>
+		/// Wandelt die Symbole einer List<Sign> in einen String (Graph) um.
+		/// </summary>
+		public static string ConvertSignListToIPA (List<Sign> ll)
+		{
+
+			string str = "";
+			foreach (Sign l in ll) {
+
+				str += l.PrintIpa ();
+			}
+			return str;
+		}
+
+		/// <summary>
+		/// Wandelt einen String in eine List<Sign> um.
+		/// </summary>
+		public static List<Sign> ConvertStringToSignList (String str)
+		{
+			/* signLength ist längestes Zeichen oder Länge von str */
+			int signLength = Math.Min (Math.Max (longestPhon, longestGraph), str.Length);
+
+			List<Sign> ll = new List<Sign> ();
+
+			for (int i = 0; i< str.Length; i++) {
+
+				/* falls das längste Sign + i größer als String, 
+				 * dann signLength auf Länge des Strings - i setzen */
+				if (signLength + i > str.Length)
+					signLength = str.Length - i;
+
+				for (int j = signLength; j>0; j--) {
+					String sign = str.Substring (i, j);
+					if (graphOutListLang1.ContainsKey (sign)) {
+						ll.Add (new Sign (ObjectExtensions.Copy (sign)));
+						i = i + j - 1;
+
+						break;
+					} else if (j == 1) {
+						ll.Add (new Sign (str [i].ToString ()));
+					}
+				}
+			}
+			return ll;
+		}
+
+		public static List<List<Sign>> ConvertStringToSignListList (String str, String phonOrGraph, String type)
+		{
+
+			List<List<Sign>> list = new List<List<Sign>> ();
+
+			if (type == "before") {
+
+				Match VarRegex = Regex.Match (str, @"^(\$.+)$");
+
+				if (VarRegex.Success) {
+					/* str ist Variable */
+					Variable Vars = Functions.varListLang1.Find (x => x.Name == VarRegex.Groups [1].Value);
+					if (Vars == null)
+						Functions.ShowErrorMessage ("Variable " + VarRegex.Groups [1].Value + " ist nicht definiert.");
+					foreach (String s1 in Vars.Values) {
+						if (phonOrGraph == "phon") {
+							list.Add (Functions.ConvertStringToSignListPhon (s1));
+						} else if (phonOrGraph == "graph") {
+							list.Add (Functions.ConvertStringToSignList (s1));
+						}
+					}
+				} else {
+					if (str == "") {
+						list.Add (new List<Sign> { new Sign("") });
+					} else if (str == "#") {
+						list.Add (new List<Sign> { new Sign("#") });
+					} else {
+						if (phonOrGraph == "phon") {
+							list.Add (Functions.ConvertStringToSignListPhon (str));
+						} else if (phonOrGraph == "graph") {
+							list.Add (Functions.ConvertStringToSignList (str));
+						}
+					}
+				}
+			} else if (type == "context") {			
+				/* Mögliche Werte:
+				 * s
+				 * st
+				 * s, r
+				 * st, sl
+				 * $V
+				 * $V $N
+				 * $V s
+				 * $V, s
+				 */
+
+				// 1. verschiedene Werte durch , getrennt
+				String[] strings = str.Split (',');
+
+				foreach (String s in strings) {
+					String sTrim = s.Trim ();
+
+					if (sTrim.Contains (" ")) {
+						/* Variablen [und Signs] */
+						String[] varsAndSigns = sTrim.Split (' ');
+						List<List<List<Sign>>> varsAndSignsList = new List<List<List<Sign>>> ();
+
+						foreach (String varOrSign in varsAndSigns) {
+
+							Match VarRegex = Regex.Match (varOrSign, @"^(\$.+)$");
+							List<List<Sign>> varOrSignList = new List<List<Sign>> ();
+
+							if (VarRegex.Success) {
+								/* Variable */
+								Variable Vars = Functions.varListLang1.Find (x => x.Name == VarRegex.Groups [1].Value);
+								if (Vars == null)
+									ShowErrorMessage ("Variable " + VarRegex.Groups [1].Value + " ist nicht definiert.");
+								foreach (String s1 in Vars.Values) {
+									if (phonOrGraph == "phon") {
+										varOrSignList.Add (Functions.ConvertStringToSignListPhon (s1));
+									} else if (phonOrGraph == "graph") {
+										varOrSignList.Add (Functions.ConvertStringToSignList (s1));
+									}
+								}
+							} else {
+								/* Signs */
+								if (varOrSign == "#") {
+									varOrSignList.Add (new List<Sign> { new Sign("#") });
+								} else {
+									if (phonOrGraph == "phon") {
+										varOrSignList.Add (Functions.ConvertStringToSignListPhon (varOrSign));
+									} else if (phonOrGraph == "graph") {
+										varOrSignList.Add (Functions.ConvertStringToSignList (varOrSign));
+									}
+								}
+							}
+							varsAndSignsList.Add (varOrSignList);
+						}
+
+						List<List<Sign>> currList = new List<List<Sign>> ();
+						List<List<Sign>> cartesianList = varsAndSignsList [0];
+
+						/* Kartesisches Produkt der Listen */
+						for (int i=1; i < varsAndSignsList.Count; i++) {
+							currList = cartesianList;
+							cartesianList = CartesianJoinListLists (currList, varsAndSignsList [i]);			
+						}
+
+						list = cartesianList;
+
+					} else {
+						/* nur Phoneme/Grapheme oder nue eine variable (kein Leerzeichen) */
+						if (sTrim == "") {
+							//list.Add (new List<Sign> { new Sign("") });
+							return list;
+						} else if (sTrim == "#") {
+							list.Add (new List<Sign> { new Sign("#") });
+						} else {
+
+							Match VarRegex = Regex.Match (sTrim, @"^(\$.+)$");
+
+							if (VarRegex.Success) {
+								/* Variable */
+								Variable Vars = Functions.varListLang1.Find (x => x.Name == VarRegex.Groups [1].Value);
+								if (Vars == null)
+									ShowErrorMessage ("Variable " + VarRegex.Groups [1].Value + " ist nicht definiert.");
+								foreach (String s1 in Vars.Values) {
+									if (phonOrGraph == "phon") {
+										list.Add (Functions.ConvertStringToSignListPhon (s1));
+									} else if (phonOrGraph == "graph") {
+										list.Add (Functions.ConvertStringToSignList (s1));
+									}
+								}
+							} else {
+								/* Signs */
+								if (sTrim == "#") {
+									list.Add (new List<Sign> { new Sign("#") });
+								} else {
+									if (phonOrGraph == "phon") {
+										list.Add (Functions.ConvertStringToSignListPhon (sTrim));
+									} else if (phonOrGraph == "graph") {
+										list.Add (Functions.ConvertStringToSignList (sTrim));
+									}
+								}
+							}
+						}
+					}
+
+				}
+			}
+			return list;
+		}
+
+		/// <summary>
+		/// Wandelt einen String in eine List<Sign> von Phonemen um.
+		/// </summary>
+		public static List<Sign> ConvertStringToSignListPhon (String str)
+		{
+			/* signLength ist längestes Zeichen oder Länge von str */
+			int signLength = Math.Min (Math.Max (longestPhon, longestGraph), str.Length);
+
+			List<Sign> ll = new List<Sign> ();
+
+			for (int i = 0; i< str.Length; i++) {
+
+				/* falls das längste Sign + i größer als String, 
+				 * dann signLength auf Länge des Strings - i setzen */
+				if (signLength + i > str.Length)
+					signLength = str.Length - i;
+
+				for (int j = signLength; j>0; j--) {
+					String sign = str.Substring (i, j);
+					if (phonOutListLang1.ContainsKey (sign)) {
+						ll.Add (new Sign (ObjectExtensions.Copy (sign)));
+						i = i + j - 1;
+
+						break;
+					} else if (j == 1) {
+						ll.Add (new Sign (str [i].ToString ()));
+					}
+				}
+			}
+			return ll;
+		}
+
+		/// <summary>
+		/// Erzeugt eine tiefe Kopie eines Objekts.
+		/// </summary>
+		public static T DeepClone<T> (T obj)
+		{
+			using (var ms = new MemoryStream()) {
+				var formatter = new BinaryFormatter ();
+				formatter.Serialize (ms, obj);
+				ms.Position = 0;
+
+				return (T)formatter.Deserialize (ms);
+			}
+		}
+
+		/// <summary>
+		/// Prüft, ob zwei Sign identisch sind.
+		/// </summary>
+		public static bool IsEqual (List<Sign> ll1, List<Sign> ll2)
+		{
+
+			bool equal = false;
+
+			if (ll1.Count != ll2.Count)
+				return false;
+
+			for (int i=0; i<ll1.Count; i++) {
+				if (ll2.Count > i) {
+					if (ll1 [i].Symbol == ll2 [i].Symbol) {
+						equal = true;
+					} else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			return equal;
+		}
+
+		/// <summary>
+		/// Grapheme in Phonem umwandeln
+		/// </summary>
+		public static List<Sign> TransformGraphToPhon (Wordform wf, int start)
+		{
+
+			List<Sign> phoneticWord = new List<Sign> ();
+			// TODO: posInPhon entfernen?
+			int posInPhon = start - 1;
+			int SignMappingGraph1 = start - 1;
+			int SignMappingPhon1 = start - 1;
+
+			for (int i = start; i < wf.Word.Count; i++) {
+
+				int nextGraphI = i;
+
+				List<GraphemePhoneme> multiGraphInList = new List<GraphemePhoneme> ();
+				List<GraphemePhoneme> graphInList = new List<GraphemePhoneme> ();
+				List<int?> SignMappingGraph = new List<int?> ();
+				List<int?> SignMappingPhon = new List<int?> ();
+				SignMappingGraph1++;
+				SignMappingPhon1++;
+				SignMappingGraph.Add (SignMappingGraph1);
+				SignMappingPhon.Add (SignMappingPhon1);
+				posInPhon++;
+
+				/* Wortgrenzen */
+				if (wf.Word [i].Symbol == "#") {
+					phoneticWord.Add (new Sign ("#"));
+					SignMapping sm = new SignMapping (i, SignMappingGraph, SignMappingPhon);
+					wf.MappingList.Add (sm);
+					continue;
+				}
+
+				/* Monographem, auch Diphtonge (da sie in .graph stehen) */
+				graphInList = new List<GraphemePhoneme> (Functions.SearchGraphInList (Functions.TransListLang1, wf.Word [i].Symbol));
+
+				/* Multigraphemeinheiten: Affrikate, Aspiranten...*/
+				string sym = wf.Word [i].Symbol;
+
+
+				for (int j = i + 1; j < wf.Word.Count; j++) {
+					sym += wf.Word [j].Symbol;
+					multiGraphInList = new List<GraphemePhoneme> (Functions.SearchGraphInList (Functions.TransListLang1, sym));
+
+					/* prüfen, ob SegmentationBorder im Multigraphem gefunden wurde */
+					if (multiGraphInList.Any ()) {
+						for (int k = i; k < j; k++) {
+							if (wf.Word [k].SegmEnd == true) {
+								multiGraphInList.Clear ();
+								break;
+							}
+						}
+						posInPhon = posInPhon - (j - i);
+						nextGraphI = j;
+						SignMappingGraph.Add (j);
+						SignMappingGraph1++;
+						break;
+					}
+				}
+
+				/* Bedingungen überprüfen und Phoneme speichern */
+				if (multiGraphInList.Any ()) {
+					/* falls Multigraphem gefunden wurde*/
+
+					// TODO: Umschreiben für Multigraphemeinheiten
+
+					/* für alle GraphemePhoneme Konditionen testen
+					 * falls Kondition stimmt, dann abbrechen und i+2 */
+					foreach (GraphemePhoneme gp in multiGraphInList) {
+
+						if (Functions.CheckConditions (gp, posInPhon, wf.Word, phoneticWord) == true) {
+
+							Match phonGroup = Regex.Match (gp.Phoneme, @"^(.*?)\.(.*?)$");
+
+							if (phonGroup.Success) {
+								/* Phonemgruppen*/
+								// TODO: überprüfen (Beispiel konstruieren)
+								string[] phons = gp.Phoneme.Split ('.');
+
+								for (int j = 0; j < phons.Count(); j++) {
+									Sign l = ObjectExtensions.Copy (wf.Word [i]);
+									l.Symbol = phons [j];
+									phoneticWord.Add (l);
+									if (j > 0) {
+										SignMappingPhon.Add (i + j);
+										SignMappingPhon1++;
+									}
+								}
+								SignMapping sm = new SignMapping (i, SignMappingGraph, SignMappingPhon);
+								wf.MappingList.Add (sm);
+							} else {
+								Sign l = ObjectExtensions.Copy (wf.Word [i]);
+								l.Symbol = gp.Phoneme;
+								phoneticWord.Add (l);
+								SignMapping sm = new SignMapping (i, SignMappingGraph, SignMappingPhon);
+								wf.MappingList.Add (sm);
+							}
+							goto TransformationFound;
+						}
+					}
+				} else if (graphInList.Any ()) {
+
+					/* für alle GraphemePhoneme Konditionen testen
+					 * falls Kondition stimmt, dann abbrechen und i+2
+					 */
+					foreach (GraphemePhoneme gp in graphInList) {
+						if (Functions.CheckConditions (gp, posInPhon, wf.Word, phoneticWord) == true) {
+
+							Match phonGroup = Regex.Match (gp.Phoneme, @"^(.*?)\.(.*?)$");
+
+							if (phonGroup.Success) {
+								/* Phonemgruppen: x - ks */
+								string[] phons = gp.Phoneme.Split ('.');
+
+								for (int j = 0; j < phons.Count(); j++) {
+									Sign l = ObjectExtensions.Copy (wf.Word [i]);
+									l.Symbol = phons [j];
+									phoneticWord.Add (l);
+									if (j > 0) {
+										SignMappingPhon.Add (i + j);
+										SignMappingPhon1++;
+									}
+								}
+								SignMapping sm = new SignMapping (i, SignMappingGraph, SignMappingPhon);
+								wf.MappingList.Add (sm);
+							} else {
+
+								Sign l = ObjectExtensions.Copy (wf.Word [i]);
+								l.Symbol = gp.Phoneme;
+								phoneticWord.Add (l);
+								SignMapping sm = new SignMapping (i, SignMappingGraph, SignMappingPhon);
+								wf.MappingList.Add (sm);
+							}
+							goto TransformationFound;
+						}
+					}
+				} else {
+					// TODO: Warnung, dass Grapheme nicht gefunden und Abbruch
+					Functions.ShowWarningMessage ("Graphem in Transkriptionsdatei (.trans) nicht gefunden: " + wf.Word [i].Symbol);
+					return null;
+				}
+
+				TransformationFound:
+				i = nextGraphI;
+				continue;
+			}
+			return phoneticWord;
+		}
+
+		public static string SpliceText (String str, int width, String delimiter)
+		{
+			int signsAfterLastBreak = str.Count ();
+			int searchStart = 0;
+			int index = 0;
+
+			while (signsAfterLastBreak > width) {
+
+				Match lastWhite = Regex.Match (str.Substring (searchStart, width), delimiter, RegexOptions.RightToLeft);
+				if (lastWhite.Success) {
+					index = lastWhite.Index + searchStart + 1;
+
+					var aStringBuilder = new StringBuilder (str);
+					aStringBuilder.Insert (index, Environment.NewLine);
+					str = aStringBuilder.ToString ();
+
+				} else {
+					break;
+				}
+
+				searchStart = index;
+				signsAfterLastBreak = str.Count () - index;
+			}
+
+			return str;
+		}
+
+		public static List<List<Sign>> CartesianJoinListLists (List<List<Sign>> a, List<List<Sign>> b)
+		{
+			List<List<Sign>> newList = new List<List<Sign>> ();
+
+			foreach (List<Sign> lsA in a) {
+				foreach (List<Sign> lsB in b) {
+					List<Sign> newLs = new List<Sign> ();
+					newLs.AddRange (lsA);
+					newLs.AddRange (lsB);
+					newList.Add (newLs);
+				}
+			}
+
+			return newList;
+		}
+
+		public static void printDebugText (String str, bool tabs)
+		{
+			if (tabs == true) {
+				for (int i=0; i< Functions.tabNum; i++) {
+					Functions.debugText.Append ("\t");
+				}
+			}
+			Functions.debugText.Append (str);
+		}
+
+		/// <summary>
+		/// Konvertiert die Zahlen 1-10 in römische Ziffern.
+		/// </summary>
+		public static String ToRoman (int num)
+		{
+			List<String> roman = new List<String> { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
+			return roman [num];
+		}
+	}
+}
+
