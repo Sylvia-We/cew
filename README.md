@@ -1,0 +1,2 @@
+# cew
+computergenerated etymological dictionary
