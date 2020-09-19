@@ -1,0 +1,5891 @@
+# Regeln aus Rheinfelder I
+# ohne Rheinfelders Anmerkungen
+
+################################################
+# Periodisierung
+
+# bei Entwicklung:
+# Vlat.: -100--600
+# Entwicklungen links: 601--1100
+# Entwicklungen rechts: 1101--1976
+
+# im 20. Jh.: 1901 bis 2000
+# 1. Jh. v. Chr. = 100 - 1
+# "Ende des 18. Jh." : 1790
+
+################################################
+#################### Vokale ####################
+################################################
+
+################################################
+# im Vulgärlatein (-100 - 600)
+################################################
+
+[
+Id: V_vlat_Synkope_1
+Name: Synkope der Proparoxytona
+Beschreibung: zwischen l, r einerseits und einem einfachen Konsonanten andererseits
+Rheinfelder-Id: §18 (I: 11)
+Beispiel: cálamus > *cálmus ; láridum > lárdum
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: -100--600
+	Linker Kontext: [l, r]
+	Rechter Kontext: [$K_PH $V_PH]
+	Betonung: "A _ B#
+	}
+
+[
+Id: V_vlat_Synkope_2
+Name: Synkope der Proparoxytona 
+Beschreibung: zwischen l, r einerseits und einem einfachen Konsonanten andererseits
+Rheinfelder-Id: §18 (I: 11)
+Beispiel: sábulum > *sablum
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: -100--600
+	Linker Kontext: [$V_PH $K_PH]
+	Rechter Kontext: [l, r]
+	Betonung: "A _ B#
+	}
+
+[
+Id: V_vlat_Synkope_3
+Name: Synkope der Proparoxytona 
+Beschreibung: zwischen gleichartigen Konsonanten
+Rheinfelder-Id: §18 (I: 11)
+Beispiel: nítidus > *nittus, *nettus > net
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: -100--600
+	Linker Kontext: [t]
+	Rechter Kontext: [d]
+	Betonung: "A _ B#
+	}
+
+[
+Id: V_vlat_Synkope_4
+Name: Synkope der Proparoxytona 
+Beschreibung: zwischen s und t
+Rheinfelder-Id: §18 (I: 11)
+Beispiel: depósitum > *depóstum
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: -100--600
+	Linker Kontext: [s]
+	Rechter Kontext: [t]
+	Betonung: "A _ B#
+	}
+
+[
+Id: V_vlat_QUANTI
+Name: Quantitätenkollaps
+Rheinfelder-Id: §21 (I: 13)
+Entwicklung: ī > i ; ĭ > ẹ ; ē > ẹ ; ĕ > ę ; ā > a ; ă > a ; ŏ > ǫ ; ō > ọ ; ŭ > ọ ; ū > u
+Beispiel: nĭtĭdus > *nĭttus > *nettus ; mĭttĕre > mẹttere ; sŭmma > sọmma ; ŭmbra > ọmbra
+]
+[a:] > [a] ; <=a> > <a>
+[a]  > [a] ; <°a> > <a>
+[e:] > [e] ; <=e> > <e>
+[e]  > [E] ; <°e> > <e>
+[i:] > [i] ; <=i> > <i>
+[i]  > [e] ; <°i> > <e>
+[o:] > [o] ; <=o> > <o>
+[o]  > [O] ; <°o> > <o>
+[u:] > [u] ; <=u> > <u> 
+[u]  > [o] ; <°u> > <o>
+[y:] > [o] ; <=y> > <y>
+[y] > [o] ; <°y> > <y>
+[a:]  > [a] ; <=A> > <A>
+[a]  > [a] ; <°A> > <A>
+[e:] > [e] ; <=E> > <E>
+[e]  > [E] ; <°E> > <E>
+[i:] > [i] ; <=I> > <I>
+[i]  > [e] ; <°I> > <E>
+[o:] > [o] ; <=O> > <O>
+[o]  > [O] ; <°O> > <O>
+[u:] > [u] ; <=U> > <U> 
+[u]  > [o] ; <°U> > <O>
+[y:] > [o] ; <=Y> > <Y>
+[y] > [o] ; <°Y> > <Y>
+	{
+	Zeit: -100--300
+	Spezialfall: V_vlat_i_^_1, V_vlat_i_^_2, V_vlat_w_1
+	}     
+ 
+[
+Id: V_vlat_MONO
+Name: Monophthongierung
+Rheinfelder-Id: §22 (I: 13)
+Entwicklung: ae > ę ; oe > ̣̄ö (̄  + ̣ö) > ē > ẹ
+Beispiel: cael°u > ci̯el > ciel ; poen°a > peine
+]
+[a-\e_^] > [E] ; <ae> > <e>
+[o-\e_^]  > [e] ; <oe> > <e>
+	{
+	Zeit: -100--200
+	}
+
+[
+Id: V_vlat_KONTR
+Name: Kontraktion
+Beschreibung: Zusammenfluss nebeneinanderstehender gleicher Vokale
+Rheinfelder-Id: §25 (I: 14)
+Beispiel: cooperire > coprire > couvrir ; prehendere > preendere > prendere
+]
+[aa] > [a] ; <aa> > <a>
+[ee] > [e] ; <ee> > <e>
+[EE] > [E] ; <ee> > <e>
+[ie] > [i] ; <ii> > <i>
+[oo] > [o] ; <oo> > <o>
+[OO] > [O] ; <oo> > <o>
+[uu] > [u] ; <uu> > <u> 
+[a-\u_^a-\u_^] > [a-\u_^] ; <auau> > <au>
+	{
+	Zeit: -100--600
+	}
+
+[
+Id: V_vlat_i_^_1
+Name: Konsonantisierung
+Beschreibung: tonloses i wird unmittelbar vor einem andersartigen Vokal konsonantisch
+Rheinfelder-Id: §26 (I: 14)
+Beispiel: potionem > pot̯ionem > poison ; filíolus > filiólus > fili̯ólus > filluol (ll = ɫ) > filleul
+]
+[i] > [i_^] ; <°i> > <i>
+	{
+	Zeit: -100--600
+	Rechter Kontext: [$V_PH_NICHT_i]
+	Betonung: _
+	}
+
+[
+Id: V_vlat_i_^_2
+Name: Konsonantisierung
+Beschreibung: tonloses (e) wird unmittelbar vor einem andersartigen Vokal konsonantisch
+Rheinfelder-Id: §26 (I: 14)
+Beispiel: linea > line̯a > ligne
+]
+[e] > [i_^] ; <°e> > <e>
+	{
+	Zeit: -100--600
+	Rechter Kontext: [$V_PH_NICHT_e]
+	Betonung: _
+	}
+              
+[
+Id: V_vlat_w_1
+Name: Konsonantisierung
+Beschreibung: tonloses u wird unmittelbar vor einem andersartigen Vokal konsonantisch
+Rheinfelder-Id: §26 (I: 14)
+Beispiel: vidua > vidu̯a > *vedve > veve > veuve
+]
+[u] > [u_^] ; <°u> > <u>
+	{
+	Zeit: -100--600
+	Rechter Kontext: [$V_PH_NICHT_u]
+	Betonung: _
+	}
+
+################################################
+# Haupttonvokale
+################################################
+
+[
+Id: V_Haupt_u
+Name: Haupttonvokale
+Rheinfelder-Id: §37, §38 (I: 18)
+Entwicklung: ú[ > ü = ü ; ú] = ü = ü
+Beispiel: mūru > mur ; ūsu > us ; cūra > cure ; pĕrdĭtu > *pĕrdū́tu > perdut > perdu ; pĕrdĭta > *pĕrdū́tă > perdude > perdue ; fĭssūra > fissure (i gelehrt) ; pūrgat > purget > purge ; fūste > fust > fût
+]
+[u] > [y]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Nasal_u_1, V_Pal_7
+	Früher: K_vorkons_15a, K_vorkons_15b, K_zwischenvok_15(II), K_zwischenvok_15(III)
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_e_1
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §40 (I: 20)
+Entwicklung: e[ > ei̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: vĭa > veie > voie ; fĭde > feit ; mē > mei > moi ; tēla > teile > toile ; sērō > seir > soir ; sēta und saeta > seide > soie ; mŏnēta > moneide > monoie > monnaie; flēbĭle > *fẹble > feible > foible > faible
+]
+[e] > [e-\i_^] ; <e> > <ei>
+	{
+	Zeit: 790--1100
+	Und-Vorbedingung: !V_Haupt_e_2
+	Früher: K_vorkons_15a
+	Spezialfall: V_Haupt_einsilbig_1, V_Pal_1, V_Pal_8, V_Pal_11, V_Pal_18
+	Betonung: "_
+	Silbe: [
+	}
+
+[
+Id: V_Haupt_e_1(II)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §40 (I: 20)
+Entwicklung: e[ > ei̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: vĭa > veie > voie ; fĭde > feit ; mē > mei > moi ; tēla > teile > toile ; sērō > seir > soir ; sēta und saeta > seide > soie ; mŏnēta > moneide > monoie > monnaie; flēbĭle > *fẹble > feible > foible > faible ; tēctu > teit > toit ; strĭctu > estreit > étroit ; crēscĕre > creistre > croître ; *parēscĕre (< părēre) > pareistre > paroistre > paraître
+]
+[e-\i_^] > [o-\i_^]
+	{
+	Zeit: 901--1150
+	}
+
+[
+Id: V_Haupt_e_1(III)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §40, §254, §269, §277, §280 (I: 20, 101, 105, 108)
+Entwicklung: e[ > ei̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: vĭa > veie > voie ; fĭde > feit ; mē > mei > moi ; tēla > teile > toile ; sērō > seir > soir ; sēta und saeta > seide > soie ; mŏnēta > moneide > monoie > monnaie; flēbĭle > *fẹble > feible > foible > faible ; tēctu > teit > toit ; strĭctu > estreit > étroit ; crēscĕre > creistre > croître ; *parēscĕre (< părēre) > pareistre > paroistre > paraître ; gaudĭa > joie ; vōce > voiz > voix ; glōria > gloire ; mĕmŏria > memoire > mémoire ; cŏgnōscĕre > *conọscĕre > conoistre > connaître ; crú̆ce > croiz > croix ; lŭscu > lois > -- ; cŏgnōscĭt > vlat. *cōnōscit > conoist > connaît ; ăngŭstĭa > angoisse ; dŏrmītōrĭu > dortoir ; pṑtĭōne > poison > spl. tŏnsĭōne > *tōsĭōne > toison ; ŭxōre > oissour > --
+]
+[o-\i_^] > [o-\E]
+	{
+	Zeit: 1101--1300
+	Spezialfall: V_Nasal_Oi_^_oi_^_1
+	}
+
+[
+Id: V_Haupt_e_1(IV)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §40, §254, §269, §277, §280 (I: 20, 101, 105, 108)
+Entwicklung: e[ > ei̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: vĭa > veie > voie ; fĭde > feit ; mē > mei > moi ; tēla > teile > toile ; sērō > seir > soir ; sēta und saeta > seide > soie ; mŏnēta > moneide > monoie > monnaie; flēbĭle > *fẹble > feible > foible > faible ; tēctu > teit > toit ; strĭctu > estreit > étroit ; crēscĕre > creistre > croître ; *parēscĕre (< părēre) > pareistre > paroistre > paraître ; gaudĭa > joie ; vōce > voiz > voix ; glōria > gloire ; mĕmŏria > memoire > mémoire ; cŏgnōscĕre > *conọscĕre > conoistre > connaître ; crú̆ce > croiz > croix ; lŭscu > lois > -- ; cŏgnōscĭt > vlat. *cōnōscit > conoist > connaît ; ăngŭstĭa > angoisse ; dŏrmītōrĭu > dortoir ; pṑtĭōne > poison > spl. tŏnsĭōne > *tōsĭōne > toison ; ŭxōre > oissour ; mĕdŭlla > meọle > mọele (Metathesis) > mu̯ęle > moelle ; pătĕlla > paele > poele > pu̯ęle > poêle ; păllĭu > paile > pele > poele > pu̯ęle > poêle ; pēnsĭle > *pēsĭle > peisle > poisle > poile > pu̯ęle > poêle
+]
+[o-\E] > [u_^-\E]
+	{
+	Zeit: 1201--1300
+	}
+
+[
+Id: V_Haupt_e_1(Va)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §40, §254, §269, §277, §280 (I: 20, 101, 105, 108)
+Entwicklung: e[ > ei̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: vĭa > veie > voie ; fĭde > feit ; mē > mei > moi ; tēla > teile > toile ; sērō > seir > soir ; sēta und saeta > seide > soie ; mŏnēta > moneide > monoie > monnaie; flēbĭle > *fẹble > feible > foible > faible ; tēctu > teit > toit ; strĭctu > estreit > étroit ; crēscĕre > creistre > croître ; *parēscĕre (< părēre) > pareistre > paroistre > paraître ; gaudĭa > joie ; vōce > voiz > voix ; glōria > gloire ; mĕmŏria > memoire > mémoire ; cŏgnōscĕre > *conọscĕre > conoistre > connaître ; crú̆ce > croiz > croix ; lŭscu > lois > -- ; cŏgnōscĭt > vlat. *cōnōscit > conoist > connaît ; ăngŭstĭa > angoisse ; dŏrmītōrĭu > dortoir ; pṑtĭōne > poison ; spl. tŏnsĭōne > *tōsĭōne > toison ; ŭxōre > oissour ; mĕdŭlla > meọle > mọele > mu̯ęle > moelle ; pătĕlla > paele > poele > pu̯ęle > poêle ; păllĭu > paile > pele > poele > pu̯ęle > poêle ; pēnsĭle > *pēsĭle > peisle > poisle > poile > pu̯ęle > poêle
+]
+[u_^-\E] > [u_^-\a] ; <ei> > <oi>
+[u_^-\E] > [u_^-\a]
+	{
+	Zeit: 1301--1800
+	}
+
+[
+Id: V_Haupt_e_2
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §51 (I: 23)
+Entwicklung: ̣́e] = ẹ > ę
+Beispiel: ĭlla > ele > elle; vĭrga > verge; vĭrĭde > *vẹrde > vert ; dēbĭta > *debta > dete > dette
+]
+[e] > [e]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Haupt_einsilbig_1, V_Pal_8
+	Betonung: "_
+	Silbe: ]
+	}
+
+[
+Id: V_Haupt_e_2(II)
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §51 (I: 23)
+Entwicklung: ̣́e] = ẹ > ę
+Beispiel: ĭlla > ele > elle; vĭrga > verge; vĭrĭde > *vẹrde > vert ; dēbĭta > *debta > dete > dette
+]
+[e] > [E]
+	{
+	Zeit: 1140--1160
+	Oder-Vorbedingung: V_Haupt_e_2
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_o_1
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §53 (I: 24)
+Entwicklung: ọ[ > ọu̯ > ẹu̯ > ̣ö > ̣ö / ̨ö
+Beispiel: gŭla > goule > geule ; dŭōs > duos > deux ; tŭa > toue > teue > -- ; hōra > ọra > oure > heure ; nĕpōte > nevout > neveu ; dŏlōre > dolour > douleur ; pĕrīcŭlōsu > perillous > périlleux
+]
+[o] > [o-\u_^] ; <o> > <ou>
+	{
+	Zeit: 601--1000
+	Und-Vorbedingung: !K_Palatal_7(II), !V_Haupt_o_2
+	Spezialfall: V_Haupt_einsilbig_2, V_Nasal_o_1, V_Nasal_o[_1, V_Pal_9
+	Früher: K_zwischenvok_15(II), K_zwischenvok_15(III), K_zwischenvok_15(IVa), K_zwischenvok_15(IVb), K_nachkons_1(II), K_nachkons_4, K_nachkons_4(II)
+	Betonung: "_
+	Silbe: [
+	}
+
+[
+Id: V_Haupt_o_1(II)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §53 (I: 24)
+Entwicklung: ọ[ > ọu̯ > ẹu̯ > ̣ö > ̣ö / ̨ö
+Beispiel: gŭla > goule > geule ; dŭōs > duos > deux ; tŭa > toue > teue ; hōra > ọra > oure > heure ; nĕpōte > nevout > neveu ; dŏlōre > dolour > douleur ; pĕrīcŭlōsu > perillous > périlleux
+]
+[o-\u_^] > [e-\u_^] ; <ou> > <eu>
+	{
+	Zeit: 1050--1976
+	Und-Vorbedingung: !V_Vel_11(II)
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_o_1(III)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §53 (I: 24)
+Entwicklung: ọ[ > ọu̯ > ẹu̯ > ̣ö > ̣ö / ̨ö
+Beispiel: gŭla > goule > geule ; dŭōs > duos > deux ; tŭa > toue > teue ; hōra > ọra > oure > heure ; nĕpōte > nevout > neveu ; dŏlōre > dolour > douleur ; pĕrīcŭlōsu > perillous > périlleux
+]
+[e-\u_^] > [2]
+	{
+	Zeit: 1201--1300
+	Und-Vorbedingung: V_Haupt_o_1(II)
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_o_1(IV)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §53 (I: 24)
+Entwicklung: ọ[ > ọu̯ > ẹu̯ > ̣ö > ̣ö / ̨ö
+Beispiel: gŭla > goule > geule ; dŭōs > duos > deux ; tŭa > toue > teue ; hōra > ọra > oure > heure ; nĕpōte > nevout > neveu ; dŏlōre > dolour > douleur ; pĕrīcŭlōsu > perillous > périlleux
+]
+[2] > [9]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Haupt_o_1(III)
+	Betonung: "_
+	Rechter Kontext: [l, r, R]
+	}
+
+[
+Id: V_Haupt_o_2
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §59 (I: 26)
+Entwicklung: ̣́o] = ọ > u
+Beispiel: gŭtta > gote > goutte ; cŭrsu > cors > cours ; cŏhŏrte > *cŏŏrte > *cōrte > cọrte > cort > cour ; tōtu > tōttu > tot > tout
+]
+[o] > [o]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Haupt_einsilbig_2, V_Haupt_e_1(III)
+	Und-Vorbedingung: !V_Haupt_O_2, !V_Vel_12
+	Betonung: "_
+	Silbe: ]
+	}
+
+[
+Id: V_Haupt_o_2(II)
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §59 (I: 26)
+Entwicklung: ̣́o] = ọ > u
+Beispiel: gŭtta > gote > goutte ; cŭrsu > cors > cours ; cŏhŏrte > *cŏŏrte > *cōrte > cọrte > cort > cour ; tōtu > tōttu > tot > tout
+]
+[o] > [u] ; <o> > <ou>
+	{
+	Zeit: 1101--1200
+	Spezialfall: V_Pal_9
+	Und-Vorbedingung: !V_Nasal_Oi_^_oi_^_1(II)
+	Oder-Vorbedingung: V_Haupt_o_2
+	}
+
+[
+Id: V_Haupt_E_1
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §64 (I: 27)
+Entwicklung: ̨́e[ > i̯ę > i̯ę / i̯ẹ
+Beispiel: pĕtra > piedre > pierre ; pĕde > piet > pied ; lĕpŏre > lępre > lievre > lièvre ; ĕbŭlu > ęblu > ieble > hièble und yèble
+]
+[E] > [i_^-\E] ; <e> > <ie>
+	{
+	Zeit: 501--600
+	Früher: K_zwischenvok_11, K_zwischenvok_12, K_vorkons_16, K_vorkons_17
+	Spezialfall: V_Haupt_einsilbig_3, V_Pal_10, V_Pal_18
+	Betonung: "_
+	Silbe: [
+	}
+
+[
+Id: V_Haupt_E_1(II)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §64 (I: 27)
+Entwicklung: e[ > i̯ę > i̯ę / i̯ẹ
+Beispiel: pĕde > piet > pied
+]
+[i_^-\E] > [i_^-\e]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Haupt_E_1
+	Betonung: "_
+	Rechter Kontext: [#]
+	}
+
+[
+Id: V_Haupt_E_1(III)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §64 (I: 27)
+Entwicklung: e[ > i̯ę > i̯ę / i̯ẹ
+Beispiel: pĕde > piet > pied
+]
+[i_^-\E] > [jE]
+	{
+	Zeit: 1101--1976
+	Spezialfall: V_Pal_19
+	Und-Vorbedingung: V_Haupt_E_1
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_O_1
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §69 (I: 28)
+Entwicklung: o[ > u̯ǫ > u̯ę > ̨ö > ̨ö / ̣ö
+Beispiel: spl. prŏba > pruove > preuve ; mŏrĭtur > mǫrit > muort > meurt ; fīlĭŏlu > fili̯ǫlu > filluol > filleul ; pŏtĕst > pǫtet > puot > peut ; Mŏsa > Muose > Meuse
+]
+[O] > [u_^-\O] ; <o> > <uo>
+	{
+	Zeit: 501--600
+	Spezialfall: V_Haupt_einsilbig_4, V_Nasal_O_1
+	Früher: K_zwischenvok_15(II), K_zwischenvok_15(III)
+	Betonung: "_
+	Silbe: [
+	}
+
+[
+Id: V_Haupt_O_1(II)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §69 (I: 28)
+Entwicklung: o[ > u̯ǫ > u̯ę > ̨ö > ̨ö / ̣ö
+Beispiel: spl. prŏba > pruove > preuve ; mŏrĭtur > mǫrit > muort > meurt ; fīlĭŏlu > fili̯ǫlu > filluol > filleul ; pŏtĕst > pǫtet > puot > peut ; Mŏsa > Muose > Meuse
+]
+[u_^-\O] > [u_^-\E] ; <uo> > <ue>
+	{
+	Zeit: 1001--1100
+	Oder-Vorbedingung: V_Haupt_O_1, V_Haupt_einsilbig_4
+	Spezialfall: V_Nasal_wO_1
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_O_1(III)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §69 (I: 28)
+Entwicklung: o[ > u̯ǫ > u̯ę > ̨ö > ̨ö / ̣ö
+Beispiel: spl. prŏba > pruove > preuve ; mŏrĭtur > mǫrit > muort > meurt ; fīlĭŏlu > fili̯ǫlu > filluol > filleul ; pŏtĕst > pǫtet > puot > peut ; Mŏsa > Muose > Meuse
+]
+[u_^-\E] > [9] ; <ue> > <eu>
+	{
+	Zeit: 1201--1300
+	Und-Vorbedingung: V_Haupt_O_1(II)
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_O_1(IV)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §69 (I: 28)
+Entwicklung: o[ > u̯ǫ > u̯ę > ̨ö > ̨ö / ̣ö
+Beispiel: pŏtĕst > pǫtet > puot > peut ; Mŏsa > Muose > Meuse
+]
+[9] > [2] ; <ue> > <eu>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Haupt_O_1(III)
+	Betonung: "_
+	Rechter Kontext: [#, z]
+	}
+
+[
+Id: V_Haupt_O_2
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §75 (I: 29)
+Entwicklung: ̨́o] = ǫ > ǫ / ọ
+Beispiel: cŏsta > coste (ǫ) > côte (ọ) ; fŏssa > fosse (ǫ) > fosse (ọ) ; vlat. grŏssa > grosse (ǫ) > grosse (ọ) ; vlat. grŏssu > gros (ǫ) > gros (ọ) ; tŏstu > tost (ǫ) > tôt (ọ)
+]
+[O] > [o]
+	{
+	Zeit: 1101--1976
+	Spezialfall: V_Haupt_einsilbig_4
+	Betonung: "_
+	Silbe: ]
+	Rechter Kontext: [#, s]
+	}
+
+[
+Id: V_Haupt_a_1
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §77 (I: 30)
+Entwicklung: á[ > ̨̄e > ę / ẹ
+Beispiel: făba > feve > fève ; fāta > fede > fée ; măre > mer ; nāsu > nes > nez ; lăvāre > laver ; lăvātĭs > lavez ; lăvātu > lavet > lavé ; lăvāta > lavede > lavée
+]
+[a] > [E] ; <a> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_Pal_18, !V_Haupt_a_2
+	Spezialfall: V_Haupt_einsilbig_5, V_Nasal_a[_1, V_Pal_2, V_Pal_14, V_Pal_18
+	Früher: K_Palatal_7, K_zwischenvok_12, K_zwischenvok_15(II), K_zwischenvok_15(III), K_nachkons_1(II), K_nachkons_4(II), K_nachkons_11(III)
+	Betonung: "_
+	Silbe: [
+	}
+
+[
+Id: V_Haupt_a_1(II)
+Name: Haupttonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §77 (I: 30)
+Entwicklung: á[ > ̨̄e > ę / ẹ
+Beispiel: fāta > fede > fée ; nāsu > nes > nez ; lăvāre > laver ; lăvātĭs > lavez ; lăvātu > lavet > lavé ; lăvāta > lavede > lavée
+]
+[E] > [e]
+	{
+	Zeit: 1301--1976
+	Und-Vorbedingung: V_Haupt_a_1
+	Betonung: "_
+	Rechter Kontext: [#]
+	}
+
+[
+Id: V_Haupt_a_2
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §84 (I: 32)
+Entwicklung: á] = a > ạ / ą
+Beispiel: crăssu > grąs ; vlat. băssu > bąs ; vlat. *bastu > bast > bąt
+]
+[a] > [a]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Haupt_einsilbig_5
+	Betonung: "_
+	Silbe: ]
+	}
+
+[
+Id: V_Haupt_a_2(II)
+Name: Haupttonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §84 (I: 32)
+Entwicklung: á] = a > ạ / ą
+Beispiel: crăssu > grąs ; vlat. băssu > bąs ; vlat. *bastu > bast > bąt
+]
+[a] > [A]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Haupt_a_2
+	Betonung: "_
+	Silbe: ]
+	Rechter Kontext: [s]
+	}
+
+[
+Id: V_Haupt_au_1
+Name: Haupttonvokale
+Rheinfelder-Id: §87 (I: 33)
+Entwicklung: áu̯ > ǫ > ǫ / ọ / u
+Beispiel: causa > chose ; Paulu > Pol > Paul ; auru > or ; clausu > clos ; paupĕre > povre > pauvre ; laudat > lodet > loue ; făbrĭca > *favrga > *faurga > forge
+]
+[a-\u_^] > [O] ; <au> > <o>
+	{
+	Zeit: 601--900
+	Früher: K_Palatal_6, K_Palatal_7, K_vorkons_1
+	Spezialfall: V_Pal_15, K_Palatal_7(II)
+	Betonung: "_
+	}
+
+[
+Id: V_Haupt_au_1(IIa)
+Name: Haupttonvokale
+Rheinfelder-Id: §87 (I: 33)
+Entwicklung: áu̯ > ǫ > ǫ / ọ / u
+Beispiel: causa > chose ; clausu > clos ; paupĕre > povre > pauvre
+]
+[O] > [o]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Haupt_au_1
+	Betonung: "_
+	Rechter Kontext: [#, z]
+	}
+
+[
+Id: V_Haupt_au_1(IIb)
+Name: Haupttonvokale
+Rheinfelder-Id: §87 (I: 33)
+Entwicklung: áu̯ > ǫ > ǫ / ọ / u
+Beispiel: laudat > lodet > loue
+]
+[O] > [u]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Haupt_au_1
+	Betonung: "_
+	Rechter Kontext: [@]
+	}
+
+################################################
+# Nebentonvokale
+################################################
+
+[
+Id: V_Neben_u_1
+Name: Nebentonvokale
+Rheinfelder-Id: §99 (I: 37)
+Entwicklung: ù > ü = ü
+Beispiel: dūrāre > durer ; spl. cūrātu > curet > curé ; tūtāre > *tuder > tuer ; *sūctĭāre > sucier > sucer ; iūdĭcāre > * i̯udẹgare > jugier > juger
+]
+[u] > [y]
+	{
+	Zeit: 601--1100
+	Betonung: %_
+	}
+
+[
+Id: V_Neben_E_1
+Name: Nebentonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §100 (I: 38)
+Entwicklung: è[ > ĕ > ə (> -)
+Beispiel: lĕvāre > lever ; fĕnĕstra > fenestre > fenêtre ; vĕnīre > venir
+]
+[E] > [e]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_Pal_18
+	Spezialfall: V_Nasal_E_1
+	Betonung: %_
+	Silbe: [
+	}
+
+[
+Id: V_Neben_E_1(II)
+Name: Nebentonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §100 (I: 38)
+Entwicklung: è[ > ĕ > ə (> -)
+Beispiel: lĕvāre > lever ; fĕnĕstra > fenestre > fenêtre ; vĕnīre > venir
+]
+[e] > [@]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Neben_E_1
+	Betonung: %_
+	Silbe: [
+	}
+
+[
+Id: V_Neben_E_2
+Name: Nebentonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §100 (I: 38)
+Entwicklung: è[ > ĕ > ə (> -)
+Beispiel: Brĭtănnĭa > Bretagne ; mĭnāri > *minare > mener ; dēbēre > deveir > devoir ; pēnsāre > pẹsare > peser
+]
+[e] > [@]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Nasal_e_1, V_Pal_18
+	Und-Vorbedingung: !V_Neben_E_1
+	Betonung: %_
+	Silbe: [
+	}
+
+[
+Id: V_Neben_e_1
+Name: Nebentonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §109 (I: 41)
+Entwicklung: è] ≥ ę = ę
+Beispiel: fĭrmāre > fermer ; *pĭscāre > peschier > pêcher ; vĭrtūte > vertut > vertu
+]
+[e] > [E]
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Nasal_e_1, V_Pal_17b
+	Betonung: %_
+	Silbe: ]
+	}
+
+[
+Id: V_Neben_O_1
+Name: Nebentonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §113 (I: 43)
+Entwicklung: ò[ ≥ ọ > u
+Beispiel: mŏvēre > moveir > mouvoir ; iŏcāre > joer > jouer ; dŏlōre > dolour > douleur ; nŏvĕllu > novel > nouvel, nouveau
+]
+[O] > [o]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_Neben_au_1
+	Betonung: %_
+	Silbe: [
+	}
+
+[
+Id: V_Neben_O_1(II)
+Name: Nebentonvokale
+Beschreibung: in freier Silbe
+Rheinfelder-Id: §113 (I: 43)
+Entwicklung: ò[ ≥ ọ > u
+Beispiel: cŭbāre > cover > couver ; sŭbĭnde > sovent > souvent ; *nŭtrīre > nodrir > nourrir ; plōrāre > plorer > pleurer ; nōdāre > noder > nouer ; cōlāre > coler > couler ; mŏvēre > moveir > mouvoir ; iŏcāre > joer > jouer ; dŏlōre > dolour > douleur ; nŏvĕllu > novel > nouvel, nouveau 
+]
+[o] > [u] ; <o> > <ou>
+[O] > [u] ; <o> > <ou>
+	{
+	Zeit: 1101--1700
+	Und-Vorbedingung: !V_Neben_au_1, !V_Nasal_Oi_^_oi_^_1(II), !V_Nasal_o_1(IIb)
+	Betonung: %_
+	Silbe: [
+	}
+
+[
+Id: V_Neben_o_1
+Name: Nebentonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §118 (I: 44)
+Entwicklung: ọ̀] = ọ > u
+Beispiel: spl. bŭrdōne > afrz. bordon > bourdon ; dŭbĭtāre > *dọbtare > doter > douter ; sŭbtŭs > soz > sous ; *cŏhŏrt-ēnse > *cọrtẹse > corteis > courtois ; nōs > nos > nous ; pro > pōr > por > pour ; prōvĭdēre > *porvedeir > pourveoir > pourvoir
+]
+[o] > [u] ; <o> > <ou>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !V_Neben_O_2, !V_Neben_au_1(IIa)
+	Spezialfall: V_Pal_9
+	Betonung: %_
+	Silbe: ]
+	}
+
+[
+Id: V_Neben_O_2
+Name: Nebentonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §118 (I: 44)
+Entwicklung: ̨ò] > ọ > u ; ̨ò] = ǫ = ǫ
+Beispiel: tŏrmĕntu > torment > tourment ; pŏrcĕllu > porcel > pourceau ; *fŏrmīce > formiz > fourmi ; *fŏ(is)-vĭāre > *forveiier > forvoier > fourvoyer ; dŏrmīre > dormir ; pŏrtāre > porter
+]
+[O] > [o]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_Neben_au_1
+	Betonung: %_
+	Silbe: ]
+	}
+
+[
+Id: V_Neben_O_2(II)
+Name: Nebentonvokale
+Beschreibung: in gedeckter Silbe
+Rheinfelder-Id: §118 (I: 44)
+Entwicklung: ̨ò] > ọ > u ; ̨ò] = ǫ = ǫ
+Beispiel: tŏrmĕntu > torment > tourment ; pŏrcĕllu > porcel > pourceau ; *fŏrmīce > formiz > fourmi ; *fŏ(is)-vĭāre > *forveiier > forvoier > fourvoyer ; dŏrmīre > dormir ; pŏrtāre > porter
+]
+[o] > [u] ; <o> > <ou>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Neben_O_2
+	Betonung: %_
+	Silbe: ]
+	}
+
+[
+Id: V_Neben_au_1
+Name: Nebentonvokale
+Rheinfelder-Id: §136 (I: 51)
+Entwicklung: àu̯ > ǫ > ǫ / ọ / u
+Beispiel: *laurārĭu > lorier > laurier ; *taurĕllu > torel > taureau ; *aurātĭcu > orage ; *ausāre > oser ; spl. pausāre > poser ; laudāre > loder > lòér > louer ; audīre > odir > òír > ouïr ; *clausĭtūra > closture > clôture ; *austrūcĭa > ostruce > autruche
+]
+[a-\u_^] > [O] ; <au> > <o>
+	{
+	Zeit: 601--1100
+	Betonung: %_
+	}
+
+[
+Id: V_Neben_au_1(IIa)
+Name: Nebentonvokale
+Rheinfelder-Id: §136 (I: 51)
+Entwicklung: àu̯ > ǫ > ǫ / ọ / u
+Beispiel: *ausāre > oser ; spl. pausāre > poser ; *clausĭtūra > closture > clôture
+]
+[O] > [o]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Neben_au_1
+	Betonung: %_
+	Rechter Kontext: <s>
+	}
+
+[
+Id: V_Neben_au_1(IIb)
+Name: Nebentonvokale
+Rheinfelder-Id: §136 (I: 51)
+Entwicklung: àu̯ > ǫ > ǫ / ọ / u
+Beispiel: laudāre > loder > lòér > louer
+]
+[O] > [u] ; <o> > <ou>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Neben_au_1
+	Betonung: %_ "A
+	Rechter Kontext: [$V_PH]
+	}
+
+
+################################################
+# tonlose Silben
+################################################
+ 
+[
+Id: V_tonl_Synkope_5
+Name: Synkope der Pänultima
+Rheinfelder-Id: §147 (I: 55)
+Entwicklung: X́XX > X́X
+Beispiel: dēbĭta > *debta > dete > dette ; tĕpĭdu > *ti̯ebde > tiede > tiède ; tăbŭla > *tabla > table ; săbŭlu > *sablo > sable ; iŭvĕne > juevne > juene > jeune ; cămĕra > *camra > chambre ; cŏllŏcat > *colcat > colchet > couche ; cŏlăp(h)u > *colpo > colp > coup ; găbăta > *gabta > jate > jatte ; Stĕphănu > Estiefne > Estiene > Etienne
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: 301--1100
+	Früher: K_zwischenvok_4, K_zwischenvok_15, K_zwischenvok_15(II), V_Haupt_E_1
+	Betonung: "A _ B#
+	}
+
+[
+Id: V_tonl_2Zwischen_3
+Name: Zwei Zwischentonsilben
+Beschreibung: relative Pänultima ist durch Konsonantengruppe gestützt
+Rheinfelder-Id: §153 (I: 58)
+Entwicklung: X̀XXX́X > X̀xͤX́X
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: 601--1100
+	Betonung: %A B _ "C
+	Linker Kontext: [$K_PH $K_PH]
+	}
+
+[
+Id: V_tonl_2Zwischen_4
+Name: Zwei Zwischentonsilben
+Rheinfelder-Id: §153 (I: 58)
+Entwicklung: X̀XXX́X > X̀xͤX́X
+Beispiel: ằntĕcĕssṓre > *àntcessóre > ancessoụr ; Àugŭstŏdū́nu > *Àustedúno > Ostedum > Autun ; *ằrbŏrĭscé̆llu > *àrbrescéllo > arbreissel > arbrisseau ; lì̄bĕrātĭṓne > *lìbrati̯óne > livreison > livraison
+]
+[$V_PH] > [] ; <$V_GR> > <>
+	{
+	Zeit: 601--1100
+	Betonung: %A _ B "C
+	}
+
+[
+Id: V_tonl_Zwischen_1
+Name: Eine Zwischentonsilbe
+Beschreibung: Hiatus-ĭ und -ŭ werden konsonantisch
+Rheinfelder-Id: §159 (I: 59)
+Entwicklung: X̀XX́X > X̀X́X
+Beispiel: pò̆tĭṓne > p̨òti̯ọ́ne > poison ; Jā̀nŭā́rĭu > i̯ènu̯ári̯u > jenvier > janvier
+]
+[i] > [i_^]
+[u] > [u_^]
+	{
+	Zeit: 601--1100
+	Betonung: %A _ "C
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: V_tonl_Zwischen_2
+Name: Eine Zwischentonsilbe
+Beschreibung: Vokal schwindet
+Rheinfelder-Id: §159 (I: 59)
+Entwicklung: X̀XX́X > X̀ͤX́X
+Beispiel: spl. sằlīnā́re > *sàlnáre > salner > sauner ; *cò̆nsūtū́ra > *còstúra > costure > couture ; spl. sĭ̀mĭlā́re > *sèmláre > sembler; *mā̀(n)suētī́nu > *màstíno > mastin > mătin ; spl. trĕ̀mŭlā́re > *trèmláre > trembler ; *ĭm-pĕ̀iōrā́re > *em-pèiráre > empeirier > empirer (i anal.) ; cĕ̀rĕbé̆llu > *cèrvéllo > cervel > cerveau ; lĕ̀pŏrā́rĭu > *lèpŕ̨ero > levrier > lévrier ; pằrăbŏlā́re > *pàrauláre > *pàrláre > parler
+]
+[$V_PH_NICHT_a] > [] ; <$V_GR_NICHT_a> > <>
+	{
+	Zeit: 0--1100
+	Und-Vorbedingung: !V_tonl_Zwischen_3, !V_tonl_Zwischen_4, !V_tonl_Zwischen_5, !V_tonl_Zwischen_6
+	Spezialfall: V_tonl_Zwischen_4, V_tonl_Zwischen_5, V_tonl_Zwischen_6
+	Betonung: %A _ "C
+	}
+
+[
+Id: V_tonl_Zwischen_3
+Name: Eine Zwischentonsilbe
+Beschreibung: a bleibt als e erhalten
+Rheinfelder-Id: §163 (I: 61)
+Entwicklung: X̀xͣX́X > X̀xͤX́X
+Beispiel: fĕ̀rā mé̆nte > fierement > fièrement ; cằntātṓre > chantedour > chanteur ; cằlămé̆llu > chalemel > chalumeau ; *ŏrphăn-ī́nu > orfenin > orphelin ; spl. bàccalā́re > bacheler > bachelier ; săcrāmĕntu > sairement > serment
+]
+[a] > [@] ; <a> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: %A _ "C
+	}
+
+[
+Id: V_tonl_Zwischen_4
+Name: Eine Zwischentonsilbe
+Beschreibung: Zwischentonsilbe, die durch eine Konsonantengruppe gestützt ist, bleibt als e, i oder in der eigenen Lautung erhalten
+Rheinfelder-Id: §164 (I: 62)
+Entwicklung: X̀x̱X́X > X̀xͤX́X
+Beispiel: *quằdrĭfú̆rcu > cadreforc > carrefour ; *lằtrōcī́nĭu > ladrecin > larcin ; *nŭ̀trītū́ra > nodreture > nourriture ; *pĕ̀trŏsī́lĭu > pedresil > persil
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: %A _ "C
+	Linker Kontext: [$K_PH_MUTA $K_PH_LIQUIDA]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: V_tonl_Zwischen_5
+Name: Eine Zwischentonsilbe
+Beschreibung: Zwischentonsilbe, die durch eine Konsonantengruppe gestützt ist, bleibt in der Regel als e, manchmal als i oder gelegentlich in der eigenen Lautung erhalten
+Rheinfelder-Id: §164 (I: 62)
+Entwicklung: X̀x̱X́X > X̀xͤX́X
+Beispiel: pā̀pĭlĭṓne > paveillon > pavillon ; Cằstĕlĭṓne > Chasteillon > Châtillon ; Àvĕnĭṓne > Avegnon > Avignon ; Flā̀vīnĭā́cu > Flavegni > Flavigny ; Sằbīnĭā́cu > Savegni > Savigny
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: %A _ "C
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [li_^, ni_^]
+	}
+
+[
+Id: V_tonl_Zwischen_6
+Name: Eine Zwischentonsilbe
+Beschreibung: Zwischentonsilbe, die durch eine Konsonantengruppe gestützt ist, bleibt als e, i oder in der eigenen Lautung erhalten
+Rheinfelder-Id: §164 (I: 62)
+Entwicklung: X̀x̱X́X > X̀xͤX́X
+Beispiel: ằppĕllā́re > apeler > appeler ; vò̆lŭntā́te > volentet > volonté ; pĕ̀rĕgrī́nu > pèlegrínu > pelerin > pèlerin ; sŭ̀spĕctĭṓne > sospeçon > soupçon
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Zwischen_5
+	Betonung: %A _ "C
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [$K_PH $K_PH]
+	}
+
+[
+Id: V_tonl_Zwischen_7
+Name: Eine Zwischentonsilbe
+Beschreibung: Stütz-e neigt zwischen einfachen Konsonanten zum Verstummen
+Rheinfelder-Id: §165 (I: 63)
+Beispiel: ằppĕllā́re > apeler > appeler ; pĕ̀rĕgrī́nu > pèlegrínu > pelerin > pèlerin ; sŭ̀spĕctĭṓne > sospeçon > soupçon
+]
+[e] > []
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_tonl_Zwischen_3, V_tonl_Zwischen_4, V_tonl_Zwischen_5, V_tonl_Zwischen_6
+	Betonung: %A _ "C
+	Linker Kontext: [$V_PH $K_PH]
+	Rechter Kontext: [$K_PH $V_PH]
+	}
+
+[
+Id: V_tonl_Ultima_1
+Name: Ultima
+Beschreibung: Vokal schwindet
+Rheinfelder-Id: §166 (I: 63)
+Entwicklung: X́X > X́
+Beispiel: vēnī > vin > vins ; audīs > oz ; mănūs > mains ; quārē > quer, car ; mōrēs > *mours > meurs > mœurs ; hĕrĭ > ier > hier ; ămātis > amez > aimez (ai anal.) ; dīcō > di > dis (s anal.) ; ămātōs > amez > aimés (ai anal.) ; mūrŭ > mur ; mūrōs > murs ; fĭdĕ > feit > foi ; pŏtĕs > *puoz > puez > peux ; fĕrrŭ > fer ; păssŭ > pas ; văllēs > vals > vaux ; căbăllōs > chevals > chevaux ; tŏstŭ > tost > tôt ; hŏstĭs > *osts > oz > -- ; pĕrdō > pert > perds ; pĕrdĭs > perz > perds ; căntō > chant > chante ; căntūs > chanz > chants ; ărcŭ > arc ; ărcūs > arcs ; vĕrsŭ > vers ; vĕrsūs > vers ; cŏrpŭs > cors > corps ; tĕmpŭs > tens > temps ; vĭrĭdĕ > vẹrde > vert ; călĭdōs > caldos > chalz > chauds ; nĭgrŭ > neir > noir ; nĭgrōs > neirs > noirs ; fĭrmŭ > ferm > ferme ; fĭrmōs > fers > fermes ; cŏrnŭ > corn > cor ; vlat. *cŏrnūs > cors ; ŏcŭlŭ > ŏclŭ > ueil > œil ; ŏcŭlōs > ŏclōs > uelz > ueus > yeux ; vĕtŭlŭ > *vĕtlu > vĕclŭ > vieil ; vĕtŭlōs > vĕclōs > vielz > vieux ; sōlācĭŭ > solaz > -- ; Mărtĭŭ > marz > mars ; cōnsĭlĭŭ > conseil ; mĕlĭŭs > mielz > mieux ; vărĭŭ > vair ; vărĭōs > vairs 
+]
+[$V_PH_NICHT_a] > [] ; <$V_GR_NICHT_a> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_2, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9
+	Spezialfall: V_tonl_Ultima_11, V_tonl_Ultima_3a, V_tonl_Ultima_3b, V_tonl_Ultima_5, V_tonl_Ultima_6, V_tonl_Ultima_7, V_tonl_Ultima_8, V_tonl_Ultima_9
+	Früher: K_zwischenvok_13, K_zwischenvok_15(II), K_zwischenvok_15(III), K_nachkons_1(II), K_nachkons_2a, K_nachkons_7(II), K_nachkons_7(III), V_Haupt_a_1, V_Haupt_e_1
+	Betonung: "A _
+	}
+
+[
+Id: V_tonl_Ultima_2
+Name: Ultima
+Beschreibung: a bleibt als e erhalten
+Rheinfelder-Id: §171 (I: 65)
+Entwicklung: X́xͣ > X́xͤ
+Beispiel: ālă > ele > aile ; tĕrră > terre ; surda > sorde > sourde ; pŏrtās > portes ; pĕrdās > perdes ; nĭgrās > neires > noires ; vĕtŭlă > vĕclă > vieille ; ārĕă > aire ; fīlĭās > filles 
+]
+[a] > [@] ; <a> > <e>
+	{
+	Zeit: 601--1100
+	Früher: K_Palatal_6, K_zwischenvok_11, K_zwischenvok_12
+	Betonung: "A _
+	}
+
+[
+Id: V_tonl_Ultima_3a
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: pătrĕ > pedre > père ; mātrĕ > medre > mère ; fĕbrĕ > fievre > fièvre ; ĭntrō > entre 
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_2
+	Betonung: "A _
+	Linker Kontext: [$K_PH_MUTA $K_PH_LIQUIDA]
+	}
+	
+[
+Id: V_tonl_Ultima_3b
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: ĭnflō > enfle
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_2
+	Betonung: "A _
+	Linker Kontext: [f $K_PH_LIQUIDA]
+	}
+
+[
+Id: V_tonl_Ultima_5
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: sīmĭŭ > singe ; rŭbĕŭ > roge > rouge 
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_2
+	Betonung: "A _
+	Linker Kontext: [$K_PH_LABIAL i_^]
+	}
+
+[
+Id: V_tonl_Ultima_6
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: ēbrĭŭ > ivre
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: "A _
+	Linker Kontext: [$K_PH ri_^]
+	}
+
+[
+Id: V_tonl_Ultima_7
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: sŏmnĭŭ > songe
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: "A _
+	Linker Kontext: [mni_^]
+	}
+
+[
+Id: V_tonl_Ultima_8
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+Beispiel: cădŭnt > chiedent ; vĕndŭnt > vendent ; căntĕnt > chantent ; mĭnŏr > *meinr̥ > *meinre > meindre > moindre ; *ĭn-sĕmŭl > *enseml̥ > ensemble
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 600--1100
+	Früher: K_zwischenvok_5
+	Betonung: "A _
+	Rechter Kontext: [$K_PH $K_PH]
+	}
+
+[
+Id: V_tonl_Ultima_9
+Name: Ultima
+Beschreibung: Vokal ist durch Konsonantengruppe gestützt und bleibt als e erhalten
+Rheinfelder-Id: §173 (I: 66)
+Entwicklung: X́x̱ > X́xͤ
+]
+[$V_PH] > [@] ; <$V_GR> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: "A _
+	Rechter Kontext: [$K_PH_LATERAL]
+	}
+
+[
+Id: V_tonl_Ultima_11
+Name: Ultima
+Beschreibung: Hiatus > Diphthong
+Rheinfelder-Id: §176 (I: 67)
+Beispiel: vlat. dŭī > düi̯ ; pĭŭ (< klt. pīŭ) > piu̯ ; Dĕŭ > Deu̯ > Di̯eu̯ > Dieu ; rīvŭ > rīu̯ > riu̯ > rü̯i ; clāvŭ > clǫŭ > clou ; lŭpŭ > lọu̯ > leu̯ > leu ; lŏcŭ > *lǫu > *lu̯eu̯ > li̯eu̯ (auch leu̯, liu̯) > lieu ; paucŭ > pǫu > pǫu̯ > pou
+]
+[ui:] > [y-\i_^] ; <°u=i> > <ui>
+[i:u] > [iu_^] ; <=i°u> > <iu>
+[eu] > [e-\u_^] ; <°e°u> > <eu>
+[a:u] > [Ou] ; <=a°u> > <ou>
+[uu] > [o-\u_^] ; <°u°u> > <ou>
+[Ou] > [u_^-\eu_^] ; <°o°u> > <ueu>
+[Ou] > [O-\u_^] ; <ou> > <ou>
+	{
+	Zeit: 601--1100
+	Betonung: "A _
+	}
+
+################################################
+# Vokale in besonderer oder wechselnder Betonung
+################################################
+
+[
+Id: V_Haupt_einsilbig_1
+Name: Haupttonvokale einsilbiger Wörter
+Beschreibung: Entwicklung, als ob sie in freier Silbe wären
+Rheinfelder-Id: §177 (I: 69)
+Beispiel: sĭt > *sẹt > seit > soit ; quĭd > *quẹd > queit > quei > coi > quoi ; trēs > treis > trois
+]
+[e] > [e-\i_^] ; <e> > <ei>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_1, !V_tonl_Ultima_1, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9, !V_tonl_Ultima_11
+	Betonung: #"_#
+	}
+
+[
+Id: V_Haupt_einsilbig_2
+Name: Haupttonvokale einsilbiger Wörter
+Beschreibung: Entwicklung, als ob sie in freier Silbe wären
+Rheinfelder-Id: §177 (I: 69)
+]
+[o] > [o-\u_^] ; <o> > <ou>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_1, !V_tonl_Ultima_1, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9, !V_tonl_Ultima_11
+	Betonung: #"_#
+	}
+
+[
+Id: V_Haupt_einsilbig_3
+Name: Haupttonvokale einsilbiger Wörter
+Beschreibung: Entwicklung, als ob sie in freier Silbe wären
+Rheinfelder-Id: §177 (I: 69)
+Beispiel: mĕl > męl > miel ; fĕl > fęl > fiel
+]
+[E] > [i_^-\E] ; <e> > <ie>
+	{
+	Zeit: 601--1100
+	Spezialfall: V_Pal_10
+	Und-Vorbedingung: !V_tonl_Ultima_1, !V_tonl_Ultima_1, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9, !V_tonl_Ultima_11, !V_Haupt_einsilbig_5
+	Betonung: #"_#
+	} 
+
+[
+Id: V_Haupt_einsilbig_4
+Name: Haupttonvokale einsilbiger Wörter
+Beschreibung: Entwicklung, als ob sie in freier Silbe wären
+Rheinfelder-Id: §177 (I: 69)
+Beispiel: cŏr > cǫr > cuor > cuer > cœur
+]
+[O] > [u_^-\O] ; <o> > <uo>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_1, !V_tonl_Ultima_1, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9, !V_tonl_Ultima_11
+	Betonung: #"_#
+	}    
+
+[
+Id: V_Haupt_einsilbig_5
+Name: Haupttonvokale einsilbiger Wörter
+Beschreibung: Entwicklung, als ob sie in freier Silbe wären
+Rheinfelder-Id: §177 (I: 69)
+Beispiel: sāl > sel ; trāns > *trās > tres > très
+]
+[a] > [E] ; <a> > <e>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !V_tonl_Ultima_1, !V_tonl_Ultima_1, !V_tonl_Ultima_3a, !V_tonl_Ultima_3b, !V_tonl_Ultima_5, !V_tonl_Ultima_6, !V_tonl_Ultima_7, !V_tonl_Ultima_8, !V_tonl_Ultima_9, !V_tonl_Ultima_11
+	Betonung: #"_#
+	}
+
+################################################
+#Nasaleinflüsse
+################################################
+
+[
+Id: V_Nasal_i_1
+Name: Nasalierung
+Rheinfelder-Id: §191 (I: 75)
+Entwicklung: in > ĩn
+Beispiel: vī́nu > vĩn > vĩ > ṽ̨̃ɛ (vin) ; răcḗmu > raisĩ́n > ręsĩ́ > ręs̨̃̃́ɛ (raisin) ; lĭ̀ntĕŏlu > lintę́olu > lĩntsuél (lincuel) > lĩś̨öl > l̨̃̃ɛś̨öl (linceul) ; lī́ma > lĩme > limᵉ ; dĕcĭma > *dieisme > disme > dĩme > dimᵉ (dîme) ; lì̄māre > lĩmér > limer > limé (limer)
+]
+[i] > [i~]
+	{
+	Zeit: 601--900
+	Früher: K_nachkons_3
+	Spezialfall: V_Pal_16, V_Pal_17a
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_i_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §191 (I: 75)
+Entwicklung: ĩn > ĩ > ẹ̃ (17. Jh.) > ̃ɛ
+Beispiel: vī́nu > vĩn > vĩ > ṽ̨̃ɛ (vin) ; răcḗmu > raisĩ́n > ręsĩ́ > ręs̨̃̃́ɛ (raisin) ; lĭ̀ntĕŏlu > lintę́olu > lĩntsuél (lincuel) > lĩś̨öl > l̨̃̃ɛś̨öl (linceul)
+]
+[n] > []
+[m] > []
+[J] > []
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Nasal_i_1, V_Pal_17a
+	Linker Kontext: [i~]
+	Rechter Kontext: [$K_PH, #]
+	}
+
+[
+Id: V_Nasal_i_1(aIII)
+Name: Nasalierung
+Rheinfelder-Id: §191 (I: 75)
+Entwicklung: ĩn > ĩ > ẹ̃ (17. Jh.) > ̃ɛ
+Beispiel: vī́nu > vĩn > vĩ > ṽ̨̃ɛ (vin) ; răcḗmu > raisĩ́n > ręsĩ́ > ręs̨̃̃́ɛ (raisin) ; lĭ̀ntĕŏlu > lintę́olu > lĩntsuél (lincuel) > lĩś̨öl > l̨̃̃ɛś̨öl (linceul)
+]
+[i~] > [e~]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Nasal_i_1(IIa), V_Pal_17a, K_nachkons_12(III)
+	}
+
+[
+Id: V_Nasal_i_1(aIV)
+Name: Nasalierung
+Rheinfelder-Id: §191 (I: 75)
+Entwicklung: ĩn > ĩ > ẹ̃ (17. Jh.) > ̃ɛ
+Beispiel: vī́nu > vĩn > vĩ > ṽ̨̃ɛ (vin) ; răcḗmu > raisĩ́n > ręsĩ́ > ręs̨̃̃́ɛ (raisin) ; lĭ̀ntĕŏlu > lintę́olu > lĩntsuél (lincuel) > lĩś̨öl > l̨̃̃ɛś̨öl (linceul)
+]
+[e~] > [E~]
+	{
+	Zeit: 1101--1700
+	Und-Vorbedingung: V_Nasal_i_1(aIII)
+	}
+
+[
+Id: V_Nasal_i_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §191 (I: 75)
+Entwicklung: ĩ-n > i-n
+Beispiel: lī́ma > lĩme > limᵉ ; dĕcĭma > *dieisme > disme > dĩme > dimᵉ (dîme) ; lì̄māre > lĩmér > limer > limé (limer)
+]
+[i~] > [i]
+[i~] > [i]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_i_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_u_1
+Name: Nasalierung
+Rheinfelder-Id: §192 (I: 75)
+Entwicklung: un > ̃ün
+Beispiel: ū́nu > ̃ün > ̃ü > œ̃ (un) ; *lū̀nĭs dīe > lü̃nsí > lü̃dí > lœ̃dí (lundi) ; ū́na > ü̃ne > ünᵉ (une) ; lū́na > lü̃ne > lünᵉ (lune) ; fū̀māre > fü̃mér > fümér > fümé (fumer)
+]
+[u] > [y~]
+	{
+	Zeit: 601--900
+	Früher: V_tonl_Ultima_1, K_nachkons_3, K_nachkons_3(IIa)
+	Spezialfall: V_Pal_17b
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_u_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §192 (I: 75)
+Entwicklung: ü̃n > ü̃ > ọ̃̈ (17. Jh.) > œ̃
+Beispiel: ū́nu > ̃ün > ̃ü > œ̃ (un) ; *lū̀nĭs dīe > lü̃nsí > lü̃dí > lœ̃dí (lundi)
+]
+[n] > []
+[m] > []
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: V_Nasal_u_1
+	Linker Kontext: [y~]
+	Rechter Kontext: [$K_PH, #]
+	}
+
+[
+Id: V_Nasal_u_1(aIII)
+Name: Nasalierung
+Rheinfelder-Id: §192 (I: 75)
+Entwicklung: ü̃n > ü̃ > ọ̃̈ (17. Jh.) > œ̃
+Beispiel: ū́nu > ̃ün > ̃ü > œ̃ (un) ; *lū̀nĭs dīe > lü̃nsí > lü̃dí > lœ̃dí (lundi)
+]
+[y~] > [2~]
+	{
+	Zeit: 1101--1700
+	Und-Vorbedingung: V_Nasal_u_1(IIa)
+	}
+
+[
+Id: V_Nasal_u_1(aIV)
+Name: Nasalierung
+Rheinfelder-Id: §192 (I: 75)
+Entwicklung: ü̃n > ü̃ > ọ̃̈ (17. Jh.) > œ̃
+Beispiel: ū́nu > ̃ün > ̃ü > œ̃ (un) ; *lū̀nĭs dīe > lü̃nsí > lü̃dí > lœ̃dí (lundi)
+]
+[2~] > [9~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_u_1(aIII)
+	}
+
+[
+Id: V_Nasal_u_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §192 (I: 75)
+Entwicklung: ü̃-n > ü-n
+Beispiel: ū́na > ü̃ne > ünᵉ (une) ; lū́na > lü̃ne > lünᵉ (lune) ; fū̀māre > fü̃mér > fümér > fümé (fumer)
+]
+[y~] > [y]
+[y~] > [y]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_u_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_e_1
+Name: Nasalierung
+Rheinfelder-Id: §193 (I: 75)
+Entwicklung: ẹn > ̨̃en
+Beispiel: sŭbí̆nde > sọṽ̨ent > sọvá̃nt > sọvá̃t (sovent, sovant) > suvá̃t (souvent) ; fí̆ndĕre > f̨̃endre > fãndre > fãdre (fendre, fandre) > fãdrᵉ (fendre) ; ĭ̀n > ̨̃en > ãn > ã (en, an) > ã (en) ; ĭ̀ntrāre > ̨̃entrér > ãntrér > ãtrér (entrer, antrer) > ãtré (entrer) ; ĭ̀nĭmīcu > ẽnemí > enemí > enᵉmí (ennemi) ; mĭ̀nāri > vlat. mẹ̀nare > mẽnér > menér > mᵉné (mener) ; fḗmĭna > fẹmna > *femma > f̨̃eme > fãme (feme, fame, femme, famme) > famᵉ (femme) ; *cŭtĭna > vlat. *cọtẹ́nna > afrz. cọd̨̃ene > cọãne > cuãne > cuanᵉ (couenne) ; hĭ̀nnīre > ̨̃ennír > ãnnír > ãnír (hennir, hannir) > anír (hennir)
+]
+[e] > [E~]
+	{
+	Zeit: 601--900
+	Früher: K_zwischenvok_5, K_zwischenvok_5(IIa), K_zwischenvok_5(IIb), K_zwischenkons_7, K_zwischenkons_7(II), K_nachkons_3
+	Spezialfall: V_Pal_16
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_e_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §193 (I: 75)
+Entwicklung: ̨̃en > ̃ɛn > ãn (11. Jh.) > ɔ̃
+Beispiel: sŭbí̆nde > sọṽ̨ent > sọvá̃nt > sọvá̃t (sovent, sovant) > suvá̃t (souvent) ; fí̆ndĕre > f̨̃endre > fãndre > fãdre (fendre, fandre) > fãdrᵉ (fendre) ; ĭ̀n > ̨̃en > ãn > ã (en, an) > ã (en) ; ĭ̀ntrāre > ̨̃entrér > ãntrér > ãtrér (entrer, antrer) > ãtré (entrer)
+]
+[E~] > [A~]
+	{
+	Zeit: 1000--1100
+	Und-Vorbedingung: V_Nasal_e_1
+	}
+
+[
+Id: V_Nasal_e_1(IIIb)
+Name: Entnasalierung
+Rheinfelder-Id: §193 (I: 75)
+Entwicklung: ̨̃e-n > ̃ɛ-n > ã-n (11. Jh.) > a-n
+Beispiel: ĭ̀nĭmīcu > ẽnemí > enemí > enᵉmí (ennemi) ; mĭ̀nāri > vlat. mẹ̀nare > mẽnér > menér > mᵉné (mener) ; fḗmĭna > fẹmna > *femma > f̨̃eme > fãme (feme, fame, femme, famme) > famᵉ (femme) ; *cŭtĭna > vlat. *cọtẹ́nna > afrz. cọd̨̃ene > cọãne > cuãne > cuanᵉ (couenne) ; hĭ̀nnīre > ̨̃ennír > ãnnír > ãnír (hennir, hannir) > anír (hennir)
+]
+[A~] > [a]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_e_1(II)
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}  
+
+[
+Id: V_Nasal_o_1
+Name: Nasalierung
+Rheinfelder-Id: §196 (I: 78)
+Entwicklung: ọn > ọ̃n > ̃𝔬
+Beispiel: ú̆mbra > ọ̃mbre > õbre (ombre) > õbrᵉ (ombre) ; nŭmĕrāre > nọ̃mbrér > nõbrér (nombrer) > nõbré (nombrer) ; pṓma > pọ̃me > põme (pome, pomme) > pǫmᵉ (pomme) ; dṓnat > dọ̃net > dõne (done, donne) > dǫnᵉ (donne) ; dṑnāre > dọ̃nér > dõnér > dǫné (donner)
+]
+[o] > [o~]
+	{
+	Zeit: 601--900
+	Spezialfall: V_Nasal_o[_1
+	Früher: K_nachkons_3, K_nachkons_3(IIa), K_vorkons_20(II), K_zwischenkons_7, K_zwischenkons_7(II), K_Gleitkons_6
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_o_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §196 (I: 78)
+Entwicklung: ọn > ọ̃n > ̃𝔬
+Beispiel: ú̆mbra > ọ̃mbre > õbre (ombre) > õbrᵉ (ombre) ; nŭmĕrāre > nọ̃mbrér > nõbrér (nombrer) > nõbré (nombrer)
+]
+[o~n] > [O~]
+[o~m] > [O~]
+	{
+	Zeit: 1101--1976
+	Rechter Kontext: [$K_PH, #]
+	Oder-Vorbedingung: V_Nasal_o_1
+	}
+
+[
+Id: V_Nasal_o_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §196 (I: 78)
+Entwicklung: ̃𝔬-n > ǫ-n
+Beispiel: pṓma > pọ̃me > põme (pome, pomme) > pǫmᵉ (pomme) ; dṓnat > dọ̃net > dõne (done, donne) > dǫnᵉ (donne) ; dṑnāre > dọ̃nér > dõnér > dǫné (donner)
+]
+[o~] > [O]
+[o~] > [O]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Nasal_o_1, V_Nasal_o[_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_E_1
+Name: Nasalierung
+Rheinfelder-Id: §197 (I: 78)
+Entwicklung: ęn > ̨̃en > ̃ɛn > ãn (11. Jh.)
+Beispiel: dé̆nte > d̨̃ent > dãnt > dãt (dent, dant) > dã (dent) ; té̆mpus > t̨̃ens > tãns > tãs (tens, tans) > tã (temps) ; pé̆nna > p̨̃ene > pãne (pene, pane) > panᵉ (panne) ; trĕ̀mŭlāre > tr̨̃emblér > trãmblér > trãblér (trembler, trambler) > trãblé (trembler) ; vĕ̀nīre > ṽ̨enír > venír > vᵉnír (venir)
+]
+[E] > [E~]
+	{
+	Zeit: 601--900
+	Und-Vorbedingung: !V_Pal_17a
+	Früher: K_nachkons_3, K_frzAuslaut_15
+	Spezialfall: V_Pal_16, V_Pal_17a
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_E_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §197 (I: 78)
+Entwicklung: ęn > ̨̃en > ̃ɛn > ãn (11. Jh.)
+Beispiel: dé̆nte > d̨̃ent > dãnt > dãt (dent, dant) > dã (dent) ; té̆mpus > t̨̃ens > tãns > tãs (tens, tans) > tã (temps) ; trĕ̀mŭlāre > tr̨̃emblér > trãmblér > trãblér (trembler, trambler) > trãblé (trembler)
+]
+[E~] > [3~]
+	{
+	Zeit: 1001--1100
+	Und-Vorbedingung: V_Nasal_E_1
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+	
+[
+Id: V_Nasal_E_1(III)
+Name: Nasalierung
+Rheinfelder-Id: §197 (I: 78)
+Entwicklung: ęn > ̨̃en > ̃ɛn > ãn (11. Jh.)
+Beispiel: dé̆nte > d̨̃ent > dãnt > dãt (dent, dant) > dã (dent) ; té̆mpus > t̨̃ens > tãns > tãs (tens, tans) > tã (temps) ; trĕ̀mŭlāre > tr̨̃emblér > trãmblér > trãblér (trembler, trambler) > trãblé (trembler)
+]
+[3~] > [A~]
+	{
+	Zeit: 1001--1100
+	Und-Vorbedingung: V_Nasal_E_1(II)
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_E_1(IV)
+Name: Entnasalierung
+Rheinfelder-Id: §197 (I: 78)
+Entwicklung: ã-n > a-n
+Beispiel: pé̆nna > p̨̃ene > pãne (pene, pane) > panᵉ (panne) ; vĕ̀nīre > ṽ̨enír > venír > vᵉnír (venir)
+]
+[A~] > [a]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_E_1(III)
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_O_1
+Name: Nasalierung
+Rheinfelder-Id: §203 (I: 80)
+Entwicklung: ǫn > ọ̃n > ̃𝔬n
+Beispiel: pó̆nte > pọ̃nt > põ (pont) ; có̆mpŭtāre > cọ̃ntér > cõtér (conter) > cõté (compter) ; hó̆mĭne > *ǫmne > ọ̃me (ome, onme, omme) > õme > ǫmᵉ (homme) ; bò̆na > bọ̃ne (bone, bonne) > b̨̃one > bǫnᵉ (bonne) ; sò̆nāre > sọ̃nèr > sọnér > sǫné (sonner)
+]
+[O] > [o~]
+	{
+	Zeit: 601--900
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_O_1(IIa)
+Name: Entnasalierung
+Rheinfelder-Id: §203 (I: 80)
+Entwicklung: ̃𝔬-n > ǫ-n
+Beispiel: hó̆mĭne > *ǫmne > ọ̃me (ome, onme, omme) > õme > ǫmᵉ (homme) ; bò̆na > bọ̃ne (bone, bonne) > b̨̃one > bǫnᵉ (bonne) ; sò̆nāre > sọ̃nèr > sọnér > sǫné (sonner)
+]
+[o~] > [O]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_O_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_O_1(IIb)
+Name: Nasalierung
+Rheinfelder-Id: §203 (I: 80)
+Entwicklung: ̃ǫn > ọ̃n > ̃𝔬n
+Beispiel: pó̆nte > pọ̃nt > põ (pont) ; có̆mpŭtāre > cọ̃ntér > cõtér (conter) > cõté (compter)
+]
+[o~] > [O~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_O_1
+	}
+
+[
+Id: V_Nasal_a_1
+Name: Nasalierung
+Rheinfelder-Id: §205 (I: 81)
+Entwicklung: an > ãn
+Beispiel: tắntu > tã (tant) ; cắmpu > tʃãmp > ʃã (champ) ; mằntĕllu > mãnt̨́el > mãteáu̯ (manteau) > mãtọ́ ; flắmma > flãme (flame, flamme) > flāmᵉ (flamme) ; ắnĭma > ãme (ame, anme, amme) > āmᵉ (âme) ; ămắnte > ãmá̃nt (amant) > amá̃ (amant)
+]
+[a] > [A~]
+	{
+	Zeit: 601--900
+	Früher: K_nachkons_3, K_zwischenkons_7, K_zwischenkons_7(II)
+	Spezialfall: V_Pal_16, V_Pal_17a, V_Pal_17b, V_Pal_17c
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_a_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §187, §205 (I: 81)
+Entwicklung: ãn > ɔ̃n
+Beispiel: tắntu > tã (tant) ; cắmpu > tʃãmp > ʃã (champ) ; mằntĕllu > mãnt̨́el > mãteáu̯ (manteau) > mãtọ́ ; ămắnte > ãmá̃nt (amant) > amá̃ (amant)
+]
+[A~n] > [A~]
+[A~m] > [A~]
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: V_Nasal_a_1
+	Rechter Kontext: [$K_PH, #]
+	}
+
+[
+Id: V_Nasal_a_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §205 (I: 80)
+Entwicklung: ̃ã-n > a-n
+Beispiel: flắmma > flãme (flame, flamme) > flāmᵉ (flamme) ; ắnĭma > ãme (ame, anme, amme) > āmᵉ (âme) ; ămắnte > ãmá̃nt (amant) > amá̃ (amant)
+]
+[A~] > [a]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_a_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_ei_^_1
+Name: Nasalierung
+Rheinfelder-Id: §206 (I: 82)
+Entwicklung: ẹi̯n > ̨̃ei̯n
+Beispiel: plḗnu > ple͠in > pl̨̃e (plein) > plɛ̃ ; plḗna > ple͠ine > pl̨̃ene (pleine) > plęnᵉ ; dĭ̀gnĭtāte > de͠intiét > d̨̃etié (deintié, daintié) > dɛ̃ti̯é (daintiers)
+]
+[e-\i_^] > [E~-\i_^~]
+	{
+	Zeit: 601--900
+	Oder-Vorbedingung: V_Haupt_e_1, K_nachkons_3(IIa)
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_ei_^_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §206 (I: 82)
+Entwicklung: ̨̃ei̯n > ̨̃en (12. Jh.) > ɛ̃
+Beispiel: plḗnu > ple͠in > pl̨̃e (plein) > plɛ̃ ; plḗna > ple͠ine > pl̨̃ene (pleine) > plęnᵉ ; dĭ̀gnĭtāte > de͠intiét > d̨̃etié (deintié, daintié) > dɛ̃ti̯é (daintiers)
+]
+[E~-\i_^~] > [E~]
+	{
+	Zeit: 1201--1700
+	Oder-Vorbedingung: V_Nasal_ei_^_1, V_Pal_17b
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_ei_^_1(III)
+Name: Entnasalierung
+Rheinfelder-Id: §206 (I: 82)
+Entwicklung: ̨̃e-n > ę-n
+Beispiel: plḗna > ple͠ine > pl̨̃ene (pleine) > plęnᵉ
+]
+[E~] > [E]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_ei_^_1(II)
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_i_^e_1
+Name: Nasalierung
+Rheinfelder-Id: §208 (I: 83)
+Entwicklung: i̯en > į̯̯̃en
+Beispiel: bé̆nĕ > bį̯̯̃en > bį̯̯̃e (bien) > bi̯ɛ̃ ; fí̆mu > fẹmus >  fęmus > fį̯̯̃ens > fχ̨̃e (fiens) ; cắne > tʃį̯̯̃en (chien) > ʃį̯̯̃e, ʃχ̨̃e > ʃi̯̯ɛ̃, ʃχɛ̃ ; vé̆nĭunt > *vĕnunt > vį̯̯̃enent (vienent, viennent) > vi̯ęnᵉ (viennent) ; pāgā́na > pai̯į̯̯̃ene (paiiene, paiene) > pai̯ęnᵉ (païenne)
+]
+[i_^-\E] > [i_^-\E~]
+[i_^-\E:] > [i_^-\E~]
+	{
+	Zeit: 601--900
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_i_^e_1(II)
+Name: Entnasalierung
+Rheinfelder-Id: §208 (I: 83)
+Entwicklung: į̯̯̃e-n > i̯ę-n, χę-n
+Beispiel: vé̆nĭunt > *vĕnunt > vį̯̯̃enent (vienent, viennent) > vi̯ęnᵉ (viennent) ; pāgā́na > pai̯į̯̯̃ene (paiiene, paiene) > pai̯ęnᵉ (païenne)
+]
+[i_^-\E~] > [i_^-\E]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_i_^e_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_wO_1
+Name: Nasalierung
+Rheinfelder-Id: §209 (I: 84)
+Entwicklung: u̯on > u̯õn > u̯ẽn
+Beispiel: hó̆mo > u̯õm, u̯ẽm ; có̆mes > cu̯õms > cu̯ẽns ; bó̆nu > bu̯õn > bu̯ẽn > bu̯ẽ (buen) ; bó̆na > bu̯õne > bu̯ẽne (buene) ; tó̆nat > tu̯õnet > tu̯ẽnet > tonne
+]
+[u_^-\O] > [u_^-\o~]
+	{
+	Zeit: 601--900
+	Und-Vorbedingung: V_Haupt_O_1
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_u_^O_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §209 (I: 84)
+Entwicklung: u̯on > u̯õn > u̯ẽn
+Beispiel: hó̆mo > u̯õm, u̯ẽm ; có̆mes > cu̯õms > cu̯ẽns ; bó̆nu > bu̯õn > bu̯ẽn > bu̯ẽ (buen) ; bó̆na > bu̯õne > bu̯ẽne (buene) ; tó̆nat > tu̯õnet > tu̯ẽnet > tonne
+]
+[u_^-\o~] > [u_^-\e~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_wO_1
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_wO_1(III)
+Name: Nasalierung
+Rheinfelder-Id: §209 (I: 84)
+Entwicklung: u̯ẽn > u̯ẽ (> ̨̃ö)
+Beispiel: hó̆mo > u̯õm, u̯ẽm ; có̆mes > cu̯õms > cu̯ẽns ; bó̆nu > bu̯õn > bu̯ẽn > bu̯ẽ (buen) ; bó̆na > bu̯õne > bu̯ẽne (buene) ; tó̆nat > tu̯õnet > tu̯ẽnet > tonne
+]
+[$K_PH_NASAL] > []
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: V_Nasal_u_^O_1(II)
+	Linker Kontext: [u_^-\e~]
+	}
+
+[
+Id: V_Nasal_yi_^_1
+Name: Nasalierung
+Rheinfelder-Id: §210 (I: 84)
+Entwicklung: üi̯n > ü͠i̯n
+Beispiel: iū́nĭu > dʒü͠i̯n (juin) > ʒüĩ > ʒü̯ɛ̃ ; rŭī́na > rü̯͠ine (ruine)
+]
+[y-\i_^] > [y~-\i_^~]
+	{
+	Zeit: 601--900
+	Und-Vorbedingung: K_nachkons_3(IIa)
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_yi_^_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §210 (I: 84)
+Entwicklung: ü͠i̯n > üĩ > ü̯ɛ̃
+Beispiel: iū́nĭu > dʒü͠i̯n (juin) > ʒüĩ > ʒü̯ɛ̃
+Notiz: ü̯ ist ɥ im IPA und H im SAMPA
+]
+[y~-\i_^~n] > [Hi~]
+[y~-\i_^~m] > [Hi~]
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Nasal_yi_^_1, V_Pal_17b
+	}
+
+[
+Id: V_Nasal_yi_^_1(aIII)
+Name: Nasalierung
+Rheinfelder-Id: §210 (I: 84)
+Entwicklung: ü͠i̯n > üĩ > ü̯ɛ̃
+Beispiel: iū́nĭu > dʒü͠i̯n (juin) > ʒüĩ > ʒü̯ɛ̃
+Notiz: ü̯ ist ɥ im IPA und H im SAMPA
+]
+[Hi~] > [HE~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_yi_^_1(IIa)
+	}
+
+[
+Id: V_Nasal_yi_^_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §210 (I: 84)
+Entwicklung: ü͠i̯-n > ü̯i-n
+Beispiel: rŭī́na > rü̯͠ine (ruine)
+Notiz: ü̯ ist ɥ im IPA und H im SAMPA
+]
+[y~-\i_^~n] > [Hi]
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: V_Nasal_yi_^_1
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: V_Nasal_Oi_^_oi_^_1
+Name: Nasalierung
+Rheinfelder-Id: §211, §212 (I: 85)
+Entwicklung: ǫi̯n > ọ͠i̯n > ọ̃́e > u̯ɛ̃ ; ọi̯n > ọ̃i̯n > ọ̃́e > u̯ɛ̃
+Beispiel: ló̆nge > lọ͠i̯n (loin) > lọ̃́e > lų̃e > lu̯ɛ̃ ; lò̆ngĭtānu > lọ͠i̯nta͠i̯n > lų̯̃et̨̃é (lointain) ; tĕstĭmōnĭu > tesmọ̃i̯n > temọ̃́e > temų̯̃e (tesmoin, tesmoing) > témoin ; pú̆nctu > pọ̃i̯nt > pọ̃́e > pų̯̃e (point) ; pŭ̀nctūra > pọ̃i̯ntǘre > pų̯̃etǘre (pointure)
+]
+[O-\i_^] > [o~-\i_^~]
+[o-\i_^] > [o~-\i_^~]
+[Oi_^] > [o~-\i_^~]
+[oi_^] > [o~-\i_^~]
+	{
+	Zeit: 601--900
+	Und-Vorbedingung: K_nachkons_3(IIa)
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_Oi_^_oi_^_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §211, §212 (I: 85)
+Entwicklung: ǫi̯n > ọ͠i̯n > ọ̃́e > u̯ɛ̃ ; ọi̯n > ọ̃i̯n > ọ̃́e > u̯ɛ̃
+Beispiel: ló̆nge > lọ͠i̯n (loin) > lọ̃́e > lų̃e > lu̯ɛ̃ ; lò̆ngĭtānu > lọ͠i̯nta͠i̯n > lų̯̃et̨̃é (lointain)
+]
+[o~-\i_^~n] > [oe~]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Nasal_Oi_^_oi_^_1, V_Pal_17b
+	}
+
+[
+Id: V_Nasal_Oi_^_oi_^_1(III)
+Name: Nasalierung
+Rheinfelder-Id: §211 (I: 85)
+Entwicklung: ǫi̯n > ọ͠i̯n > ọ̃́e > u̯ɛ̃ ; ọi̯n > ọ̃i̯n > ọ̃́e > u̯ɛ̃
+Beispiel: ló̆nge > lọ͠i̯n (loin) > lọ̃́e > lų̃e > lu̯ɛ̃ ; lò̆ngĭtānu > lọ͠i̯nta͠i̯n > lų̯̃et̨̃é (lointain)
+]
+[oe~] > [u_^-\E~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_Oi_^_oi_^_1(II)
+	}
+
+[
+Id: V_Nasal_ai_^_1
+Name: Nasalierung
+Rheinfelder-Id: §214 (I: 85)
+Entwicklung: ai̯n > a͠i̯n
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; sā́nctu > sa͠i̯nt > sę͠i̯ (saint, seint) > sɛ̃ (saint) ; plā́nctu > pla͠i̯nt > plę͠i̯ (plaint, pleint) > plɛ̃ (plaint) ; sā́na > sa͠i̯ne > sę͠i̯ne (saine) > sęnᵉ (saine) ; ắmat > a͠i̯met > ę͠i̯me (aime) > ęmᵉ
+]
+[a-\i_^] > [a~-\i_^~]
+	{
+	Zeit: 601--900
+	Rechter Kontext: [$K_PH_NASAL]
+	}
+
+[
+Id: V_Nasal_ai_^_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §214, §217 (I: 85, 87)
+Entwicklung: a͠i̯n > ę͠i̯ > ̨̃e (12./17. Jh.) > ɛ̃
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; sā́nctu > sa͠i̯nt > sę͠i̯ (saint, seint) > sɛ̃ (saint) ; plā́nctu > pla͠i̯nt > plę͠i̯ (plaint, pleint) > plɛ̃ (plaint)
+]
+[a~-\i_^~n] > [E~-\i_^~]
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: V_Nasal_ai_^_1
+	Rechter Kontext: [$K_PH, #]
+	}
+
+[
+Id: V_Nasal_ai_^_1(aIII)
+Name: Nasalierung
+Rheinfelder-Id: §214 (I: 85)
+Entwicklung: a͠i̯n > ę͠i̯ > ̨̃e (12./17. Jh.) > ɛ̃
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; sā́nctu > sa͠i̯nt > sę͠i̯ (saint, seint) > sɛ̃ (saint) ; plā́nctu > pla͠i̯nt > plę͠i̯ (plaint, pleint) > plɛ̃ (plaint)
+]
+[E~-\i_^~] > [E~]
+	{
+	Zeit: 1101--1700
+	Und-Vorbedingung: V_Nasal_ai_^_1(IIa)
+	}
+
+[
+Id: V_Nasal_ai_^_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §214 (I: 85)
+Entwicklung: a͠i̯-n > ę͠i̯-n > ̨̃e-n (12./17. Jh.) > ę-n
+Beispiel: sā́na > sa͠i̯ne > sę͠i̯ne (saine) > sęnᵉ (saine) ; ắmat > a͠i̯met > ę͠i̯me (aime) > ęmᵉ
+]
+[a~-\i_^~] > [E~-\i_^~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_ai_^_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_ai_^_1(bIII)
+Name: Entnasalierung
+Rheinfelder-Id: §214 (I: 85)
+Entwicklung: a͠i̯-n > ę͠i̯-n > ̨̃e-n (12./17. Jh.) > ę-n
+Beispiel: sā́na > sa͠i̯ne > sę͠i̯ne (saine) > sęnᵉ (saine) ; ắmat > a͠i̯met > ę͠i̯me (aime) > ęmᵉ
+]
+[E~-\i_^~] > [E~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_ai_^_1(IIb)
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_ai_^_1(bIV)
+Name: Entnasalierung
+Rheinfelder-Id: §214 (I: 85)
+Entwicklung: a͠i̯-n > ę͠i̯-n > ̨̃e-n (12./17. Jh.) > ę-n
+Beispiel: sā́na > sa͠i̯ne > sę͠i̯ne (saine) > sęnᵉ (saine) ; ắmat > a͠i̯met > ę͠i̯me (aime) > ęmᵉ
+]
+[E~] > [E]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_ai_^_1(bIII)
+	}
+
+[
+Id: V_Nasal_o[_1
+Name: Nasalierung
+Rheinfelder-Id: §216 (I: 86)
+Entwicklung: ọ́[n > ọ̃n
+Beispiel: rătĭṓne > rai̯sọ̃n > rai̯s̨̃o (raison) > ręsõ ; nṓmen > nọme > nọ̃m > nõ (nom, non) ; pĕrsṓna > persọ̃ne > pers̨̃one (persone, personne) > persǫnᵉ (personne) ; pṓma > pọ̃me > p̨̃ome > pǫmᵉ (pomme)
+]
+[o] > [o~]
+	{
+	Zeit: 601--900
+	Rechter Kontext: [$K_PH_NASAL]
+	Silbe: [
+	Betonung: "_
+	}
+
+[
+Id: V_Nasal_o[_1(II)
+Name: Nasalierung
+Rheinfelder-Id: §216 (I: 86)
+Entwicklung: ọ̃n > ̃𝔬
+Beispiel: rătĭṓne > rai̯sọ̃n > rai̯s̨̃o (raison) > ręsõ ; nṓmen > nọme > nọ̃m > nõ (nom, non)
+]
+[o~n] > [O~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_o[_1
+	}
+
+[
+Id: V_Nasal_o[_1(III)
+Name: Entnasalierung
+Rheinfelder-Id: §216 (I: 86)
+Entwicklung: ọ̃-n > ̨̃o-n > ǫ-n
+Beispiel: pĕrsṓna > persọ̃ne > pers̨̃one (persone, personne) > persǫnᵉ (personne) ; pṓma > pọ̃me > p̨̃ome > pǫmᵉ (pomme)
+]
+[o~] > [O~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_o[_1
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: V_Nasal_o[_1(IV)
+Name: Entnasalierung
+Rheinfelder-Id: §216 (I: 86)
+Entwicklung: ọ̃-n > ̨̃o-n > ǫ-n
+]
+[O~] > [O]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_o[_1(III)
+	}
+
+[
+Id: V_Nasal_a[_1
+Name: Nasalierung
+Rheinfelder-Id: §217 (I: 87)
+Entwicklung: á[n > a͠i̯n
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; fắme > fa͠i̯m > fę͠i̯ (fain, fain) > fɛ̃ (fain) ; lā́na > la͠i̯ne > lę͠i̯ne (laine) > lęnᵉ (laine) ; ắmant > a͠i̯ment > ę͠i̯me (aiment) > ęmᵉ
+]
+[a] > [a~-\i_^~] ; <a> > <ai>
+	{
+	Zeit: 601--900
+	Früher: K_zwischenvok_12
+	Spezialfall: V_Pal_2
+	Rechter Kontext: [$K_PH_NASAL]
+	Silbe: [
+	Betonung: "_
+	}
+
+[
+Id: V_Nasal_a[_1(IIa)
+Name: Nasalierung
+Rheinfelder-Id: §217 (I: 87)
+Entwicklung: a͠i̯n > ę͠i̯ > ̨̃e > ɛ̃
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; fắme > fa͠i̯m > fę͠i̯ (fain, fain) > fɛ̃ (fain)
+]
+[a~-\i_^~n] > [E~-\i_^~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_a[_1
+	Rechter Kontext: [$K_PH, #]
+	}
+
+[
+Id: V_Nasal_a[_1(aIII)
+Name: Nasalierung
+Rheinfelder-Id: §217 (I: 87)
+Entwicklung: a͠i̯n > ę͠i̯ > ̨̃e > ɛ̃
+Beispiel: mắnu > ma͠i̯n > mę͠i̯ (main, mein) > mɛ̃ (main) ; fắme > fa͠i̯m > fę͠i̯ (fain, fain) > fɛ̃ (fain)
+]
+[E~-\i_^~] > [E~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_a[_1(IIa)
+	}
+
+[
+Id: V_Nasal_a[_1(IIb)
+Name: Entnasalierung
+Rheinfelder-Id: §217 (I: 87)
+Entwicklung: a͠i̯-n > ę͠i̯-n > ę-n
+Beispiel: lā́na > la͠i̯ne > lę͠i̯ne (laine) > lęnᵉ (laine) ; ắmant > a͠i̯ment > ę͠i̯me (aiment) > ęmᵉ
+]
+[a~-\i_^~] > [E~-\i_^~]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_a[_1
+	Rechter Kontext: [$K_PH_NASAL $V_PH]
+	}
+
+[
+Id: V_Nasal_a[_1(bIII)
+Name: Entnasalierung
+Rheinfelder-Id: §217 (I: 87)
+Entwicklung: a͠i̯-n > ę͠i̯-n > ę-n
+]
+[E~-\i_^~] > [E]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Nasal_a[_1(IIb)
+	}
+
+################################################
+# Palatalisierungen
+################################################
+
+[
+Id: V_Pal_1
+Name: Palataleinflüsse é[
+Rheinfelder-Id: §221 (I: 90)
+Entwicklung: ̣́nach Pal. ẹ́[ > i = i
+Beispiel: cēra > cire ; mĕrcēde > mercit > merci ; cēpa > cive ; plăcēre > plaisir ; pāgēnse > *pagẹse > pai̯ís > pays
+]
+[e] > [i] ; <e> > <i>
+	{
+	Zeit: 601--1100
+	Betonung: "_
+	Silbe: [
+	Linker Kontext: [$K_PH_PALATAL]
+	}
+
+[
+Id: V_Pal_2
+Name: Palataleinflüsse á[ (Bartsch'sches Gesetz)
+Rheinfelder-Id: §225 (I: 91)
+Entwicklung: nach Pal. á[ > į̯̄e
+Beispiel: cāru > chier > cher ; căpra > chievre > chèvre ; mĕrcātu > marchiet > marché ; căne > chien ; trăctāre > traitier > traiter ; lăxāre > laissier > laisser ; dĭgnĭtāte > deintiet > daintiers ; mĕdĭĕtāte > *męi̯táte > meitiet > moitié ; pĭĕtāte > *pii̯táte > pitiet > pitié ; *ămīcĭtāte > amistiet > amitié ; spl. tālĭāre > taillier > tailler ; *rŏtŭndĭāre > rodognier > roognier > rogner
+]
+[a] > [i_^-\E:] ; <a> > <ie>
+	{
+	Zeit: 400--600
+	Betonung: "_
+	Silbe: [
+	Linker Kontext: [$K_PH_PALATAL]
+	}
+
+[
+Id: V_Pal_2(IIa)
+Name: Palataleinflüsse á[ (Bartsch'sches Gesetz)
+Rheinfelder-Id: §225 (I: 91)
+Entwicklung: į̯̄e > i̯ę
+Beispiel: căne > chien
+]
+[i_^-\E:] > [i_^-\E]
+	{
+	Zeit: 1101--1976
+	Spezialfall: V_Pal_2(IIb)
+	Und-Vorbedingung: V_Pal_2
+	}
+
+[
+Id: V_Pal_2(IIb)
+Name: Palataleinflüsse á[ (Bartsch'sches Gesetz)
+Rheinfelder-Id: §225 (I: 91)
+Entwicklung: į̯̄e > ę ; ẹ
+Beispiel: cāru > chier > cher ; căpra > chievre > chèvre
+]
+[i_^-\E:] > [E] ; <ie> > <e>
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: V_Pal_2
+	Linker Kontext: [t-\S, S, d-\Z, Z, l_j, J]
+	}
+
+[
+Id: V_Pal_2(bIII)
+Name: Palataleinflüsse á[ (Bartsch'sches Gesetz)
+Rheinfelder-Id: §225 (I: 91)
+Entwicklung: į̯̄e > ę ; ẹ
+Beispiel: mĕrcātu > marchiet > marché ; trăctāre > traitier > traiter ; *rŏtŭndĭāre > rodognier > roognier > rogner
+]
+[E] > [e]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Pal_2(IIb)
+	}
+
+[
+Id: V_Pal_2(aIII)
+Name: Palataleinflüsse á[ (Bartsch'sches Gesetz)
+Rheinfelder-Id: §225 (I: 91)
+Entwicklung: i̯ę = i̯ę ; i̯ẹ
+Beispiel: mĕdĭĕtāte > *męi̯táte > meitiet > moitié ; pĭĕtāte > *pii̯táte > pitiet > pitié ; *ămīcĭtāte > amistiet > amitié ; dĭgnĭtāte > deintiet > daintiers 
+]
+[i_^-\E] > [i_^-\e]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: V_Pal_2(IIa)
+	}
+
+[
+Id: V_Pal_3
+Name: Palataleinflüsse à[
+Rheinfelder-Id: §228 (I: 92)
+Entwicklung: ̣́nach Pal. à[ > ĕ > ə (> -)
+Beispiel: căbăllu > cheval ; cănāle > chenel > chéneau ; vlat. cămīsia > chemise ; *cămmīnu > *camínu > chemin ; căpĭllos > chevels > cheveux ; *gărŏfĭlu > gerofle, girofle > girofle
+]
+[a] > [e] ; <a> > <e>
+	{
+	Zeit: 601--1100
+	Betonung: %_
+	Silbe: [
+	Linker Kontext: [$K_PH_PALATAL]
+	}
+
+[
+Id: V_Pal_6
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §241 (I: 98)
+Entwicklung: i + i̯ > i = i
+Beispiel: ămīca > *amii̯e > amie ; dīcĕre > dire
+]
+[i_^] > [] ; <i> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [i]
+	}
+
+[
+Id: V_Pal_7
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §243 (I: 99)
+Entwicklung: u + i̯ > üi̯ > ü̯i
+Beispiel: lū́cent > luisent ; frūctu > fruit ; mĭnūtĭa > menuise ; lū̀cēre > luisir ; dūxĭstī > duisis
+]
+[ui_^] > [y-\i_^]
+	{
+	Zeit: 601--1100
+	}
+
+[
+Id: V_Pal_7(II)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §243 (I: 99)
+Entwicklung: u + i̯ > üi̯ > ü̯i
+Beispiel: lū́cent > luisent ; frūctu > fruit ; mĭnūtĭa > menuise ; lū̀cēre > luisir ; dūxĭstī > duisis
+Notizen: ü̯ ist ɥ im IPA und H im SAMPA
+]
+[y-\i_^] > [Hi]
+	{
+	Zeit: 1101--1200
+	Und-Vorbedingung: V_Pal_7
+	}
+
+[
+Id: V_Pal_8
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §249 (I: 99)
+Entwicklung: ẹ + i̯ > ei̯ > oi̯ > óe > oé > u̯ę > u̯a (ę)
+Beispiel: pí̆ce > peiz > poiz > poix ; lēge > lei > loi ; nĭgrŭ > neir > noir ; fēria > feire > foire ; tēctu > teit > toit ; dīrēctu > dreit > drot ; strĭctu > estreit > étroit ; lĭcēre > leisir > loisir ; vīcīnu > vlat. vẹ́cínu > veisin > voisin ; rēgāle > reial > royal ; mĕdĭĕtāte > meitiet > moitié ; vĕctūra > veiture > voiture ; ĕxīre > eissir > issir
+]
+[ei_^] > [e-\i_^]
+	{
+	Zeit: 601--1100
+	Früher: K_zwischenvok_15(IVb)
+	}
+
+[
+Id: V_Pal_9
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §254 (I: 101)
+Entwicklung: o + i̯ > oi̯ > óe > oé > ̯uę > u̯a / ę
+Beispiel: crú̆ce > croiz > croix ; lŭscu > lois > -- ; vōce > voiz > voix ; cŏgnōscĭt > vlat. *cōnōscit > conoist > connaît ; ăngŭstĭa > angoisse ; dŏrmītōrĭu > *dòrmtóri̯u > dortoir ; pṑtĭōne > poison ; spl. tŏnsĭōne > *tōsĭōne > toison
+]
+[oi_^] > [o-\i_^]
+	{
+	Zeit: 1201--1300
+	Spezialfall: V_Nasal_Oi_^_oi_^_1, V_Pal_17b
+	}
+
+[
+Id: V_Pal_10
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §258 (I: 102)
+Entwicklung: ̨́e + i̯ > *i̯ei̯ > i = i
+Beispiel: prĕcat > *prieiet > priet > prie ; pēĭor > vlat. pĕĭor > *pieire > pire ; lĕgĕre > *lieire > lire ; lĕctu > *lieit > lit ; pĕctus > *ieiz > piz > pis ; prĕtĭu > *prieis > pris > prix ; ĕxĭit > *ieist > ist ; dīmĭdĭu > vlat. dimędiu > *dimiei > dimi > demi
+]
+[Ei_^] > [i_^-\ei_^]
+	{
+	Zeit: 601--1100
+	Betonung: "_
+	}
+
+[
+Id: V_Pal_10(II)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §258 (I: 102)
+Entwicklung: ̨́e + i̯ > *i̯ei̯ > i = i
+Beispiel: prĕcat > *prieiet > priet > prie ; pēĭor > vlat. pĕĭor > *pieire > pire ; lĕgĕre > *lieire > lire ; lĕctu > *lieit > lit ; pĕctus > *ieiz > piz > pis ; prĕtĭu > *prieis > pris > prix ; ĕxĭit > *ieist > ist ; dīmĭdĭu > vlat. dimędiu > *dimiei > dimi > demi
+]
+[i_^-\ei_^] > [i] ; <ei> > <i>
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_Pal_10
+	}
+
+[
+Id: V_Pal_11
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: 69 (I: 104)
+Entwicklung: ̨̀e + i̯ > èi̯ > èi > òi̯ > òe > oè > ̯ų̀e > u̯à / ̨̀e
+Beispiel: mĕdĭĕtāte > meitiet > moitié ; vĕctūra > veiture > voiture ; ĕxīre > eissir > issir
+]
+[Ei_^] > [e-\i_^]
+	{
+	Zeit: 601--1100
+	Betonung: %_
+	}
+
+[
+Id: V_Pal_12
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §265 (I: 104)
+Entwicklung: ̨́o + i̯ > *u̯oi̯ > *u̯ei̯ > üi̯ > ü̯i
+Beispiel: nŏcet > *nuoist > *nueist > nuist > nuit ; hŏdĭe > vlat. ǫi̯e > *uoi > *uei > ui ; pŏdĭu > *puoi > *puei > pui > puy ; cŏrĭu > *cuoir > cuir ; nŏcēre > nŏcĕre > *nuoire > nuire ; nŏcte > *nuoit > nuit ; cŏxa > *cuoisse > cuisse ; pŏssum > vlat. *pŏssĭo > *puois > puis ; pŏstĕa > vlat. pŏstĭus > *puois > puis
+]
+[Oi_^] > [u_^-\oi_^]
+	{
+	Zeit: 601--1100
+	Betonung: "_
+	}
+
+[
+Id: V_Pal_12(II)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §265 (I: 104)
+Entwicklung: ̨ò + i̯ > *u̯oi̯ > *u̯ei̯ > üi̯ > ü̯i
+Beispiel: nŏcet > *nuoist > *nueist > nuist > nuit ; hŏdĭe > vlat. ǫi̯e > *uoi > *uei > ui ; pŏdĭu > *puoi > *puei > pui > puy ; cŏrĭu > *cuoir > cuir ; nŏcēre > nŏcĕre > *nuoire > nuire ; nŏcte > *nuoit > nuit ; cŏxa > *cuoisse > cuisse ; pŏssum > vlat. *pŏssĭo > *puois > puis ; pŏstĕa > vlat. pŏstĭus > *puois > puis
+]
+[u_^-\oi_^] > [u_^-\ei_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_Pal_12
+	}
+
+[
+Id: V_Pal_12(III)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §265 (I: 104)
+Entwicklung: ̨ò + i̯ > *u̯oi̯ > *u̯ei̯ > üi̯ > ü̯i
+Beispiel: nŏcet > *nuoist > *nueist > nuist > nuit ; hŏdĭe > vlat. ǫi̯e > *uoi > *uei > ui ; pŏdĭu > *puoi > *puei > pui > puy ; cŏrĭu > *cuoir > cuir ; nŏcēre > nŏcĕre > *nuoire > nuire ; nŏcte > *nuoit > nuit ; cŏxa > *cuoisse > cuisse ; pŏssum > vlat. *pŏssĭo > *puois > puis ; pŏstĕa > vlat. pŏstĭus > *puois > puis
+]
+[u_^-\ei_^] > [y-\i_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_Pal_12(II)
+	}
+
+[
+Id: V_Pal_12(IV)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §265 (I: 104)
+Entwicklung: ̨ò + i̯ > *u̯oi̯ > *u̯ei̯ > üi̯ > ü̯i
+Beispiel: nŏcet > *nuoist > *nueist > nuist > nuit ; hŏdĭe > vlat. ǫi̯e > *uoi > *uei > ui ; pŏdĭu > *puoi > *puei > pui > puy ; cŏrĭu > *cuoir > cuir ; nŏcēre > nŏcĕre > *nuoire > nuire ; nŏcte > *nuoit > nuit ; cŏxa > *cuoisse > cuisse ; pŏssum > vlat. *pŏssĭo > *puois > puis ; pŏstĕa > vlat. pŏstĭus > *puois > puis
+]
+[y-\i_^] > [Hi] ; <oi> > <ui>
+	{
+	Zeit: 1201--1300
+	Oder-Vorbedingung: V_Pal_12(III)
+	}
+
+[
+Id: V_Pal_13
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §269 (I: 105)
+Entwicklung: ̨ò + i̯ > òi̯ > òe > oè > ̯ų̀e > u̯à / ̨̀e
+Beispiel: nŏcēre > noisir ; fŏcārĭu > foier, foiier > foyer ; lŏcārĭu > loier, loiier > foyer
+]
+[Oi_^] > [o-\i_^]
+	{
+	Zeit: 601--1100
+	Früher: K_zwischenvok_15(IVa)
+	Betonung: %_
+	}
+
+[
+Id: V_Pal_14
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §272 (I: 105)
+Entwicklung: a + i̯ > ai̯ > ęi̯ > ę (ẹ)
+Beispiel: Mā́iu > mai ; māior > maire ; plāga > plaie ; pācat > paiet > paie (paye) ; pāce > paiz > pes > paix ; Tornācu > Tornai > Tournai ; Camarācu > Cambrai ; făctu > fait ; făcĕre > faire ; vărĭu > vair ; pălātĭu > palais ; nāsci > vlat. *nāscĕre > naistre > naître ; sānctu > saint ; plānctu > plaint ; plằcēre > plaisir ; pācāre > paiier > payer ; rătĭōne > raison ; lăxāre > laissier > laisser ; trăctāre > traitier > traiter
+]
+[ai_^] > [a-\i_^]
+	{
+	Zeit: 601--1100
+	Früher: V_tonl_Zwischen_2, K_vorkons_18, K_zwischenvok_15(IVa)
+	}
+
+[
+Id: V_Pal_14(II)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §272 (I: 105)
+Entwicklung: a + i̯ > ai̯ > ęi̯ > ę (ẹ)
+Beispiel: Mā́iu > mai ; māior > maire ; plāga > plaie ; pācat > paiet > paie (paye) ; pāce > paiz > pes > paix ; Tornācu > Tornai > Tournai ; Camarācu > Cambrai ; făctu > fait ; făcĕre > faire ; vărĭu > vair ; pălātĭu > palais ; nāsci > vlat. *nāscĕre > naistre > naître ; sānctu > saint ; plānctu > plaint ; plằcēre > plaisir ; pācāre > paiier > payer ; rătĭōne > raison ; lăxāre > laissier > laisser ; trăctāre > traitier > traiter
+]
+[a-\i_^] > [E-\i_^]
+	{
+	Zeit: 1101--1300
+	}
+
+[
+Id: V_Pal_14(III)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §272 (I: 105)
+Entwicklung: a + i̯ > ai̯ > ęi̯ > ę (ẹ)
+]
+[E-\i_^] > [E]
+	{
+	Zeit: 1101--1700
+	Oder-Vorbedingung: V_Pal_14(II)
+	}
+
+[
+Id: V_Pal_15
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §280 (I: 108)
+Entwicklung: au + i̯ > oi̯ > u̯ę > u̯a
+Beispiel: áudĭo > oi ; gaudĭa > joie ; nausĕa > noise ; *ằvĭcĕllu > àucĕllu > oisel > oiseau
+]
+[a-\u_^i_^] > [o-\i_^] ; <au> > <o>
+	{
+	Zeit: 601--1100
+	}
+
+[
+Id: V_Pal_16
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §284 (I: 110)
+Entwicklung: a + [ñ- > ãñ- > añ- 
+Beispiel: vīnĕa > viñe > vigne ; tĭnĕa > tẹñe > tęñe > teigne ; dĭgnat > dẹñet > daigne ; īnsĭgnet > *enseñt > enseint > enseigne (analog.) ; sīgnu > *sẹñ > sẹin > sęin > seing ; dĭgnāre > dẹñier > dęñer > daigner ; vlat. cărōnĭa > charọñe > charǫñe > charogne ; *grŭnniare > grọñier > grǫñer > grogner ; ūnĭōne > vlat. ŭnĭōne > oñon > oignon ; *bĭsŭnnĭāre > besoñier > besogner ; vĕnĭat > vieñet > vienne (analog.) ; sĕnĭōre > señọur > señeur > seigneur ; pĕctĭnāre > peñier > *pieñe, peñer > peigner ; *ex-lŏnge-āre > esloñier > éloigner ; mŏntānĕa > montañe > montagne ; Cămpānĭa > Champañe > Champagne ; căstănĕa > chastañe > châtaigne ; āgnĕllu > añel > agneau ; sănguĭnāre > sañier > sañer > saigner
+]
+[i] > [i~]
+[u] > [u~]
+[e] > [E~]
+[o] > [O~]
+[E] > [i_^-\E~]
+[O] > [O~]
+[a] > [A~]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [J]
+	Silbe: [
+	}
+
+[
+Id: V_Pal_16(II)
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §284 (I: 110)
+Entwicklung: a + [ñ- > ãñ- > añ- 
+Beispiel: 
+]
+[i~] > [i]
+[u~] > [u]
+[E~] > [E]
+[O~] > [O]
+[i_^-\E~] > [i_^-\E]
+[A~] > [a]
+	{
+	Zeit: 1601--1976
+	Rechter Kontext: [J]
+	}
+
+[
+Id: V_Pal_17a
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §284 (I: 110)
+Entwicklung: a + ñ] > ãi̯ñ > ɛ̃
+Beispiel: scrīnĭu > *escriñ > escrin > écrin ; iū́nĭu > *dʒüñ > jüi̯n > juin ; fĭngĕre > fẹñre > *fẹndre > fęindre > feindre ; dĭ̀gnĭtāte > *dẹñti̯et > deintiet > daintiers ; cĭnctūra > *cẹñture > ceinture ; *grŭnnĭu > *grọñ > groin ; pŭnctu > pọñt > point ; pŭngĕre > *pọñre > poindre ; iŭnctūra > *dʒoñtüre > jointure ; ĭngĕnĭu > *ẽndʒi̯ẽñ > *ẽndʒi̯ẽi̯n > engin ; lŏnge > *loñ > loin ; *lò̆ngĭtānu > *loñtáno > *loñtai̯n > lointain ; bălnĕu > vlat. *bănĕu > *bañ > bain ; plăngĕre > *plañre > plaindre 
+]
+[i] > [i~]
+[o] > [o~]
+[O] > [O~]
+[a] > [E~]
+	{
+	Zeit: 601--1100
+	Früher: K_nachkons_3(IIa)
+	Rechter Kontext: [J]
+	Silbe: ]
+	}
+
+[
+Id: V_Pal_17b
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §284 (I: 110)
+Entwicklung: a + ñ] > ãi̯ñ > ɛ̃
+Beispiel: scrīnĭu > *escriñ > escrin > écrin ; iū́nĭu > *dʒüñ > jüi̯n > juin ; fĭngĕre > fẹñre > *fẹndre > fęindre > feindre ; dĭ̀gnĭtāte > *dẹñti̯et > deintiet > daintiers ; cĭnctūra > *cẹñture > ceinture ; *grŭnnĭu > *grọñ > groin ; pŭnctu > pọñt > point ; pŭngĕre > *pọñre > poindre ; iŭnctūra > *dʒoñtüre > jointure ; ĭngĕnĭu > *ẽndʒi̯ẽñ > *ẽndʒi̯ẽi̯n > engin ; lŏnge > *loñ > loin ; *lò̆ngĭtānu > *loñtáno > *loñtai̯n > lointain ; bălnĕu > vlat. *bănĕu > *bañ > bain ; plăngĕre > *plañre > plaindre 
+]
+[yi_^] > [y~-\i_^~]
+[ei_^] > [E~-\i_^~]
+[oi_^] > [o~-\i_^~]
+	{
+	Zeit: 601--1100
+	Früher: K_nachkons_3(IIa)
+	Rechter Kontext: [n]
+	Silbe: ]
+	}
+
+[
+Id: V_Pal_17c
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §284 (I: 110)
+Entwicklung:  a + ñ] > ãi̯ñ > ɛ̃ 
+Beispiel: scrīnĭu > *escriñ > escrin > écrin ; iū́nĭu > *dʒüñ > jüi̯n > juin ; fĭngĕre > fẹñre > *fẹndre > fęindre > feindre ; dĭ̀gnĭtāte > *dẹñti̯et > deintiet > daintiers ; cĭnctūra > *cẹñture > ceinture ; *grŭnnĭu > *grọñ > groin ; pŭnctu > pọñt > point ; pŭngĕre > *pọñre > poindre ; iŭnctūra > *dʒoñtüre > jointure ; ĭngĕnĭu > *ẽndʒi̯ẽñ > *ẽndʒi̯ẽi̯n > engin ; lŏnge > *loñ > loin ; *lò̆ngĭtānu > *loñtáno > *loñtai̯n > lointain ; bălnĕu > vlat. *bănĕu > *bañ > bain ; plăngĕre > *plañre > plaindre 
+]
+[EJ] > [i_^-\E~i_^]
+	{
+	Zeit: 601--1100
+	Silbe: ]
+	}
+
+[
+Id: V_Pal_18
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §290 (I: 113)
+Entwicklung: a + ɫ > aɫ (auch im Wortauslaut) > ai̯ (17. Jh.)
+Beispiel: fīlĭa > fiɫe > fille ; ăcūcŭla > agüɫe > aiguille ; aurĭcŭla > orẹɫe > oręɫe > oreille ; tĭlĭa > teɫe > teille ; vĭgĭlāre > veɫier > veiller ; *rānŭcŭla > renọɫe > renuɫe > grenouille ; vlat. vĕtŭlă > vĕclă > vieɫe > vieille ; mĕlĭōre > meɫọur > meilleur ; fŏlĭa > fueɫe > feuille ; cŏllĭgo > *cŏli̯o > cueɫe > cueille ; *mŏllĭāre > moɫier > moiller ; cŏllĭgĕre > *cŏli̯ĕre, *cŏli̯īre > coɫir > cueillir (analog.) ; pălĕa > paɫe > paille ; vlat. băttŭālĭa > băttālĭa > bataɫe > bataille; vălĕat > vaɫet > vaille ; vlat. ằlĭōre > aɫour, aɫours > ailleurs
+]
+[El_j] > [i_^-\El_j] ; <e> > <ei>
+[Ol_j] > [u_^-\Ol_j]
+[el_j] > [El_j]
+[ol_j] > [ul_j]
+[il_j] > [il_j]
+[yl_j] > [yl_j]
+[al_j] > [al_j]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: V_Pal_19
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §290 (I: 113)
+Entwicklung: a + ɫ > aɫ (auch im Wortauslaut) > ai̯ (17. Jh.)
+Beispiel: fīlĭu > fiɫ > - ; *sōlĭcŭlu > soleɫ > soleil ;  *sŏmnĭcŭlu > someɫ > sommeil ; cōnsĭlĭŭ > conseɫ > conseil ; fēnŭcŭlu > fenọɫ > fenouil ; vlat. vĕtŭlu > vĕclu > vieɫ > vieil ; ŏcŭlu > ueɫ > œil ; vlat. căprĭfŏlĭu > chevrefueɫ > chèvrefeuille , gŭbĕrnācŭlu > governaɫ > gouvernail ; (*sŭ)spīrācŭlu > sospiraɫ > soupirail ; spl. trēpālĭū > travaɫ > travail
+]
+[il_j] > [i-\i_^]
+[el_j] > [E-\i_^]
+[ol_j] > [u-\i_^]
+[El_j] > [i_^-\Ei_^]
+[Ol_j] > [u_^-\Oi_^]
+[al_j] > [a-\i_^]
+[i_^-\El_j] > [i_^-\Ei_^]
+	{
+	Zeit: 1601--1700
+	Und-Vorbedingung: !V_Pal_18
+	Rechter Kontext: [#]
+	}
+
+[
+Id: V_Pal_20
+Name: Vokal vor Palatalkonsonant
+Rheinfelder-Id: §290 (I: 113)
+Entwicklung: a + ɫ > al > au̯ (vor Konsonant) > o (16. Jh.)
+Beispiel: fīlĭus > *fiɫs > filts (schr. filz) > fils ; cōnsĭlĭet > *consẹɫt > conselt > conseille (analog.) ; fŭlgŭr > *fọ́ɫre > foldre > foudre ; mĕlĭor > *mieɫre > mieldre ; mĕlĭus > *mieɫs > mielts (schr. mielz) > mieux 
+]
+[il_j] > [il]
+[el_j] > [el]
+[ol_j] > [ul]
+[El_j] > [El]
+	{
+	Zeit: 601--1100
+	Früher: K_Gleitkons_7
+	Rechter Kontext: [$K_PH]
+	}
+
+
+################################################
+# Labialisierung und Velarisierung
+################################################
+
+# a) u aus Hiat (oder Auslaut)
+
+[
+Id: V_Vel_1
+Name: Vokal vor Velar
+Rheinfelder-Id: §312 (I: 124)
+Entwicklung: i + u̯ > iu̯ > ü̯i
+]
+[iu_^] > [i-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_1(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §312 (I: 124)
+Entwicklung: i + u̯ > iu̯ > ü̯i
+]
+[i-\u_^] > [i-\H]
+	{
+	Zeit: 1101--1200
+	Oder-Vorbedingung: V_Vel_1, V_Vel_2
+	}
+
+[
+Id: V_Vel_2
+Name: Vokal vor Velar
+Rheinfelder-Id: §313 (I: 125)
+Entwicklung: ẹ + u̯ > iu̯ > ü̯i
+]
+[eu_^] > [i-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_3
+Name: Vokal vor Velar
+Rheinfelder-Id: §315 (I: 126)
+Entwicklung: ọ + u̯ > ọu̯ > u (schr. ou)
+iŭgu > i̯ọgu > jọu̯ > jou > joug ; *mōvŭĭt > mọu̯t > mout > mut ; 
+          *cŏnōvŭĭt > *conọu̯t, conut > connut
+]
+[ou_^] > [o-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_3(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §315 (I: 126)
+Entwicklung: ọ + u̯ > ọu̯ > u (schr. ou)
+]
+[o-\u_^] > [u]
+	{
+	Zeit: 1201--1300
+	Oder-Vorbedingung: V_Vel_3
+	}
+
+[
+Id: V_Vel_4
+Name: Vokal vor Velar
+Rheinfelder-Id: §316 (I: 126)
+Entwicklung: ę + u̯ > (i̯)eu̯ > (i̯)ọ̈
+]
+[Eu_^] > [i_^-\eu_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_4(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §316 (I: 126)
+Entwicklung: ę + u̯ > (i̯)eu̯ > (i̯)ọ̈
+]
+[i_^-\eu_^] > [i_^-\2]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_4
+	}
+
+[
+Id: V_Vel_5
+Name: Vokal vor Velar
+Rheinfelder-Id: §317 (I: 126)
+Entwicklung: ǫ + u̯ > ọu̯ > ẹu̯ > ọ̈
+]
+[Ou_^] > [o-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_5(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §317 (I: 126)
+Entwicklung: ǫ + u̯ > ọu̯ > ẹu̯ > ọ̈
+]
+[o-\u_^] > [e-\u_^]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_5
+	}
+
+[
+Id: V_Vel_5(III)
+Name: Vokal vor Velar
+Rheinfelder-Id: §317 (I: 126)
+Entwicklung: ǫ + u̯ > ọu̯ > ẹu̯ > ọ̈
+]
+[e-\u_^] > [2]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_5(II)
+	}
+
+[
+Id: V_Vel_6
+Name: Vokal vor Velar
+Rheinfelder-Id: §318 (I: 128)
+Entwicklung: a + u̯ > ǫu̯ > ọu̯ > u
+]
+[au_^] > [O-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+[
+Id: V_Vel_6(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §318 (I: 128)
+Entwicklung: a + u̯ > ǫu̯ > ọu̯ > u
+]
+[O-\u_^] > [o-\u_^]
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Vel_6, V_Vel_7
+	}
+
+[
+Id: V_Vel_6(III)
+Name: Vokal vor Velar
+Rheinfelder-Id: §318 (I: 128)
+Entwicklung: a + u̯ > ǫu̯ > ọu̯ > u
+]
+[o-\u_^] > [u]
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Vel_6(II)
+	}
+
+[
+Id: V_Vel_7
+Name: Vokal vor Velar
+Rheinfelder-Id: §319 (I: 128)
+Entwicklung: au + u̯ > ǫu̯ > ọu̯ > u
+]
+[a-\u_^u_^] > [O-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: V_tonl_Zwischen_1
+	}
+
+# b) u aus velarem Konsonanten
+
+[
+Id: V_Vel_8
+Name: Vokal vor Velar
+Rheinfelder-Id: §321 (I: 129)
+Entwicklung: ẹ + u̯ (<l) > ẹu̯ > ọ̈
+]
+[eu_^] > [e-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_8(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §321 (I: 129)
+Entwicklung: ẹ + u̯ (<l) > ẹu̯ > ọ̈
+]
+[e-\u_^] > [2]
+	{
+	Zeit: 1201--1300
+	Oder-Vorbedingung: V_Vel_8
+	}
+
+[
+Id: V_Vel_9
+Name: Vokal vor Velar
+Rheinfelder-Id: §323 (I: 130)
+Entwicklung: ọ + u̯ (<l) > ọu̯ > u
+]
+[ou_^] > [o-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_9(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §323 (I: 130)
+Entwicklung: ọ + u̯ (<l) > ọu̯ > u
+]
+[o-\u_^] > [u]
+	{
+	Zeit: 1201--1300
+	Oder-Vorbedingung: V_Vel_9, V_Vel_11(II)
+	}
+
+[
+Id: V_Vel_10
+Name: Vokal vor Velar
+Rheinfelder-Id: §324 (I: 130)
+Entwicklung: ę + u̯ (<l) > éau̯ > eáu > e̯ọ > ọ
+]
+[Eu_^] > [ea-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_10(III)
+Name: Vokal vor Velar
+Rheinfelder-Id: §324 (I: 130)
+Entwicklung: ę + u̯ (<l) > éau̯ > eáu > e̯ọ > ọ
+]
+[ea-\u_^] > [e_^-\o]
+	{
+	Zeit: 1501--1600
+	Oder-Vorbedingung: V_Vel_10
+	}
+
+[
+Id: V_Vel_10(IV)
+Name: Vokal vor Velar
+Rheinfelder-Id: §324 (I: 130)
+Entwicklung: ę + u̯ (<l) > éau̯ > eáu > e̯ọ > ọ
+]
+[e_^-\o] > [o]
+	{
+	Zeit: 1601--1700
+	Oder-Vorbedingung: V_Vel_10(III)
+	}
+
+[
+Id: V_Vel_11
+Name: Vokal vor Velar
+Rheinfelder-Id: §325 (I: 131)
+Entwicklung: ǫ + u̯ (<l) > ǫu̯ > ọu̯ > u
+]
+[Ou_^] > [O-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_11(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §325 (I: 131)
+Entwicklung: ǫ + u̯ (<l) > ǫu̯ > ọu̯ > u
+]
+[O-\u_^] > [o-\u_^]
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Vel_11
+	}
+
+[
+Id: V_Vel_12
+Name: Vokal vor Velar
+Rheinfelder-Id: §326 (I: 131)
+Entwicklung: a + u̯ (<l) > au̯ > ọ
+]
+[au_^] > [a-\u_^]
+	{
+	Zeit: 601--1100
+	Früher: K_zwischenvok_5, K_zwischenvok_5(IIa)
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_12(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §326 (I: 131)
+Entwicklung: a + u̯ (<l) > au̯ > ọ
+]
+[a-\u_^] > [o]
+	{
+	Zeit: 1301--1600
+	Oder-Vorbedingung: V_Vel_12
+	}
+
+[
+Id: V_Vel_13
+Name: Vokal vor Velar
+Rheinfelder-Id: §327 (I: 131)
+Entwicklung: e(i̯) + u̯ (<l) > eu̯ > -- (durch Anal. verdrängt)
+]
+[e-\i_^u_^] > [e-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_14
+Name: Vokal vor Velar
+Rheinfelder-Id: §328 (I: 132)
+Entwicklung: ọ + u̯ (<l) > ọu̯ > ẹu̯ > ọ̈
+]
+[ou_^] > [o-\u_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_14(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §328 (I: 132)
+Entwicklung: ọ + u̯ (<l) > ọu̯ > ẹu̯ > ọ̈
+]
+[o-\u_^] > [e-\u_^]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_14
+	}
+
+[
+Id: V_Vel_14(III)
+Name: Vokal vor Velar
+Rheinfelder-Id: §328 (I: 132)
+Entwicklung: ọ + u̯ (<l) > ọu̯ > ẹu̯ > ọ̈
+]
+[e-\u_^] > [2]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_14(II)
+	}
+
+[
+Id: V_Vel_15
+Name: Vokal vor Velar
+Rheinfelder-Id: §329 (I: 132)
+Entwicklung: i̯ę + u̯ (<l) > i̯eu̯ > i̯ọ̈
+]
+[i_^-\Eu_^] > [i_^-\eu_^]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_vorkons_22
+	}
+
+[
+Id: V_Vel_15(II)
+Name: Vokal vor Velar
+Rheinfelder-Id: §329 (I: 132)
+Entwicklung: i̯ę + u̯ (<l) > i̯eu̯ > i̯ọ̈
+]
+[i_^-\eu_^] > [i_^-\2]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: V_Vel_15
+	}
+
+################################################
+################## Konsonanten #################
+################################################
+
+################################################
+# im Vulgärlatein
+################################################
+    
+[
+Id: K_vlat_1a
+Name: Konsonantenschwund (h)
+Rheinfelder-Id: §353 (I: 142)
+Beispiel: hōra > ọ́ra > heure ; vlat. ănhēla > hălēna > *alẹ́na > haleine ; prĕhĕndĕre > *preendere > prẹ́ndere > prendre ; cŏhŏrte > *coorte > cọ́rte
+]
+[h] > [] ; <h> > <>
+	{
+	Zeit: -200--600
+	}
+
+[
+Id: K_vlat_2
+Name: Konsonantenschwund (-m)
+Beschreibung: in mehrsilbigen Wörtern, d.h. m ist nicht in betonter Silbe
+Rheinfelder-Id: §354 (I: 142)
+Beispiel: m=ens°am
+]
+[m] > [] ; <m> > <>
+	{
+	Zeit: -100--600
+	Betonung: _
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_vlat_3
+Name: Konsonantenschwund (n vor s)
+Rheinfelder-Id: §355 (I: 143)
+Beispiel: cōnsŭl > cosol ; cŏnvĕntu > coventu
+]
+[n] > [] ; <n> > <>
+	{
+	Zeit: -300--600
+	Rechter Kontext: [s]
+	}
+
+[
+Id: K_vlat_4
+Name: Artikulationsverschiebung
+Rheinfelder-Id: §357, §541 (I: 144, 213)
+Entwicklung: u̯ > ᵬ > v
+Beispiel: vĭdŭa > *vedve > veve > veuve ; ăntīqua > antive ; vlat. sĕquunt > sievent, sieuvent, siuvent > suivent ; Iānŭārĭu > vlat. i̯enu̯ári̯u > jenvier > janvier ; ănnŭāle > anvel ; tĕnŭe > tĕnu̯e > tenve ; ĕqua > *i̯iei̯u̯e > ive ; aequāle > ivel
+]
+[u_^] > [B]
+	{
+	Zeit: -100--600
+	Und-Vorbedingung: !K_zwischenvok_8(II), !K_zwischenvok_10(II), !K_zwischenvok_17, !V_vlat_w_1
+	# Spezialfall: K_nachkons_14
+	}
+
+[
+Id: K_vlat_4(II)
+Name: Artikulationsverschiebung
+Rheinfelder-Id: §357 (I: 144)
+Entwicklung: u̯ > ᵬ > v
+Beispiel: vĭdŭa > *vedve > veve > veuve ; ăntīqua > antive ; vlat. sĕquunt > sievent, sieuvent, siuvent > suivent ; Iānŭārĭu > vlat. i̯enu̯ári̯u > jenvier > janvier ; ănnŭāle > anvel ; tĕnŭe > tĕnu̯e > tenve ; ĕqua > *i̯iei̯u̯e > ive ; aequāle > ivel
+]
+[B] > [v]
+	{
+	Zeit: -100--600
+	Oder-Vorbedingung: K_vlat_4
+	}
+
+[
+Id: K_vlat_5
+Name: Vokalisierung
+Rheinfelder-Id: §358 (I: 144)
+Beispiel: *ăvĭca > au̯ca ; tăbŭla > *táᵬola > *taᵬla > *taŭla ; părăbŏla > *paraᵬla > *parau̯la
+]
+[u_^] > []
+[B] > [u_^] ; <b> > <u>
+	{
+	Zeit: -100--600
+	Linker Kontext: [a]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_vlat_6a
+Name: Vokalvorschlag
+Rheinfelder-Id: §359 (I: 145, 182)
+Beispiel: spīrĭtus > espiritus ; spătha > spede > espee > épée ; spĕcĭe > espice > épice ; spīna > espine > épine ; spŏngĭa > vlat. *spŏnga > esponge > éponge ; *stŭrnĕllu > *estornellu > estornel; stăbŭla > estable > étable ; Stĕphănu > Estievne > Étienne ; stēlla > clat. stēla > esteile > estoile > étoile ; stŭdĭu > estudie > étude ; strĭngĕre > estreindre > étreindre ; scrīpta > iscripta ; scāla > eschiele > échelle ; scŏpŭlu > *scŏplu > *scǫclu > escueɫ > écueil ; schŏla > escole > école ; scūtu > escut > écu ; vlat. *scūrĭŏlu > escuriuel, escurieu > écurieu und écureuil ; scrībĕre > escrivre > escrire > écrire; scăndălu > escandle, escandre, esclande, eslandre > esclandre
+]
+[] > [e] ; <> > <e>
+	{
+	Zeit: 150--1200
+	Linker Kontext: [#]
+	Rechter Kontext: <sp, st, sc, squ, sm>
+	}
+
+[
+Id: K_vlat_6b
+Name: Vokalvorschlag
+Rheinfelder-Id: §359 (I: 145, 182)
+Beispiel: Stĕphănu > Estievne > Étienne
+]
+[] > [e] ; <> > <e>
+	{
+	Zeit: 150--1200
+	Linker Kontext: [#]
+	Rechter Kontext: <Sp, St, Sc, Squ, Sm>
+	}
+
+[
+Id: K_vlat_6b(II)
+Name: Vokalvorschlag
+Rheinfelder-Id: §359 (I: 145, 182)
+Beispiel: Stĕphănu > Estievne > Étienne
+]
+<S> > <s>
+	{
+	Zeit: 150--1200
+	Linker Kontext: [e]
+	}
+
+[
+Id: K_vlat_7
+Name: Sonstige Umgestaltungen im Vlat.: tl > kl
+Rheinfelder-Id: §361 (I: 145)
+Beispiel: stlŏppus > scloppus ; vĕtŭlŭ > *vĕtlu > veclu > vieil ; pŏrtŭlāca > *portlaca > *porclaca > clat. porcacla > porchaille
+]
+[tl] > [kl] ; <tl> > <cl>
+	{
+	Zeit: 150--600
+	}
+
+[
+Id: K_vlat_8
+Name: Assimilation
+Rheinfelder-Id: §360 (I: 145)
+Beispiel: nítidus > *nittus, *nettus > net [SW]
+]
+[d] > [t] ; <d> > <t>
+	{
+	Zeit: -100--600
+	Linker Kontext: [t]
+	}
+
+[
+Id: K_vlat_9
+Name: Griechische Konsonanten
+Rheinfelder-Id: §362 (I: 145)
+]
+[p_h] > [p] ; <ph> > <p>
+[t_h] > [t] ; <th> > <t>
+[k_h] > [k] ; <ch> > <c>
+	{
+	Zeit: -100--600
+	}
+
+[
+Id: K_vlat_10
+Name: qu
+Rheinfelder-Id: §356 (I: 143)
+Entwicklung: u̯ > ᵬ > v
+Beispiel: equus > ecus
+]
+[k_w] > [k] ; <qu> > <c>
+	{
+	Zeit: -100--600
+	Rechter Kontext: <°u, o>
+	}
+
+################################################
+# im Anlaut
+################################################
+    
+[
+Id: K_Palatal_1
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §399, §475 (I: 164, 193)
+Entwicklung: gi- > dʒi- > ʒi- ; ge- > dʒe- > ʒe-
+Beispiel: gĭbba > gibe ; spl. gĭbbōsu > gibbeux ; gĭngīva > *gĭncīva > gencive ; gĕlāre > geler ; gĕnŭcŭlu > genoil > genou ; ărgīlla > argile ; ărgĕntu > argent ; spl. bŭrgēnse > *bọrgẹ́se > borgeis > bourgeois ; ĭngĕnĭu > engin
+]
+[g] > [d-\Z]
+	{
+	Zeit: 290--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Früher: V_tonl_Synkope_5
+	Linker Kontext: [#, $K_PH]
+	Rechter Kontext: [e, E, i]
+	}
+
+[
+Id: K_Palatal_1(II)
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §399, §401, §402, §404, §412, §475, §484 (I: 164, 165, 166, 167, 193, 195)
+Entwicklung: gi- > dʒi- > ʒi- ; ge- > dʒe- > ʒe- ; gi̯- > dʒ- > ʒ-
+Beispiel: gĭbba > gibe ; spl. gĭbbōsu > gibbeux ; gĭngīva > *gĭncīva > gencive ; gĕlāre > geler ; gĕnŭcŭlu > genoil > genou ; ărgīlla > argile ; ărgĕntu > argent ; spl. bŭrgēnse > *bọrgẹ́se > borgeis > bourgeois ; ĭngĕnĭu > engin
+]
+[d-\Z] > [Z]
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Oder-Vorbedingung: K_Palatal_1, K_Anlaut_Palatal_2, K_Anlaut_Palatal_3, K_Anlaut_Palatal_4, K_Palatal_6
+	}
+
+[
+Id: K_Anlaut_Palatal_2
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §401 (I: 165)
+Entwicklung: gi̯- > dʒ- > ʒ-
+Beispiel: Gĕōrgĭus > vlat. Gi̯orgi̯os > Jorges, Georges > Georges
+]
+[gi_^] > [d-\Z]
+	{
+	Zeit: 290--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [#]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_Anlaut_Palatal_3
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §402 (I: 165)
+Entwicklung: i̯- > dʒ- > ʒ-
+Beispiel: iēiūnu > *i̯ḕū́nu > jëun > jun > jeun ; iăctāre > vlat. *iĕctāre > jeter, geter > jeter ; iăcēre > *jaisir > jesir, gesir > gésir ; Iānŭārĭu > vlat. Ienŭārĭu > i̯enu̯ári̯u > jenvier, janvier > janvier ; iăm > ja ; iŏcu > jou > jeu ; vlat. iŏcāre > joer > jouer ; iŭvĕne > vlat. į̯́ovene > juene > jeune ; iŭngĕre > joindre ; iūdĭcāre > *i̯udegáre > jugier > juger
+]
+[i_^] > [d-\Z] ; <i> > <j>
+[i_^] > [d-\Z] ; <j> > <j>
+	{
+	Zeit: 290--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [#]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_Anlaut_Palatal_4
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §404 (I: 166)
+Entwicklung: di̯- > dʒ- > ʒ-
+Beispiel: spl. dĭŭrnu > jorn > jor > jour
+]
+[di_^] > [d-\Z]
+	{
+	Zeit: 290--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [#]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_Palatal_5
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §408, §477 (I: 167, 194)
+Entwicklung: ki- > tsi- > si- ; ke- > tse- > se-
+Beispiel: cīvĭtāte > citet > cité ; cĭnĕre > cendre ; cēra > cire ; cĕntu > cent ; ăncĭlla > ãntś̨ele (ancele) ; pŏrcĕllu > porcel > porceau > pourceau ; mĕrcēde > mercit > merci ; pŏllĭce > vlat. *pǫlce > polz > pouz ; sălĭce > vlat. *salce > *salz > saus  ; spl. rādīcīna > racine
+]
+[k] > [t-\s]
+	{
+	Zeit: 290--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Spezialfall: K_nachkons_1
+	Linker Kontext: [#, $K_PH]
+	Rechter Kontext: [i, e, E]
+	}
+
+[
+Id: K_Palatal_5(II)
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §408, §414, §477 (I: 167, 168, 194)
+Entwicklung: ki- > tsi- > si- ; ke- > tse- > se-
+Beispiel: cīvĭtāte > citet > cité ; cĭnĕre > cendre ; cēra > cire ; cĕntu > cent ; ăncĭlla > ãntś̨ele (ancele) ; pŏrcĕllu > porcel > porceau > pourceau ; mĕrcēde > mercit > merci ; pŏllĭce > vlat. *pǫlce > polz > pouz ; sălĭce > vlat. *salce > *salz > saus  ; spl. rādīcīna > racine
+]
+[t-\s] > [s]
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: K_Palatal_5, !K_Anlaut_qu_1
+	Linker Kontext: [#, $NICHT_ORAL]
+	}
+
+[
+Id: K_Palatal_6
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §412, §484 (I: 167, 195)
+Entwicklung: ga- > dʒa-, dʒe- > ʒa-, ʒe- ; gau- > *fʒau- > dʒo- > ʒo-
+Beispiel: gămba > jambe ; gălbĭnu > jalne > jaune ; găllīna > *galína > geline ; vlat. *gardínu > jardin ; gaudĭa > *di̯aui̯a > joie ; gaudēre > vlat. *gaudíre > *jaudir > joïr > jouir ; vĭrga > verge ; lŏnga > longe > longue ; pūrgāre > purgier > purger ; nāvĭgāre > nagier > nager ; Ăndĕgāvu > Anjǫu > Anjou
+]
+[g] > [d-\Z]
+	{
+	Zeit: 501--800
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [#, $K_PH]
+	Rechter Kontext: [a, a-\u_^]
+	}
+
+[
+Id: K_Palatal_7
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §414, §487 (I: 168, 196)
+Entwicklung: ka- > tʃa-, tʃie-, tʃe- > ʃa-, ʃie-, ʃe- ; kau- > *tʃau- > tʃo- > ʃo-
+Beispiel: cămpu > champ ; cāru > chier > cher ; căne > chien ; căbăllu > cheval ; causa > *chause > chose ; caule > *chaul > *chol > chou̯ > chou ; ărca > arche ; mŭsca > mosche > mouche ; pĭscāri > vlat. pĭscāre > peschier > pêcher ; mănĭca > *manca > manche  ; dĭe dŏmĭnĭca > *diaminca > diemenche > dimanche ; pĕrsĭca > vlat. péssica > *pęsca > pesche > pêche ; cŏllŏcat > *colcat > colchet > couche
+]
+[k] > [t-\S] ; <c> > <ch>
+[k] > [t-\S] ; <C> > <Ch>
+	{
+	Zeit: 501--800
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [#, $K_PH]
+	Rechter Kontext: [a, a-\u_^]
+	}
+
+[
+Id: K_Palatal_7(II)
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §414 (I: 168)
+Entwicklung: ka- > tʃa-, tʃie-, tʃe- > ʃa-, ʃie-, ʃe- ; kau- > *tʃau- > tʃo- > ʃo-
+Beispiel: causa > *chause > chose ; caule > *chaul > *chol > chou̯ > chou
+]
+[a-\u_^] > [o] ; <au> > <o>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Linker Kontext: [# t-\S]
+	}
+
+[
+Id: K_Palatal_7(III)
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §414, §487 (I: 168, 196)
+Entwicklung: ka- > tʃa-, tʃie-, tʃe- > ʃa-, ʃie-, ʃe- ; kau- > *tʃau- > tʃo- > ʃo-
+Beispiel: cămpu > champ ; cāru > chier > cher ; căne > chien ; căbăllu > cheval ; causa > *chause > chose ; caule > *chaul > *chol > chou̯ > chou ; ărca > arche ; mŭsca > mosche > mouche ; pĭscāri > vlat. pĭscāre > peschier > pêcher ; mănĭca > *manca > manche  ; dĭe dŏmĭnĭca > *diaminca > diemenche > dimanche ; pĕrsĭca > vlat. péssica > *pęsca > pesche > pêche ; cŏllŏcat > *colcat > colchet > couche
+]
+[t-\S] > [S]
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: !K_Anlaut_qu_1
+	Oder-Vorbedingung: K_Palatal_7, K_Palatal_7(II)
+	}
+
+[
+Id: K_Anlaut_qu_1
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §422, §538 (I: 171, 212)
+Entwicklung: qu- > k- = k-
+Beispiel: quōmŏdō > vlat. quōmō > com ; quŏttīdĭānu > cŏttīdĭānu > cotidiien > quotidien ; quăttŭŏr > vlat. quăttŏr > quatre > quatre ; quārē > quer, quar, car > car ; quāle > quel ; quaesīta > vlat. qų́esẹta > queste > quête ; quĕrēl(l)a > querele > querelle ; quĭētu > vlat. quētu > queit > coi ; quĭrītāre > vlat. *k(e)ritare > crider > crier ; quĭd > que ; quī > qui ; quīntu > quint
+]
+[k_w] > [k]
+	{
+	Zeit: -100--600
+	Linker Kontext: [#, $K_PH]
+	}
+
+################################################
+# in nachkonsonantischer Stellung
+################################################
+    
+[
+Id: K_nachkons_1
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §482 (I: 195)
+Entwicklung: sk vor i od. e > s̃ > i̯s > ...
+Beispiel: pĭscīna > *pẹs̃ine > peissine > poissine ; crēscis > creis > crois ; vāscĕllu > vaissel > vaisseau ; nāscĕntĭa > naissance
+]
+[sk] > [s_j] ; <sc> > <s>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [i, e, E]
+	}
+
+[
+Id: K_nachkons_1(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §482, §523, §530 (I: 195, 207, 209)
+Entwicklung: sk vor i od. e > s̃ > i̯s > ... ; sti̯ (stχ) > si̯ (sχ) > s̃ > i̯s > ... ; ski̯ (skχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: pĭscīna > *pẹs̃ine > peissine > poissine ; crēscis > creis > crois ; vāscĕllu > vaissel > vaisseau ; nāscĕntĭa > naissance ; ăngŭstĭa > angoisse ; ōstĭu > vlat. ūstĭu > uis > huis ; *frŭstĭāre > froissier > froisser
+]
+[s_j] > [i_^s] ; <s> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_nachkons_11(II)
+	Oder-Vorbedingung: K_nachkons_1
+	}
+
+[
+Id: K_nachkons_2a
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §498 (I: 200)
+Entwicklung: li̯ > ɫ > i̯
+Beispiel: fīlĭa > fiɫe (fille) > fii̯ᵉ ; mĕlĭōre > meɫọur (meillour) > męį̯ör (meilleur)
+]
+[li_^] > [l_j] ; <li> > <ll>
+[li_^] > [l_j] ; <le> > <ll>
+	{
+	Zeit: 600--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_2b
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §498 (I: 200)
+Entwicklung: li̯ > ɫ > i̯
+Beispiel: fīlĭu > fiɫ (fil) > -- ; măllĕu > maɫ (mail) > mai̯ (mail) ; cōnsĭlĭu > kõnsẹɫ (conseil) > kõsęi̯
+]
+[li_^] > [l_j] ; <li> > <l>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_nachkons_2(IIa)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §498 (I: 200)
+Entwicklung: li̯ > ɫ > i̯
+Beispiel: fīlĭa > fiɫe (fille) > fii̯ᵉ
+]
+[l_j] > [i_^]
+	{
+	Zeit: 1690--1900
+	Oder-Vorbedingung: K_nachkons_2a, K_nachkons_2b, V_Pal_18
+	Linker Kontext: [i]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_2(IIb)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §498 (I: 200)
+Entwicklung: li̯ > ɫ > i̯
+Beispiel: mĕlĭōre > meɫọur (meillour) > męį̯ör (meilleur) ; fīlĭu > fiɫ (fil) ; măllĕu > maɫ (mail) > mai̯ (mail) ; cōnsĭlĭu > kõnsẹɫ (conseil) > kõsęi̯
+]
+[l_j] > [i_^] ; <ll> > <ill>
+	{
+	Zeit: 1690--1900
+	Oder-Vorbedingung: K_nachkons_2a, K_nachkons_2b, V_Pal_18
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_3
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §502 (I: 201)
+Entwicklung: ni̯ > ñ > ñ / -ĩ̯n > ...
+Beispiel: vīnĕa > vlat. vini̯a > viñe (vigne) > viñᵉ ; sĕnĭōre > señọur (seignour) > sęñ̨ör (seigneur) ; Bŏnōnĭa > Boloñe ; Bŭrgŭndĭa > *Bọrgọni̯a > Borgoñe (Borgogne) > Bourgogne ; vĕrēcŭndĭa > *veregọni̯a > vergoñe (vergogne) > vergogne ; *rŏtŭndĭāre > *rotoni̯are > rooñier (rooignier) und reoñier (reoignier) > rogner ; tĕstĭmōnĭu > *tesmoing, tesmoign > témoin ; cŏmpānĭo > *compañ > compain (compaing, compagn) > copain ; lŏnge > *loni̯e > *loñ > loin
+]
+[ni_^] > [J]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH, #]
+	}
+
+[
+Id: K_nachkons_3(IIa)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §502 (I: 201)
+Entwicklung: ni̯ > ñ > ñ / -ĩ̯n > ...
+Beispiel: tĕstĭmōnĭu > *tesmoing, tesmoign > témoin ; cŏmpānĭo > *compañ > compain (compaing, compagn) > copain ; lŏnge > *loni̯e > *loñ > loin
+]
+[J] > [i_^n] ; <ni> > <in>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_3
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_nachkons_3(IIb)
+Name: Nachkonsonantische Konsonanten
+Entwicklung: <ni> > <gn>
+Beispiel: vīnĕa > vlat. vini̯a > viñe (vigne) > viñᵉ ; sĕnĭōre > señọur (seignour) > sęñ̨ör (seigneur) ; Bŏnōnĭa > Boloñe ; Bŭrgŭndĭa > *Bọrgọni̯a > Borgoñe (Borgogne) > Bourgogne ; vĕrēcŭndĭa > *veregọni̯a > vergoñe (vergogne) > vergogne ; *rŏtŭndĭāre > *rotoni̯are > rooñier (rooignier) und reoñier (reoignier) > rogner 
+]
+<ni> > <gn>
+<nj> > <gn>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_3
+	Rechter Kontext: [$PH]
+	}
+
+[
+Id: K_nachkons_4
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §510 (I: 203)
+Entwicklung: ri̯ > r̃ > i̯r > ...
+Beispiel: fērĭa > *fer̃a > feire > foire ; părĭa > *par̃a > paire ; dŏrmītōrĭu > dortoir ; vărĭu > vair ; rĕpătrĭāre > *repat̃r̃are > *repaidrier > repairier > repairer ; ātrĭu > *at̃r̃o > aitre ; ărbĭtrĭu > *arbẹt̃r̃o > *arveidre > arveire > arvoire ; cy̆prĕu > cŭprĕu > *cǫp̃r̃o > *cuoivre > cuivre ; ēbrĭu > *ęb̃̃r̃o > *ieivre > ivre ; ŏstrĕa > *os̃t̃r̃a > *uoistre > uistre, huistre > huître
+]
+[ri_^] > [r_j]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_4(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §510 (I: 203)
+Entwicklung: ri̯ > r̃ > i̯r > ...
+Beispiel: fērĭa > *fer̃a > feire > foire ; părĭa > *par̃a > paire ; dŏrmītōrĭu > dortoir ; vărĭu > vair ; rĕpătrĭāre > *repat̃r̃are > *repaidrier > repairier > repairer ; ātrĭu > *at̃r̃o > aitre ; ărbĭtrĭu > *arbẹt̃r̃o > *arveidre > arveire > arvoire ; cy̆prĕu > cŭprĕu > *cǫp̃r̃o > *cuoivre > cuivre ; ēbrĭu > *ęb̃̃r̃o > *ieivre > ivre ; ŏstrĕa > *os̃t̃r̃a > *uoistre > uistre, huistre > huître
+]
+[r_j] > [i_^r] ; <re> > <ir>
+[r_j] > [i_^r] ; <ri> > <ir>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_4
+	}
+
+[
+Id: K_nachkons_5
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: si̯ (sχ) > s̃ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: bāsĭat > *bas̃at > baiset (spr. ṡ) > baise ; bāsĭāre > baisier > baiser ; mānsĭōne > *masi̯one > maison ; spl. tōnsĭōne > *tosi̯one > toison ; *pĕrtūsĭu > pertuis
+]
+[si_^] > [s_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_nachkons_11
+	Spezialfall: K_nachkons_6, K_nachkons_8(II)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_5(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: si̯ (sχ) > s̃ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: bāsĭat > *bas̃at > baiset (spr. ṡ) > baise ; bāsĭāre > baisier > baiser ; mānsĭōne > *masi̯one > maison ; spl. tōnsĭōne > *tosi̯one > toison ; *pĕrtūsĭu > pertuis
+]
+[s_j] > [z_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_5
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_5(IIIa)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: si̯ (sχ) > s̃ > s̃̇ > i̯ṡ / -i̯s > ...
+]
+[z_j] > [i_^s] ; <si> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_5(II)
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_nachkons_5(IIIb)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: si̯ (sχ) > s̃ > s̃̇ > i̯ṡ / -i̯s > ...
+]
+[z_j] > [i_^z] ; <si> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_5(II)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_6
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: ssi̯ (ssχ) > s͠s > i̯s > ...
+Beispiel: *băssĭāre > *bas͠sare > afrz. baissier (spr. s) > baisser ; mĕssĭōne > meisson > moisson
+]
+[ssi_^] > [s_j:]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_6(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §516 (I: 204)
+Entwicklung: ssi̯ (ssχ) > s͠s > i̯s > ...
+Beispiel: *băssĭāre > *bas͠sare > afrz. baissier (spr. s) > baisser ; mĕssĭōne > meisson > moisson
+]
+[s_j:] > [i_^s] ; <ssi> > <iss>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_6
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_7
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: rătĭōne > *ratsi̯one > *ras̃̇one > raiṡõn (raison) > raison ; vēnātĭōne > veneison > venaison ; spl. prĕtĭāre > preisier (spr. ṡ) > priser ; spl. prĕtĭat > *prieiset > priset > prise ; spl. prĕtĭet > prieist > prist (spr. s) > prise ; Vĕnĕtĭa > *Venieise > Venise ; *prōdĭtĭa > proeise ; *rīki̯-ĭtĭa > richise ; prĕtĭu > *prieis > pris (spr. s) > prix ; pălātĭu > palais (spr. s)
+]
+[t] > [t-\s]
+	{
+	Zeit: 201--500
+	Spezialfall: K_nachkons_8, K_nachkons_9
+	Rechter Kontext: [i_^ $V_PH]
+	}
+
+[
+Id: K_nachkons_7(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: rătĭōne > *ratsi̯one > *ras̃̇one > raiṡõn (raison) > raison ; vēnātĭōne > veneison > venaison ; spl. prĕtĭāre > preisier (spr. ṡ) > priser ; spl. prĕtĭat > *prieiset > priset > prise ; spl. prĕtĭet > prieist > prist (spr. s) > prise ; Vĕnĕtĭa > *Venieise > Venise ; *prōdĭtĭa > proeise ; *rīki̯-ĭtĭa > richise ; prĕtĭu > *prieis > pris (spr. s) > prix ; pălātĭu > palais (spr. s)
+]
+[t-\si_^] > [t-\s_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_7
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_7(III)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: rătĭōne > *ratsi̯one > *ras̃̇one > raiṡõn (raison) > raison ; vēnātĭōne > veneison > venaison ; spl. prĕtĭāre > preisier (spr. ṡ) > priser ; spl. prĕtĭat > *prieiset > priset > prise ; spl. prĕtĭet > prieist > prist (spr. s) > prise ; Vĕnĕtĭa > *Venieise > Venise ; *prōdĭtĭa > proeise ; *rīki̯-ĭtĭa > richise ; prĕtĭu > *prieis > pris (spr. s) > prix ; pălātĭu > palais (spr. s)
+]
+[t-\s_j] > [d-\z_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_7(II)
+	Rechter Kontext: [$V_PH, #]
+	}
+
+[
+Id: K_nachkons_7(IV)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: rătĭōne > *ratsi̯one > *ras̃̇one > raiṡõn (raison) > raison ; vēnātĭōne > veneison > venaison ; spl. prĕtĭāre > preisier (spr. ṡ) > priser ; spl. prĕtĭat > *prieiset > priset > prise ; spl. prĕtĭet > prieist > prist (spr. s) > prise ; Vĕnĕtĭa > *Venieise > Venise ; *prōdĭtĭa > proeise ; *rīki̯-ĭtĭa > richise ; prĕtĭu > *prieis > pris (spr. s) > prix ; pălātĭu > palais (spr. s)
+]
+[d-\z_j] > [z_j] ; <ti> > <si>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_7(III)
+	Rechter Kontext: [$V_PH, #]
+	}
+
+[
+Id: K_nachkons_7(Va)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: spl. prĕtĭet > prieist > prist (spr. s) > prise ; prĕtĭu > *prieis > pris (spr. s) > prix ; pălātĭu > palais (spr. s)
+]
+[z_j] > [i_^s] ; <si> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_7(IV)
+	Rechter Kontext: [#, $K_PH]
+	}
+
+[
+Id: K_nachkons_7(Vb)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §519 (I: 206)
+Entwicklung: ti̯ (tχ) > tsi̯ (tsχ) > t͠s > d͠ṡ > s̃̇ > i̯ṡ / -i̯s > ...
+Beispiel: rătĭōne > *ratsi̯one > *ras̃̇one > raiṡõn (raison) > raison ; vēnātĭōne > veneison > venaison ; spl. prĕtĭāre > preisier (spr. ṡ) > priser ; spl. prĕtĭat > *prieiset > priset > prise ; Vĕnĕtĭa > *Venieise > Venise ; *prōdĭtĭa > proeise ; *rīki̯-ĭtĭa > richise
+]
+[z_j] > [i_^z] ; <si> > <is>
+[z_j] > [i_^z] ; <ti> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_7(IV)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_8
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §523 (I: 207)
+Entwicklung: sti̯ (stχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: ăngŭstĭa > angoisse ; ōstĭu > vlat. ūstĭu > uis > huis ; *frŭstĭāre > froissier > froisser
+]
+[sti_^] > [si_^] ; <sti> > <si>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_8(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §523 (I: 207)
+Entwicklung: sti̯ (stχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: ăngŭstĭa > angoisse ; ōstĭu > vlat. ūstĭu > uis > huis ; *frŭstĭāre > froissier > froisser
+]
+[si_^] > [s_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_8
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_8(III)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §523 (I: 207)
+Entwicklung: sti̯ (stχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: ăngŭstĭa > angoisse ; ōstĭu > vlat. ūstĭu > uis > huis ; *frŭstĭāre > froissier > froisser
+]
+[s_j] > [i_^s] ; <si> > <iss>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_8(II)
+	}
+
+[
+Id: K_nachkons_9
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §524 (I: 208)
+Entwicklung: z.B. pti̯ (ptχ) > ptsi̯ (ptsχ) > pts > ts > s
+Beispiel: nŭptĭas > *nǫpti̯as > noces ; *căptĭāre > chacier > chasser ; rĕdĕmptĭōne > *redencon (spr. ts) > reencon (spr. ts), reancon (spr. ts), reanson, raencon (spr. ts, s) > rançon ; *trăctĭat > tracet > trace ; lēctĭōne > lecon > leçon ; Martĭu > marz > mars ; căntĭōne > chancon > chanson ; *ăltĭāre > alcier, halcier > haucier > hausser
+]
+[ti_^] > [t-\si_^] ; <ti> > <zi>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH_NICHT_s]
+	}
+
+[
+Id: K_nachkons_9(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §524 (I: 208)
+Entwicklung: z.B. pti̯ (ptχ) > ptsi̯ (ptsχ) > pts > ts > s
+]
+[t-\si_^] > [t-\s] ; <zi> > <z>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_9
+	Linker Kontext: [$K_PH_NICHT_s]
+	}
+
+[
+Id: K_nachkons_9(III)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §524 (I: 208)
+Entwicklung: z.B. pti̯ (ptχ) > ptsi̯ (ptsχ) > pts > ts > s
+]
+[$K_PH_NICHT_lnr] > [] ; <$K_GR_NICHT_lnr> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_9(II)
+	Rechter Kontext: [t-\s]
+	}
+
+[
+Id: K_nachkons_9(IV)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §524 (I: 208)
+Entwicklung: z.B. pti̯ (ptχ) > ptsi̯ (ptsχ) > pts > ts > s
+]
+[t-\s] > [s]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: K_nachkons_9(II), K_nachkons_9(III), K_nachkons_10(II)
+	}
+
+[
+Id: K_nachkons_10
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §527 (I: 209)
+Entwicklung: ki̯ (kχ) > tχ (> tʃ) > ts > s
+Beispiel: vlat. făcĭa > *faki̯a > *fakχa > *fatχa > fatse (face) > face ; brăcchĭu > braki̯u > brats (braz) > bras ; lăncĕa > *laŋki̯a > lãntse (lance) > lance ; *ărcĭōne > *arki̯one > artsõn (arcon) > arçon
+]
+[ki_^] > [tC]
+	{
+	Zeit: 601--1100
+	Spezialfall: K_nachkons_11
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_10(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §527 (I: 209)
+Entwicklung: ki̯ (kχ) > tχ (> tʃ) > ts > s
+Beispiel: vlat. făcĭa > *faki̯a > *fakχa > *fatχa > fatse (face) > face ; brăcchĭu > braki̯u > brats (braz) > bras ; lăncĕa > *laŋki̯a > lãntse (lance) > lance ; ărcĭōne > *arki̯one > artsõn (arcon) > arçon
+]
+[tC] > [t-\s]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_10
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_11
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §530 (I: 209)
+Entwicklung: ski̯ (skχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: făscĭa > *faski̯a > *fasi̯a (*fasχa) > *fas̃a > faisse ; *pĭscĭōne > peisson > poisson
+]
+[ski_^] > [si_^] ; <sci> > <si>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_11(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §530 (I: 209)
+Entwicklung: ski̯ (skχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: făscĭa > *faski̯a > *fasi̯a (*fasχa) > *fas̃a > faisse ; *pĭscĭōne > peisson > poisson
+]
+[si_^] > [s_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_11
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_11(III)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §530 (I: 209)
+Entwicklung: ski̯ (skχ) > si̯ (sχ) > s̃ > i̯s > ...
+Beispiel: făscĭa > *faski̯a > *fasi̯a (*fasχa) > *fas̃a > faisse ; *pĭscĭōne > peisson > poisson
+]
+[s_j] > [i_^s] ; <si> > <iss>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_11(II)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_12
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §531 (I: 210)
+Entwicklung: bi̯ = b-i̯ > b-di̯ > dʒ > ʒ ; vi̯ = v-i̯ > v-di̯ > dʒ > ʒ ; mi̯ = m-i̯ > m-di̯ > ndʒ > dʒ > ʒ ; pi̯ = p-i̯ > p-tχ > tʃ > ʃ
+Beispiel: tībĭa > *tib-i̯a > *tib-di̯e > tidʒe (tige) > tige ; rŭbĕu > *rọb-i̯o > *rọb-di̯e > rọdʒe (roge, roje) > rouge ; căvĕa > kadʒe (cage) > cage ; sĕrvĭĕnte > vlat. *servi̯ante > serdʒãnt (serjant, sergent) > sergent ; Dīvĭōne > Dijon ; sīmĭu > *sim-di̯e > singe ; cŏmmĕātu > congiet > congé ; sēpĭa > *sep-ĭa > *sep-tχa > setʃe (seche) > seiche
+]
+[b] > [bd]
+[v] > [vd]
+[m] > [md]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [i_^ $V_PH]
+	}
+
+[
+Id: K_nachkons_12(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §531 (I: 210)
+Entwicklung: bi̯ = b-i̯ > b-di̯ > dʒ > ʒ ; vi̯ = v-i̯ > v-di̯ > dʒ > ʒ ; mi̯ = m-i̯ > m-di̯ > ndʒ > dʒ > ʒ ; pi̯ = p-i̯ > p-tχ > tʃ > ʃ
+Beispiel: tībĭa > *tib-i̯a > *tib-di̯e > tidʒe (tige) > tige ; rŭbĕu > *rọb-i̯o > *rọb-di̯e > rọdʒe (roge, roje) > rouge ; căvĕa > kadʒe (cage) > cage ; sĕrvĭĕnte > vlat. *servi̯ante > serdʒãnt (serjant, sergent) > sergent ; Dīvĭōne > Dijon ; sīmĭu > *sim-di̯e > singe ; cŏmmĕātu > congiet > congé ; sēpĭa > *sep-ĭa > *sep-tχa > setʃe (seche) > seiche ; spl. ăpprŏpĭāre > aprochier > approcher
+]
+[bdi_^] > [d-\Z] ; <be> > <g>
+[bdi_^] > [d-\Z] ; <bi> > <g>
+[vdi_^] > [d-\Z] ; <vi> > <g>
+[mdi_^] > [nd-\Z] ; <mi> > <ng>
+[ptC] > [t-\S] ; <pi> > <ch>
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_nachkons_12, K_nachkons_13
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_12(III)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §531 (I: 210)
+Entwicklung: mi̯ = m-i̯ > m-di̯ > ndʒ > dʒ > ʒ
+Beispiel: sīmĭu > *sim-di̯e > singe ; cŏmmĕātu > congiet > congé
+]
+[nd-\Z] > [d-\Z]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_nachkons_12(II)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_12(IV)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §531 (I: 210)
+Entwicklung: bi̯ = b-i̯ > b-di̯ > dʒ > ʒ ; vi̯ = v-i̯ > v-di̯ > dʒ > ʒ ; mi̯ = m-i̯ > m-di̯ > ndʒ > dʒ > ʒ ; pi̯ = p-i̯ > p-tχ > tʃ > ʃ
+Beispiel: tībĭa > *tib-i̯a > *tib-di̯e > tidʒe (tige) > tige ; rŭbĕu > *rọb-i̯o > *rọb-di̯e > rọdʒe (roge, roje) > rouge ; căvĕa > kadʒe (cage) > cage ; sĕrvĭĕnte > vlat. *servi̯ante > serdʒãnt (serjant, sergent) > sergent ; Dīvĭōne > Dijon ; sīmĭu > *sim-di̯e > singe ; cŏmmĕātu > congiet > congé ; sēpĭa > *sep-ĭa > *sep-tχa > setʃe (seche) > seiche ; spl. ăpprŏpĭāre > aprochier > approcher
+]
+[d-\Z] > [Z]
+[t-\S] > [S]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: K_nachkons_12(II), K_nachkons_12(III)
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_13
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §531 (I: 210)
+Entwicklung: pi̯ = p-i̯ > p-tχ > tʃ > ʃ
+Beispiel: sēpĭa > *sep-ĭa > *sep-tχa > setʃe (seche) > seiche ; spl. ăpprŏpĭāre > aprochier > approcher
+]
+[i_^] > [tC]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [p]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_nachkons_14
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §538 (I: 212)
+Entwicklung: (Kons.) gu̯ = gu̯ > g = g
+Beispiel: lĭngŭa > lengu̯e > lenge (lengue) > langue ; spl. săngŭīnu > sangin (spr. g, 12. Jh.) > sanguin ; ŭngŭĕntu > onguent
+]
+[g_w] > [g]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH]
+	}
+
+[
+Id: K_nachkons_15
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §537 (I: 212)
+Entwicklung: (Kons.) qu > ku̯ > k = k
+Beispiel: ŭnquam > afrz. onke, onque, onques > nfrz. onques
+]
+[k_w] > [ku_^]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH]
+	}
+
+[
+Id: K_nachkons_15(II)
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §537 (I: 212)
+Entwicklung: (Kons.) qu > ku̯ > k = k
+Beispiel: ŭnquam > afrz. onke, onque, onques > nfrz. onques
+]
+[ku_^] > [k]
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_nachkons_15
+	}
+
+[
+Id: K_nachkons_16
+Name: Nachkonsonantische Konsonanten
+Rheinfelder-Id: §541 (I: 212)
+Entwicklung: (Kons.) qu > ku̯ > k = k
+Beispiel: antiqua > antive > -
+]
+[du_^] > [v]
+[nu_^] > [v]
+[ku_^] > [v]
+	{
+	Zeit: 601--1100
+	}
+
+
+################################################
+# in vorkonsonantischer Stellung
+################################################
+
+[
+Id: K_vorkons_1
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §552 (I: 217)
+Entwicklung: t,d vor Kons. > -
+Beispiel: ăddēnsāre > *adesare > adeser ; *ăddōnāre se > s'adoner > s'adonner ; mĭttat > mẹtet > mette ; mĭttĕre > mẹtre > mettre ; mĭttit > mẹt > met ; gŭtta > gọte > goutte ; pēdĭtu > pẹt > pet , nĭtĭda > nẹte > nette ; plătănu > *pladnun > plane ; vlat. ădmīrāre > amirer > admirer ; ădvĕnīre > avenir > advenir , mŏdŭlu > *modle > mole > moule ; spl. rŏtŭlu > *rodle > rolle, role > rôle ; vĕtŭlu > vęclu ; spl. rādīcīna > *radtχina > ratsine (racine) > racine
+]
+[d] > [] ; <d> > <>
+[t] > [] ; <t> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_vorkons_2, !K_Gleitkons_2
+	Spezialfall: K_vorkons_2, K_vorkons_2(II), K_vorkons_3
+	Früher: V_Haupt_o_2
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_vorkons_2
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §555 (I: 218)
+Entwicklung: tr > dr > (r)r > r = r ; tr > dr > (r)r > r = r 
+Beispiel: pătre > pedre > perre, pere > père ; pĕtra > *piedre > pierre, piere > pierre
+]
+[t] > [d] ; <t> > <d>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_vorkons_1
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_vorkons_2(II)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §555 (I: 218)
+Entwicklung: tr > dr > (r)r > r = r ; tr > dr > (r)r > r = r 
+Beispiel: quădrātu > *quadret > quarré  > carré ; claudĕre > *clodre > clorre > clore ; hĕdĕra > edre, iedre > ierre, iere > lierre ; pătre > pedre > perre, pere > père ; pĕtra > *piedre > pierre, piere > pierre
+]
+[d] > [r] ; <d> > <r>
+[D] > [r] ; <d> > <r>
+	{
+	Zeit: 601--1110
+	Und-Vorbedingung: !K_Gleitkons_2
+	Linker Kontext: [$V_PH_ORAL]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_vorkons_2(III)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §555 (I: 218)
+Entwicklung: tr > dr > (r)r > r = r ; tr > dr > (r)r > r = r 
+Beispiel: quădrātu > *quadret > quarré  > carré ; claudĕre > *clodre > clorre > clore ; hĕdĕra > edre, iedre > ierre, iere > lierre ; pătre > pedre > perre, pere > père ; pĕtra > *piedre > pierre, piere > pierre
+]
+[r] > [] ; <r> > <>
+	{
+	Zeit: 601--1110
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_vorkons_3
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §556 (I: 218)
+Entwicklung: d-s > ts > ss > s > - ; t-s > ts > ss > s > -
+Beispiel: ămātis > *amádes > *ameds > amets (amez) > amés > amé > aimez (Anal.) ; audis > ots (oz) > os > o (oz) ; vĭdes > veits (veiz) > voiz > vois vu̯ę (vois) > vois
+]
+[Ds] > [t-\s] ; <ds> > <z>
+[ds] > [t-\s] ; <ds> > <z>
+[t-\s] > [t-\s] ; <ts> > <z>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_3(II)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §556 (I: 218)
+Entwicklung: d-s > ts > ss > s > - ; t-s > ts > ss > s > -
+Beispiel: ămātis > *amádes > *ameds > amets (amez) > amés > amé > aimez ; audis > ots (oz) > os > o (oz) ; vĭdes > veits (veiz) > voiz > vois vu̯ę (vois) > vois
+]
+[t-\s] > [ss] ; <z> > <s>
+	{
+	Zeit: 1190--1300
+	Oder-Vorbedingung: K_vorkons_3, K_Gleitkons_5
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_3(III)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §556 (I: 218)
+Entwicklung: d-s > ts > ss > s > - ; t-s > ts > ss > s > -
+Beispiel: ămātis > *amádes > *ameds > amets (amez) > amés > amé > aimez ; audis > ots (oz) > os > o (oz) ; vĭdes > veits (veiz) > voiz > vois vu̯ę (vois) > vois
+]
+[ss] > [s]
+	{
+	Zeit: 1190--1300
+	Und-Vorbedingung: K_vorkons_3(II)
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_3(IV)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §556 (I: 218)
+Entwicklung: d-s > ts > ss > s > - ; t-s > ts > ss > s > -
+Beispiel: ămātis > *amádes > *ameds > amets (amez) > amés > amé > aimez ; audis > ots (oz) > os > o (oz) ; vĭdes > veits (veiz) > voiz > vois vu̯ę (vois) > vois
+]
+[s] > []
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: K_vorkons_3(III)
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_4a
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §557 (I: 219)
+Entwicklung: ss > s = s
+Beispiel: fŏssa > fose (fosse) > fosse
+]
+[ss] > [s]
+	{
+	Zeit: 601--1100
+	Früher: V_Haupt_O_2
+	Spezialfall: K_vorkons_4b
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_4b
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §557 (I: 219)
+Entwicklung: ss > s = s
+Beispiel: lăssu > las
+]
+[ss] > [s] ; <ss> > <s>
+	{
+	Zeit: 601--1100
+	Früher: V_Haupt_O_2
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_vorkons_5
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §557 (I: 219)
+Entwicklung: s vor stimmhaft. Kons. > - 
+Beispiel: īnsŭla > ísola > isle > iṡle > ile > île ; măscŭlu > *maslu > masle > male > mâle ; blăsphēmāre > *blasmare > blasmer > blamer > blâmer ; ăsĭnu > asne > ane > âne
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: 1040--1060
+	Früher: V_Haupt_a_2(II)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_STIMMH]
+	}
+
+[
+Id: K_vorkons_6
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §557 (I: 219)
+Entwicklung: s vor stimmlos. Kons. = s > -
+Beispiel: fĕsta > feste > fete > fête ; căstĕllu > chastel > chateau > château
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: 1201--1300
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_STIMML]
+	}
+
+[
+Id: K_vorkons_7
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §564 (I: 221)
+Entwicklung: bb > b = b ; pp > p = p
+Beispiel: ăbbāte > abet > abbé ; cŭppa > cope > coupe ; cĭppu > cep
+]
+[bb] > [b] ; <bb> > <b>
+[pp] > [p] ; <pp> > <p>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_8
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §565 (I: 222)
+Entwicklung: pr > br > vr = vr ; br > vr = vr
+Beispiel: căpra > *cabra > chievre > chèvre ; ŏpĕra > *ǫbra > ueuvre > œuvre
+]
+[p] > [b] ; <p> > <b>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_vorkons_8(II)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §565 (I: 222)
+Entwicklung: pr > br > vr = vr ; br > vr = vr
+Beispiel: căpra > *cabra > chievre > chèvre ; ŏpĕra > *ǫbra > ueuvre > œuvre ; fĕbre > fievre > fièvre ; lăbra > levre > lèvre
+]
+[b] > [v] ; <b> > <v>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH_ORAL]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_vorkons_9
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §566 (I: 222)
+Entwicklung: pl > bl = bl
+Beispiel: dŭplu > doble > double ; pŏpŭlu > pueble ; ĕbŭlu > ieble > hièble, yèble ; căry̆ó̆phy̆llu > *garóf(i)lu > gerofle > girofle
+]
+[p] > [b] ; <p> > <b>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [l]
+	}
+
+[
+Id: K_vorkons_10
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §567 (I: 222)
+Entwicklung: p, b, f, v vor Kons. > -
+Beispiel: rŭpta > rote > route ; băptĭsmu > batesme > baptême ; căpsa > chasse > châsse ; nĕpōs > nies ; sŭbtīle > sotil ; tĕpĭdu > *ti̯ébedo > *tiebde > tiede > tiède ; dēbĭta > *dẹbta > *dẹpte > dete > dette ; Stĕphănu > Estiefne (Estevre) > Estiene > Étienne ; clāvis > cles
+]
+[p] > [] ; <p> > <>
+[b] > [] ; <b> > <>
+[f] > [] ; <f> > <>
+[u_^] > [] ; <v> > <>
+[B] > [] ; <p> > <>
+	{
+	Zeit: 601--1100
+	Früher: V_Haupt_e_2, V_Haupt_o_2
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_NICHT_lr]
+	}
+
+[
+Id: K_vorkons_11
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §678 (I: 225)
+Entwicklung: n vor Labial > m > -
+Beispiel: īnfāns > vlat. *infas > enfes > emfes ; īnfănte > enfant > emfant > enfant ; ĭnde pŏrtāre > en porter > emporter
+]
+[n] > [m]
+	{
+	Zeit: 601--1100
+	Spezialfall: K_vorkons_13, K_vorkons_14
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_LABIAL]
+	}
+
+[
+Id: K_vorkons_12
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §579 (I: 225)
+Entwicklung: m vor Dental > n > -
+Beispiel: cŏmes > cuoms > cuens, quens ; cŏmĭte > comte > conte > comte ; spl. cŏmpŭtu > com(p)te > conte ; prīmu tĕmpus > printem(p)s > printens > printemps
+]
+[m] > [n]
+	{
+	Zeit: 601--1100
+	Spezialfall: K_vorkons_13, K_vorkons_14
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_DENTAL]
+	}
+
+[
+Id: K_vorkons_13
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §580, §670 (I: 225, 253)
+Entwicklung: nm > mm > m = m ; mn > mm > m = m
+Beispiel: ănĭma > anme, amme, ame > âme ; vlat. ĭnde mĭnāre > en mener > emmener ; sŏmnu > some > somme, some > somme ; fēmĭna > femne > fem(m)e (spr. fẽme) > fem(m)e (spr. fãme) > femme (spr. famᵉ) ; sēmĭnāre > *semnare > afrz. semer, samer (ẽ  > ã) > semer ; tĕrmĭnu > *termne > terme ; gĕrmināre > germer ; spl. cărmĭnāre > charmer
+]
+[nm] > [mm] ; <nm> > <mm>
+[mn] > [mm] ; <mn> > <mm>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH, #]
+	}
+
+[
+Id: K_vorkons_14
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §580 (I: 226)
+Entwicklung: mm > m = m ; nn > n = n
+Beispiel: sŭmma > somme, some > somme ; flămma > flamme, flame > flamme ; pĭnna > penne, pene, panne, pane > penne, panne
+]
+[mm] > [m]
+[nn] > [n]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_15a
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §585 (I: 228)
+Entwicklung: g, k, i̯, germ. h vor Kons. ≥ i̯ > ...
+Beispiel: frăgrāre > vlat. flagrare > flairier > flairer ; săcrāmĕntu > sairement > serement > serment ; făctu > fait ; nŏcte > *nu̯oi̯t > nuit ; frăxĭnu > fraisne > frêne ; lăxāre > laissier > laisser ; sĕx > *si̯ei̯s > sis > six ; ĕxīre > eissir ; lĕgĕre > *li̯ei̯re > lire ; vlat. lĭcĕre > leire > loire ; dīcĕre > *dicre > dire ; făcĕre > *facre > faire ; făcĭmus > *facmus > faimes ; pĕior > ṕ̨ei̯or > *pi̯ei̯re > pire
+]
+[g] > [i_^] ; <g> > <i>
+[k] > [i_^] ; <c> > <i>
+[k] > [i_^] ; <x> > <is>
+[i_^] > [i_^] ; <j> > <i>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_nachkons_7(Vb)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_NICHT_ln $V_PH]
+	}
+
+[
+Id: K_vorkons_15b
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §585 (I: 228)
+Entwicklung: g, k, i̯, germ. h vor Kons. ≥ i̯ > ...
+Beispiel: frăgrāre > vlat. flagrare > flairier > flairer ; săcrāmĕntu > sairement > serement > serment ; făctu > fait ; nŏcte > *nu̯oi̯t > nuit ; frăxĭnu > fraisne > frêne ; lăxāre > laissier > laisser ; sĕx > *si̯ei̯s > sis > six ; ĕxīre > eissir ; lĕgĕre > *li̯ei̯re > lire ; vlat. lĭcĕre > leire > loire ; dīcĕre > *dicre > dire ; făcĕre > *facre > faire ; făcĭmus > *facmus > faimes ; pĕior > ṕ̨ei̯or > *pi̯ei̯re > pire
+]
+[g] > [i_^] ; <g> > <i>
+[k] > [i_^] ; <c> > <i>
+[k] > [i_^] ; <x> > <i>
+[i_^] > [i_^] ; <j> > <i>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_nachkons_7(Vb)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH_NICHT_ln #]
+	}
+
+[
+Id: K_vorkons_16
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §594 (I: 233)
+Entwicklung: kl > gl > ɫ > i̯ ; gl > ɫ > i̯ ; (i̯l) > ɫ > i̯
+Beispiel: aurĭcŭla > vlat. *orẹ́cla > *orẹ́gla > orẹɫe (oreille) > oŕ̨ei̯ᵉ (oreille) ; vĕrmĭcŭlu > vermẹɫ (vermeil) > verḿ̨ei̯ ; vĕtŭlu > vęclu > vi̯eɫ (vieil) > vi̯ęi̯
+]
+[k] > [g] ; <c> > <g>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [l]
+	}
+
+[
+Id: K_vorkons_17
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §594 (I: 233)
+Entwicklung: kl > gl > ɫ > i̯ ; gl > ɫ > i̯
+Beispiel: aurĭcŭla > vlat. *orẹ́cla > *orẹ́gla > orẹɫe (oreille) > oŕ̨ei̯ᵉ (oreille) ; vĭgĭlare > veɫier (veillier) > vęi̯ẹ́ (veiller) ; vĕrmĭcŭlu > vermẹɫ (vermeil) > verḿ̨ei̯ ; vĕtŭlu > vęclu > vi̯eɫ (vieil) > vi̯ęi̯
+]
+[gl] > [l_j] ; <gl> > <ll>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_18
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §594 (I: 233)
+Entwicklung: (i̯l) > ɫ > i̯
+Beispiel: băiŭlāre > baɫier (baillier) > bai̯ẹ́ (bailler)
+]
+[i_^l] > [l_j] ; <il> > <ill>
+	{
+	Zeit: 600--1100
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_18(II)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §594 (I: 233)
+Entwicklung: kl > gl > ɫ > i̯ ; gl > ɫ > i̯ ; (i̯l) > ɫ > i̯
+Beispiel: urĭcŭla > vlat. *orẹ́cla > *orẹ́gla > orẹɫe (oreille) > oŕ̨ei̯ᵉ (oreille) ; vĭgĭlare > veɫier (veillier) > vęi̯ẹ́ (veiller) ; vĕrmĭcŭlu > vermẹɫ (vermeil) > verḿ̨ei̯ ; vĕtŭlu > vęclu > vi̯eɫ (vieil) > vi̯ęi̯ ; băiŭlāre > baɫier (baillier) > bai̯ẹ́ (bailler)
+]
+[l_j] > [i_^]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: K_vorkons_17, K_vorkons_18
+	Linker Kontext: [$V_PH]
+	}
+
+[
+Id: K_vorkons_19
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §597 (I: 234)
+Entwicklung: kn > gn > ŋn > ñ > ñ / ĩn
+Beispiel: pĕctĭne > *pęcne > *pieñe, *pieñei > pigne > peigne
+]
+[k] > [g] ; <c> > <g>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [n]
+	}
+
+[
+Id: K_vorkons_20
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §597 (I: 234)
+Entwicklung: kn > gn > ŋn > ñ > ñ / ĩn ; gn > ŋn > ñ > ñ / ĩn 
+Beispiel: dĭgnat > dẹñet (deignet) > dęñᵉ (daigne) ; vlat. *īnsĭgnāre > ẽnsẹñier (enseignier) > enseigner ; pŭgnu > *pọñ > poi̯n > poing ; sīgnu > *sẹñ > sei̯n > seing ; pĕctĭne > *pęcne > *pieñe, *pieñei > pigne > peigne
+]
+[g] > [J] ; <g> > <ig>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [n]
+	}
+
+[
+Id: K_vorkons_20(II)
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §597 (I: 234)
+Entwicklung: kn > gn > ŋn > ñ > ñ / ĩn ; gn > ŋn > ñ > ñ / ĩn
+Beispiel: dĭgnat > dẹñet (deignet) > dęñᵉ (daigne) ; vlat. *īnsĭgnāre > ẽnsẹñier (enseignier) > enseigner ; pŭgnu > *pọñ > poi̯n > poing ; signu > *sẹñ > sei̯n > seing ; pĕctĭne > *pęcne > *pieñe, *pieñei > pigne > peigne
+]
+[n] > []
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_vorkons_20
+	Linker Kontext: [$V_PH J]
+	}
+
+[
+Id: K_vorkons_21
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §604 (I: 236)
+]
+[ll] > [l] ; <ll> > <l>
+	{
+	Zeit: 601--1100
+	}
+
+[
+Id: K_vorkons_22
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §602 (I: 235)
+Entwicklung: l vor Kons. > u̯ (i̯, ü̯) > ...
+]
+[l] > [u_^] ; <l> > <u>
+	{
+	Zeit: 601--1200
+	Früher: K_zwischenkons_1, K_Gleitkons_2
+	Spezialfall: K_nachkons_2a
+	Linker Kontext: [$V_PH_NICHT_iy]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_vorkons_23
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §602 (I: 235)
+Entwicklung: l vor Kons. > u̯ (i̯, ü̯) > ...
+Beispiel: fīlĭus > filz > fils > fi > fis (fils) ; gĕntīles > gentils > gentis > ʒɔ̃tí (gentils)
+]
+[l] > [i_^]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [i]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_vorkons_24
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §602 (I: 235)
+Entwicklung: l vor Kons. > u̯ (i̯, ü̯) > ...
+Beispiel: vlat. pūlĭcĕlla > pulcele > pucele > pucelle ; pūlĭce > pulce > puce ; nūllus > nuls > nus ; cūlos > culs > cus > kü (culs)
+]
+[l] > [H]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [y]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_vorkons_25
+Name: Vorkonsonantische Konsonanten
+Rheinfelder-Id: §608 (I: 237)
+Entwicklung: r vor Kons. = r > R
+Beispiel: fŏrte > fort ; cărbōne > charbon
+]
+[r] > [R]
+	{
+	Zeit: 1601--1976
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$K_PH]
+	}
+
+################################################
+# Gleitkonsonanten
+################################################
+
+[
+Id: K_Gleitkons_1
+Name: Gleitkonsonanten
+Rheinfelder-Id: §614, §615 (I: 239)
+Entwicklung: m-l > mbl > ... ; m-r > mbr > ...
+Beispiel: vlat. *trĕmŭlat > *trémlat > tremblet > tremble ; cŭmŭlāre > *cọmláre > combler ; flămmŭla > *flámla > flamble > flambe ; cămĕra > *cámra > chambre ; spl. rĕmĕmŏrāre > *rememráre > remembrer
+]
+[] > [b] ; <> > <b>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [m]
+	Rechter Kontext: [l, r]
+	}
+
+[
+Id: K_Gleitkons_2
+Name: Gleitkonsonanten
+Rheinfelder-Id: §616, §618, §619, §620 (I: 239, 240)
+Entwicklung: n-r > ndr > ... ; l-r > ldr > ... ; ɫ-r > ldr > ... ; ṡ-r > ṡdr > ...
+Beispiel: cĭnĕre > *cẹ́nre > cendre ; ĭngĕnĕrāre > *ẹngenráre > engendrer ; mŏlĕre > *ḿ̨olre > moldre > moudre ; făllĕre *aet > *falre-áet > faldrat > faudra ; cŏrŭlu > vlat. *cŏlŭru > *ć̨olro > coldre > coudre ; pŭlvĕre > *pọlvre > *pọlre > pọldre > poudre ; mĕlĭor > *mieɫr̥ > mieldre ; cōnsŭĕre > vlat. *cọ́sere > *cọsre > cosdre (und costre) > codre > coudre ; sīcĕra > vlat. cīsĕra > *cisra > cisdre > cidre
+]
+[] > [d] ; <> > <d>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [n, l, l_j, z]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_Gleitkons_3
+Name: Gleitkonsonanten
+Rheinfelder-Id: §617 (I: 239)
+Entwicklung: ñ-r > ĩ̯ndr > ...
+Beispiel: sĕnĭor > sęñr̥ > *si̯ei̯ndre > *sindre ; iŭnior > *i̯ọñr̥ > joindre > gindre
+]
+[J] > [i_^nd] ; <n> > <ind>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_Gleitkons_4
+Name: Gleitkonsonanten
+Rheinfelder-Id: §621 (I: 240)
+Entwicklung: s-r > str > ...
+Beispiel: ĕsse > vlat. *ĕssĕre > *essre > estre > etre > être ; ăntĕcĕssor > *ancéssr̥ > ancestre > ancetre > ancêtre
+]
+[] > [t] ; <> > <t>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [s]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_Gleitkons_5
+Name: Gleitkonsonanten
+Rheinfelder-Id: §622 (I: 240)
+Entwicklung: nn-s > -nts > ...
+Beispiel: ănnos > *anns > ants (anz) > ãs > ans
+]
+[ns] > [t-\s] ; <ns> > <z>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [n]
+	}
+
+[
+Id: K_Gleitkons_6
+Name: Gleitkonsonanten
+Rheinfelder-Id: §623 (I: 241)
+Entwicklung: ñ-s > -ĩ̯nts > ...
+Beispiel: pŭgnos > *pọñs > points (poinz) > põis > poings
+]
+[J] > [i_^nt]
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [s]
+	}
+
+[
+Id: K_Gleitkons_7
+Name: Gleitkonsonanten
+Rheinfelder-Id: §624 (I: 241)
+Entwicklung: ɫ-s > -lts > ...
+Beispiel: mĕlĭus > *mieɫs > mielts (mielz) > mieus > mieux ; fīlĭus > *fiɫs > filts (filz) > fis > fils ;  ŏcŭlos > *ǫclos > *ouɫs > uolts (uolz) > uelts > ueus > ieus > yeux ; spl. trēpālĭa > trepálios > *trevaɫs > travalz > travaus > travaux
+]
+[l_js] > [lt-\s] ; <ls> > <lz>
+	{
+	Zeit: 601--1100
+	}
+
+################################################
+# zwischenkonsonantische Konsonanten
+################################################
+
+[
+Id: K_zwischenkons_1
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §629 (I: 243)
+Entwicklung: Kons. | v (verstummt) | l,r > -  
+Beispiel: sŏlvĕre > soldre > soudre ; pŭlvĕre (> *polre) > poldre > poudre ; ĭnvŏlāre > *ĭmvŏlāre > *embláre > embler
+]
+[u_^] > [] ; <v> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [l, r]
+	}
+
+[
+Id: K_zwischenkons_2
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §633 (I: 244)
+Entwicklung: Kons. | p, b, f, v (verstummt) | Kons. (nicht l,r) > -  
+Beispiel: cŏrpus > *corps > cors > corps ; hŏspĭte > *ospte > oste > hôte ; rŭmpit > ront > rompt ; cŏmpŭtu > conte ; gălbĭnu > jalne > jaune ; fŏrfĭces > forces ; sĕrvus > sers > serfs ; cĕrvus > cers > cerfs ; sălvet > salt > saut
+]
+[p] > [] ; <ph> > <>
+[p] > [] ; <p> > <>
+[b] > [] ; <b> > <>
+[f] > [] ; <f> > <>
+[v] > [] ; <v> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [$K_PH_NICHT_lr]
+	}
+
+[
+Id: K_zwischenkons_3
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §636 (I: 245)
+Entwicklung: Kons. | t, d (bewahrt) | r, s (ʃ, ʒ) > bewahrt nur vor r  
+Beispiel: căntus > chants (chanz) > chants ; fŏrtis > forts (forz) ; sŭrdus > sorts (sorz) ; vĕndis > vents (venz) > vens > vends ; mĕrcēde > mertsit (mercit) > mersi (merci) > merci ; mŭsca > mọstʃe (mosche) > muʃe (mouche) > mouche ; lŏnga >lõʒe (longe) > longue
+]
+[d] > [] ; <d> > <>
+[t] > [] ; <t> > <>
+	{
+	Zeit: 1101--1976
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [s, S, Z]
+	}
+
+[
+Id: K_zwischenkons_4
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §638 (I: 246)
+Entwicklung: Kons. | t, d (verstummt) | Kons. (nicht r, s, ʃ, ʒ) > -  
+Beispiel: quăttŭŏrdĕci(m) > vlat. *quattórdece > *quatórdetse > *quatórdedṡe > katórdṡe (quatorze) > quatorze ; pĕrdĭta > perte ; vĕndit > vent > vend ; mŏntĭcĕllu > mõn-tsél (moncel)> mõsél > monceau ; măstĭcāre > mastʃi̯er (maschier) > maʃer (macher) > mâcher ; fŏrti mĕnte > forment > fortement; blăsphēmāre >vlat. blastemáre > blasmer > blâmer ; āsthma > asme > asmᵉ ; pĕctĭne > *pęcne > *pieñe > pigne > peigne ; ōrdĭne > orne 
+]
+[d] > [] ; <d> > <>
+[t] > [] ; <th> > <>
+[t] > [] ; <t> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [$K_PH_NICHT_rsSZ]
+	}
+
+[
+Id: K_zwischenkons_5
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §647 (I: 248)
+Entwicklung: s | k, g (u, o, a) (verstummt) | l, r 
+Beispiel: măscŭlu > masle > mâle ; mŭscŭlu > mosle > moule ; *mĭscŭlāre > mesler > mêler
+]
+[k] > [] ; <c> > <>
+[g] > [] ; <g> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_vlat_6a
+	Linker Kontext: [s]
+	Rechter Kontext: [l, r]
+	}
+
+[
+Id: K_zwischenkons_6
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §651 (I: 248)
+Entwicklung: r | k, g (u, o, a) (verstummt) | sonstiger Kons. 
+Beispiel: cĭrcŭmfŏdĕre > vlat. * cercofodíre > cerfoïr > serfouir ; ărcŭbăllĭsta > arbaleste > arbalète ; pŏrcus > pors > porcs ; clērĭcus > clers > clercs
+]
+[k] > [] ; <c> > <>
+[g] > [] ; <g> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [r]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_zwischenkons_7
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §653 (I: 248)
+Entwicklung: ŋ (> ŋ̑) | k, g (u, o, a) (i̯-) | sonstiger Kons. 
+Beispiel: pŭnctu > pŭŋ̑k̑-tu > *pọñt > point ; sănctu > saint ; pĭctūra > vlat. *pĭnctūra > penture ; pīnxit > vlat. pĭnxit = pĭŋ̑k̑-sit > *pẹñst > peinst
+]
+[nk] > [J] ; <nc> > <ni>
+[nk] > [J] ; <nx> > <ns>
+[ng] > [J] ; <ng> > <ni>
+	{
+	Zeit: 601--1100
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_zwischenkons_7(II)
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643 (I: 248)
+Entwicklung: ŋ (> ŋ̑) | k, g (u, o, a) (i̯-) | sonstiger Kons. 
+Beispiel: pŭnctu > pŭŋ̑k̑-tu > *pọñt > point ; sănctu > saint ; pĭctūra > vlat. *pĭnctūra > penture ; pīnxit > vlat. pĭnxit = pĭŋ̑k̑-sit > *pẹñst > peinst
+]
+[J] > [i_^n] ; <ni> > <in>
+[J] > [i_^n] ; <ns> > <ins>
+	{
+	Zeit: 601--1100
+	Früher: K_Gleitkons_3
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_zwischenkons_8
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §656 (I: 248)
+Entwicklung: r | k̑, g̑ (i, e) (verstummt) | l
+Beispiel: mărgĭla > marle > marne
+]
+[k] > [] ; <c> > <>
+[g] > [] ; <g> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [r]
+	Rechter Kontext: [l]
+	}
+
+[
+Id: K_zwischenkons_9
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §657 (I: 248)
+Entwicklung: l, r | k̑, g̑ (i, e) (t, d) | r
+Beispiel: fŭlgĕre > *fọ́ldi̯ere > foldre > foudre ; sŭrgĕre > *sọ́rdi̯ere > sordre > sourdre ; cărcĕre > *kárk̑χere > *kχártχere > chartre ; tŏrquēre > vlat. *tọ́rkere > *t̨́ork̑χere > *t̨́ortχere > tortre > tordre
+]
+[k] > [t] ; <c> > <t>
+[g] > [d] ; <g> > <d>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [l, r]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_zwischenkons_10
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §658 (I: 248)
+Entwicklung: ŋ̑, s | k̑, g̑ (i, e) (i̯-t, i̯-d) | r
+Beispiel: fĭngĕre > fẹ́ndi̯ere > *fẹ́ñdre > feindre ; pŭngĕre > poindre ; vĭncĕre > *vẹ́ŋ̑k̑χere > *vẹ́ntχere > *vẹñtre > veintre > vaincre ; nāsci > vlat. nāscĕre > *násk̑χere > *nástχere > *nas̃tre > naistre > naître ; crēscĕre > creistre > croître
+]
+[k] > [i_^t] ; <c> > <it>
+[g] > [i_^d] ; <g> > <id>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [J, s]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_zwischenkons_11
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §660 (I: 248)
+Entwicklung: l, r | k̑, g̑ (i, e) (verstummt) | sonstiger Kons.
+Beispiel: cŭlcĭta > *kọlk̑ta > colte > coute ; cĭrcĭnu > *kẹrk̑no > cerne ; sŭrgis > *sọ́ri̯es > sors > sourds ; tĕrget > *teri̯et > tert
+]
+[k] > [] ; <c> > <>
+[g] > [] ; <g> > <>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [l, r]
+	Rechter Kontext: [r]
+	}
+
+[
+Id: K_zwischenkons_12
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §643, §663 (I: 248)
+Entwicklung: ŋ̑, s | k̑, g̑ (i, e) (i̯-) | sonstiger Kons.
+Beispiel: vĭncit > *vẹn̑kt > *vẹñt > veint > vainc ; fĭngit > *fẹñt > feint ; plăngis > *plañs > plainz > plains ; *lŏngĭtānu > *loñtáno > lointain ; crēscit > *crẹs̃t > creist > croist > croît ; fŭscĭna > *fọs̃ne > foisne > foine > foène
+]
+[k] > [i_^] ; <c> > <i>
+[g] > [i_^] ; <g> > <i>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [J, s]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_zwischenkons_13
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §665 (I: 252)
+Entwicklung: Kons. | m, n (verstummt)  | Kons.
+Beispiel: fĭrmus > ferms > fers ; vĕrmis > *verms > vers ; dŏrmit > *dormt > dort ; Ănsĕlmus > Ansels  > Anselm > Ansel > Anselme ; tŏrnet > tort ; Cărnŏtas > *Carntas > chartes > Chartres
+]
+[m] > [] ; <m> > <>
+[n] > [] ; <n> > <>
+	{
+	Zeit: 601--1100
+	Spezialfall: K_zwischenkons_14, K_zwischenkons_15
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: K_zwischenkons_14
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §668 (I: 252)
+Entwicklung: rn-s > rt-s > r(-s)
+Beispiel: *cŏrnu-s > *crons > cornts > corts (corz) > cors ; *dĭŭrnu-s > jorz > jors > jours
+]
+[ns] > [t-\s] ; <ns> > <z>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [r]
+	}
+
+[
+Id: K_zwischenkons_15
+Name: Zwischenkonsonantische Konsonanten
+Rheinfelder-Id: §669 (I: 253)
+Entwicklung: rm-r > rbr = rbr
+Beispiel: mărmor > *marmr > *marmre > marbre
+]
+[m] > [b] ; <m> > <b>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [r]
+	Rechter Kontext: [r]
+	}
+
+################################################
+# zwischenvokalische Konsonanten
+################################################
+
+[
+Id: K_zwischenvok_1
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §672 (I: 254)
+Entwicklung: s > ṡ = ṡ
+Beispiel: cāusa > chose (spr ṡ) > chose
+]
+[s] > [z]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_vorkons_4a, !K_vorkons_4b, !K_nachkons_6
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_2
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §687 (I: 259)
+Entwicklung: t > d > ᵭ > - ; d > ᵭ > - 
+Beispiel: vīta > vide  > viᵭe (vide, vidhe, vithe) > vie ; nāta > nede > neᵭe > nee > née
+]
+[t] > [d] ; <t> > <d>
+	{
+	Zeit: 401--500
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_3
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §687 (I: 259)
+Entwicklung: t > d > ᵭ > - ; d > ᵭ > - 
+Beispiel: vīta > vide  > viᵭde (vide, vidhe, vithe) > vie ; nāta > nede > neᵭe > nee > née ; vĭdēre > vedeir > veᵭeir > veeir > veoir > voir ; rĕdĕmptĭōne > redençon > reᵭençon > reençon > reançon > rançon
+]
+[d] > [D]
+	{
+	Zeit: 401--800
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_3(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §687 (I: 259)
+Entwicklung: t > d > ᵭ > - ; d > ᵭ > - 
+Beispiel: vīta > vide  > viᵭde (vide, vidhe, vithe) > vie ; nāta > nede > neᵭe > nee > née ; vĭdēre > vedeir > veᵭeir > veeir > veoir > voir ; rĕdĕmtĭōne > redençon > reᵭençon > reençon > reançon > rançon
+]
+[D] > [] ; <d> > <>
+	{
+	Zeit: 1001--1200
+	Und-Vorbedingung: K_zwischenvok_3
+	}
+
+[
+Id: K_zwischenvok_4
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §698 (I: 262)
+Entwicklung: p > b > ᵬ > v = v
+Beispiel: rīpa > *ribe > rive ; cēpa > cive ; căpĭllu > chevel > cheveu ; nĕpōte > nevout > neveu ; săpōre > savour > saveur
+]
+[p] > [b]
+	{
+	Zeit: 401--500
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_4(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §698 (I: 262)
+Entwicklung: p > b > ᵬ > v = v
+Beispiel: rīpa > *ribe > rive ; cēpa > cive ; căpĭllu > chevel > cheveu ; nĕpōte > nevout > neveu ; săpōre > savour > saveur
+]
+[b] > [B]
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_4
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_4(III)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §698 (I: 262)
+Entwicklung: p > b > ᵬ > v = v
+Beispiel: rīpa > *ribe > rive ; cēpa > cive ; căpĭllu > chevel > cheveu ; nĕpōte > nevout > neveu ; săpōre > savour > saveur
+]
+[B] > [v] ; <p> > <v>
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_4(II)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_5
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §703 (I: 263)
+Entwicklung: b (/u̯) > ᵬ > v (vor i, e, a) / - (vor ú, ó)
+Beispiel: dēbēre > deveir > devoir ; hăbēre > aveir > avoir ; făba > feve > fève ; căbăllu > cheval ; dīvīnu > devin ; ăvēna > aveine > avoine ; lăvāre > laver ; lăvat > levet > lave ; vlat. *dēbūtu > dèút > dû ; vlat. *hăbūtu > òú > èú > eu ; spl. tăbōne > tàón > taon ; rīvŭ > rīŭ > riu̯
+]
+[b] > [B]
+	{
+	Zeit: 301--500
+	Und-Vorbedingung: !K_vorkons_7, !K_zwischenvok_4
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_5(IIa)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §703 (I: 263)
+Entwicklung: b (/u̯) > ᵬ > v (vor i, e, a) / - (vor ú, ó)
+Beispiel: dēbēre > deveir > devoir ; hăbēre > aveir > avoir ; făba > feve > fève ; căbăllu > cheval ; dīvīnu > devin ; ăvēna > aveine > avoine ; lăvāre > laver ; lăvat > levet > lave
+]
+[B] > [v] ; <p> > <v>
+[B] > [v] ; <b> > <v>
+	{
+	Zeit: 600--1100
+	Und-Vorbedingung: K_zwischenvok_5
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E, @, a]
+	}
+
+[
+Id: K_zwischenvok_5(IIb)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §703 (I: 263)
+Entwicklung: b (/u̯) > ᵬ > v (vor i, e, a) / - (vor ú, ó)
+Beispiel: vlat. *dēbūtu > dèút > dû ; vlat. *hăbūtu > òú > èú > eu ; spl. tăbōne > tàón > taon ; rīvŭ > rīŭ > riu̯
+]
+[B] > [] ; <b> > <>
+	{
+	Zeit: 600--1100
+	Und-Vorbedingung: K_zwischenvok_5
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [u, o, y]
+	Betonung: "_
+	}
+
+[
+Id: K_zwischenvok_5b
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §703 (I: 263)
+Entwicklung: v > - (vor u#)
+Beispiel: °And°eg=av°um > Anjou
+]
+[v] > [] ; <v> > <>
+[B] > [] ; <b> > <>
+	{
+	Zeit: 301--500
+	Und-Vorbedingung: !K_zwischenvok_5(IIa), !K_zwischenvok_4(III)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH_OU]
+	}
+
+[
+Id: K_zwischenvok_6
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §711 (I: 266)
+Entwicklung: f > v (> -) > v, -
+Beispiel: mălĕfĭcĭu > maleviz ; spl. mălĭfātĭu > *màlevátio > malvais > mauvais; vlat. scrōfĕllas > *escroveles > escroeles > écrouelles ; spl. dēfŏris > *devors > deors > dehors
+]
+[f] > [v] ; <f> > <v>
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_6(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §711 (I: 266)
+Entwicklung: f > v (> -) > v, -
+Beispiel: vlat. scrōfĕllas > *escroveles > escroeles > écrouelles ; spl. dēfŏris > *devors > deors > dehors
+]
+[v] > [] ; <v> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_6
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+
+[
+Id: K_zwischenvok_7
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §714 (I: 267)
+Entwicklung: Vokal - k, g - (vor ú, ó) -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: sēcūru > sèúr > sûr ; vlat. *plăc-ūtu > plòút > plèú > plu ; hāc hōrā > vlat. acọ́ra > *aóra > *áu̯ra > ore, or > or
+]
+[k] > [g] ; <c> > <g>
+	{
+	Zeit: 401--500
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [u, o]
+	Betonung: "_
+	}
+
+[
+Id: K_zwischenvok_8
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §714 (I: 267)
+Entwicklung: Vokal - k, g - (vor ú, ó) -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: sēcūru > sèúr > sûr ; vlat. *plăc-ūtu > plòút > plèú > plu ; vlat. lĕg-ūtu > lèút > lu ; spl. frīgōre > *friour, freour > - ; augŭrĭu > *agūru > àǘr > èǘr > heur ; augŭstu > vlat. ăgŭstu > àóst > août ; hāc hōrā > vlat. acọ́ra > *aóra > *áu̯ra > ore, or > or
+]
+[g] > [G]
+	{
+	Zeit: 401--800
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [u, o]
+	Betonung: "_
+	}
+
+[
+Id: K_zwischenvok_8(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §714 (I: 267)
+Entwicklung: Vokal - k, g - (vor ú, ó) -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: sēcūru > sèúr > sûr ; vlat. *plăc-ūtu > plòút > plèú > plu ; vlat. lĕg-ūtu > lèút > lu ; spl. frīgōre > *friour, freour > - ; augŭrĭu > *agūru > àǘr > èǘr > heur ; augŭstu > vlat. ăgŭstu > àóst > août ; hāc hōrā > vlat. acọ́ra > *aóra > *áu̯ra > ore, or > or
+]
+[G] > [u_^]
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_8
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [u, o]
+	Betonung: "_
+	}
+
+[
+Id: K_zwischenvok_8(III)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §714 (I: 267)
+Entwicklung: Vokal - k, g - (vor ú, ó) -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: sēcūru > sèúr > sûr ; vlat. *plăc-ūtu > plòút > plèú > plu ; vlat. lĕg-ūtu > lèút > lu ; spl. frīgōre > *friour, freour > - ; augŭrĭu > *agūru > àǘr > èǘr > heur ; augŭstu > vlat. ăgŭstu > àóst > août ; hāc hōrā > vlat. acọ́ra > *aóra > *áu̯ra > ore, or > or
+]
+[u_^] > [] ; <c> > <>
+[u_^] > [] ; <g> > <>
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_8(II)
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [u, o]
+	Betonung: "_
+	}
+
+[
+Id: K_zwischenvok_9
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §727 (I: 272)
+Entwicklung: u, o, au - k, g - a -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: cărrūca > charrue ; lŏcāre > loer > louer
+]
+[k] > [g] ; <c> > <g>
+	{
+	Zeit: 401--500
+	Linker Kontext: [u, o, O, au]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_10
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §727 (I: 272)
+Entwicklung: u, o, au - k, g - a -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: cărrūca > charrue ; lŏcāre > loer > louer ; rūga > rue ; sănguĭsūga > vlat. *sănsūga > sansue > sangsue
+]
+[g] > [G]
+	{
+	Zeit: 401--800
+	Linker Kontext: [u, o, O, au]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_10(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §727 (I: 272)
+Entwicklung: u, o, au - k, g - a -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: cărrūca > charrue ; lŏcāre > loer > louer ; rūga > rue ; sănguĭsūga > vlat. *sănsūga > sansue > sangsue
+]
+[G] > [u_^]
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_10
+	Linker Kontext: [u, o, O, au]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_10(III)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §727 (I: 272)
+Entwicklung: u, o, au - k, g - a -> k > g > ǥ > u̯ > - ; g > ǥ > u̯ > -
+Beispiel: cărrūca > charrue ; lŏcāre > loer > louer ; rūga > rue ; sănguĭsūga > vlat. *sănsūga > sansue > sangsue
+]
+[u_^] > [] ; <g> > <>
+	{
+	Zeit: 401--800
+	Und-Vorbedingung: K_zwischenvok_10(II)
+	Linker Kontext: [u, o, O, au]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_11
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §733 (I: 274)
+Entwicklung: i, e, a - k, g - a -> k > g > i̯ > ... ; g > i̯ > ...
+Beispiel: ămīca > *amii̯e > amie ; pīca > *pii̯e > pie ; nĕcat > *ni̯ei̯et > niet > noie ; nĕcāre > *nei̯i̯er > neier > noiier und noier > noyer ; bāca > *baga > baie ; pācāre > *pagare > paiier > payer ; pācănte > pai̯ant > pai̯i̯ant > payant
+]
+[k] > [g] ; <c> > <g>
+	{
+	Zeit: 600--1100
+	Linker Kontext: [i, e, E, a]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_12
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §733 (I: 274)
+Entwicklung: i, e, a - k, g - a -> k > g > i̯ > ... ; g > i̯ > ...
+Beispiel: ămīca > *amii̯e > amie ; pīca > *pii̯e > pie ; nĕcat > *ni̯ei̯et > niet > noie ; nĕcāre > *nei̯i̯er > neier > noiier und noier > noyer ; bāca > *baga > baie ; pācāre > *pagare > paiier > payer ; pācănte > pai̯ant > pai̯i̯ant > payant ; căstīgat > *chastíi̯et > chastíet > châtie ; rēgāle > re-i̯al > rei̯i̯al > roiial > royal ; nĕgat > *ni̯ei̯et > niet > nie ; nĕgāre > *nei̯i̯er und neier > noiier und noier > nier ; plāga > plaie
+]
+[g] > [i_^] ; <g> > <i>
+	{
+	Zeit: 600--1100
+	Linker Kontext: [i, e, E, a]
+	Rechter Kontext: [a]
+	}
+
+[
+Id: K_zwischenvok_13
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §352, §740 (I: 142, 276)
+Entwicklung: Vokal - g - i, e -> 'g̑ > 'i̯ ; g̑' > i̯'; oder > i̯i̯'; oder > -'
+Beispiel: nĕgent > *nęi̯ent > *ni̯ei̯ent > nient ; rēge > *rẹi̯e > rei > roi ; lēge > *lẹi̯e > lei > loi ; măgĭda > *mái̯eda > *mai̯de > aie ; plăntāgĭne > *plantái̯ene > plantain ; frăgĭle > *frái̯ele > fraile > frêle ; pāgēnse > *pai̯ẹ́se > pai̯-i̯ís und pai̯-ís > pays ; flăgĕllu > flai̯-el und flael > fléau ; nĭgĕlla > neiele, niele > nielle ; săgĭtta > saiete, saete , rēgīna > *rei̯íne, rèíne > reine ; *fāgīna > *fai̯íne > fàíne > fòíne > fouine ; rūgīre > rùír
+]
+[g] > [i_^] ; <g> > <i>
+	{
+	Zeit: -100--600
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E]
+	}
+
+[
+Id: K_zwischenvok_14a
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §740 (I: 276)
+Entwicklung: Vokal - g - i, e -> 'g̑ > 'i̯ ; g̑' > i̯'; oder > i̯i̯'; oder > -'
+Beispiel: pāgēnse > *pai̯ẹ́se > pai̯-i̯ís und pai̯-ís > pays ; flăgĕllu > flai̯-el und flael > fléau ; nĭgĕlla > neiele, niele > nielle ; săgĭtta > saiete, saete , rēgīna > *rei̯íne, rèíne > reine ; *fāgīna > *fai̯íne > fàíne > fòíne > fouine ; rūgīre > rùír
+]
+[g] > [i_^i_^] ; <g> > <i>
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_zwischenvok_13
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E]
+	Betonung: "A
+	}
+
+[
+Id: K_zwischenvok_14b
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §740 (I: 276)
+Entwicklung: Vokal - g - i, e -> 'g̑ > 'i̯ ; g̑' > i̯'; oder > i̯i̯'; oder > -'
+Beispiel: pāgēnse > *pai̯ẹ́se > pai̯-i̯ís und pai̯-ís > pays ; flăgĕllu > flai̯-el und flael > fléau ; nĭgĕlla > neiele, niele > nielle ; săgĭtta > saiete, saete , rēgīna > *rei̯íne, rèíne > reine ; *fāgīna > *fai̯íne > fàíne > fòíne > fouine ; rūgīre > rùír
+]
+[g] > [] ; <g> > <>
+	{
+	Zeit: 601--1100
+	Oder-Vorbedingung: K_zwischenvok_13
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E]
+	Betonung: "A
+	}
+
+[
+Id: K_zwischenvok_15
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §742 (I: 278)
+Entwicklung: Vokal - k - i, e -> k̑ > k̑χ > tχ > tsχ > t͠s > d͠ṡ > i̯dṡ > i̯ṡ / i̯s > ...
+Beispiel: plăcēre > *plakχére > *platχére > *platsχére > *plat͠síre > *plad͠ṡíre > *plai̯dṡir > plaisir ; plăcent > plaisent ; lĭcēre > leisir > loisir ; dīcēbant > vlat. *dicẹ́ant > diseient > disoient > disaient ; vlat. aucellu > oisel > oiseau ; vīcīnu > vlat. vĭcīnu > veisin > voisin ; plăcet > *pláχet > *plátχet > *plátsχet > *plat͠set > *plad͠ṡet > *plai̯dṡet > plaist > plaît ; lūcet > luist > luit ; iăcet > *ji̯ei̯st > jist, gist > gît ; crŭce > *krọkχe > krọtχe > *krọtsχe > *krọt͠se > *krọd͠ṡe > krọi̯dṡe > croit > croix ; pĭce > peiz > poix
+]
+[k] > [t-\s_j]
+	{
+	Zeit: 401--500
+	Früher: V_tonl_2Zwischen_4
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E]
+	}
+
+[
+Id: K_zwischenvok_15(II)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §742 (I: 278)
+Entwicklung: Vokal - k - i, e -> k̑ > k̑χ > tχ > tsχ > t͠s > d͠ṡ > i̯dṡ > i̯ṡ / i̯s > ...
+Beispiel: plăcēre > *plakχére > *platχére > *platsχére > *plat͠síre > *plad͠ṡíre > *plai̯dṡir > plaisir ; plăcent > plaisent ; lĭcēre > leisir > loisir ; dīcēbant > vlat. *dicẹ́ant > diseient > disoient > disaient ; vlat. aucellu > oisel > oiseau ; vīcīnu > vlat. vĭcīnu > veisin > voisin ; plăcet > *pláχet > *plátχet > *plátsχet > *plat͠set > *plad͠ṡet > *plai̯dṡet > plaist > plaît ; lūcet > luist > luit ; iăcet > *ji̯ei̯st > jist, gist > gît ; crŭce > *krọkχe > krọtχe > *krọtsχe > *krọt͠se > *krọd͠ṡe > krọi̯dṡe > croit > croix ; pĭce > peiz > poix
+]
+[t-\s_j] > [d-\z_j]
+	{
+	Zeit: 601--1100
+	Früher: V_Pal_1
+	Und-Vorbedingung: K_zwischenvok_15
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [i, e, E]
+	}
+
+[
+Id: K_zwischenvok_15(III)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §742 (I: 278)
+Entwicklung: Vokal - k - i, e -> k̑ > k̑χ > tχ > tsχ > t͠s > d͠ṡ > i̯dṡ > i̯ṡ / i̯s > ...
+Beispiel: plăcēre > *plakχére > *platχére > *platsχére > *plat͠síre > *plad͠ṡíre > *plai̯dṡir > plaisir ; plăcent > plaisent ; lĭēre > leisir > loisir ; dīcēbant > vlat. *dicẹ́ant > diseient > disoient > disaient ; vlat. aucellu > oisel > oiseau ; vīcīnu > vlat. vĭcīnu > veisin > voisin ; plăcet > *pláχet > *plátχet > *plátsχet > *plat͠set > *plad͠ṡet > *plai̯dṡet > plaist > plaît ; lūcet > luist > luit ; iăcet > *ji̯ei̯st > jist, gist > gît ; crŭce > *krọkχe > krọtχe > *krọtsχe > *krọt͠se > *krọd͠ṡe > krọi̯dṡe > croit > croix ; pĭce > peiz > poix
+]
+[d-\z_j] > [i_^d-\z] ; <c> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_15(II)
+	}
+
+[
+Id: K_zwischenvok_15(IVa)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §742 (I: 278)
+Entwicklung: Vokal - k - i, e -> k̑ > k̑χ > tχ > tsχ > t͠s > d͠ṡ > i̯dṡ > i̯ṡ / i̯s > ...
+Beispiel: plăcēre > *plakχére > *platχére > *platsχére > *plat͠síre > *plad͠ṡíre > *plai̯dṡir > plaisir ; lĭēre > leisir > loisir ; dīcēbant > vlat. *dicẹ́ant > diseient > disoient > disaient ; vlat. aucellu > oisel > oiseau ; vīcīnu > vlat. vĭcīnu > veisin > voisin ; plăcet > *pláχet > *plátχet > *plátsχet > *plat͠set > *plad͠ṡet > *plai̯dṡet > plaist > plaît ; lūcet > luist > luit ; iăcet > *ji̯ei̯st > jist, gist > gît ; crŭce > *krọkχe > krọtχe > *krọtsχe > *krọt͠se > *krọd͠ṡe > krọi̯dṡe > croit > croix
+]
+[i_^d-\z] > [i_^z]
+	{
+	Zeit: 601--1100
+	Spezialfall: K_zwischenvok_15(IVb)
+	Und-Vorbedingung: K_zwischenvok_15(III)
+	Früher: V_tonl_Ultima_1
+	}
+
+[
+Id: K_zwischenvok_15(IVb)
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §742 (I: 278)
+Entwicklung: Vokal - k - i, e -> k̑ > k̑χ > tχ > tsχ > t͠s > d͠ṡ > i̯dṡ > i̯ṡ / i̯s > ...
+Beispiel: plăcent > plaisent ; pĭce > peiz > poix
+]
+[d-\z] > [s]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_15(III)
+	Rechter Kontext: [#]
+	}
+	
+[
+Id: K_zwischenvok_16
+Name: Zwischenvokalische Konsonanten
+Rheinfelder-Id: §752 (I: 283)
+Entwicklung: qu > kw
+Beispiel: laqueus
+]
+[k_w] > [ku_^]
+	{
+	Zeit: 601--1100
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+	
+[
+Id: K_zwischenvok_17
+Name: Anlautende Palatalkonsonanten vor Vokal
+Rheinfelder-Id: §752 (I: 283)
+Entwicklung: qu- > k- = k-
+Beispiel: antiqua
+]
+[k_w] > [ku_^]
+	{
+	Zeit: -100--600
+	Linker Kontext: [$V_PH]
+	Rechter Kontext: [$V_PH]
+	}
+	
+################################################
+# Konsonanten im lateinischen Auslaut
+################################################
+
+[
+Id: K_latAuslaut_1
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §754 (I: 284)
+Entwicklung: -t > - ; -d > -
+Beispiel: ămat > aimet > aimed > aime ; ămāvit > vlat. amáit > amát (amád) > ama > aima ; ĕt > et, ed, e > e (et) ; ămant > aiment > a͠imet > ̨e͠ime > ̨̄emᵉ (aiment) ; fēcit > fist > fit > fi (fit)
+]
+[t] > [] ; <t> > <>
+	{
+	Zeit: -100--1600
+	Und-Vorbedingung: !K_latAuslaut_2, !K_latAuslaut_3, !K_latAuslaut_4, !K_latAuslaut_5, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Früher: V_tonl_Ultima_8
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_2
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §754 (I: 284)
+Entwicklung: -t > - ; -d > -
+Beispiel: ăd > at, ad, a > à ; quĭd > (tonlos) quet, qued, que > que / (betont) quei > quoi
+]
+[d] > [] ; <d> > <>
+	{
+	Zeit: -100--1600
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_3, !K_latAuslaut_4, !K_latAuslaut_5, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_3
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §756 (I: 285)
+Entwicklung: -s > -
+Beispiel: ămas > aimes > ̨e͠ime (aimes) > emᵉ (aimes) ; măgis > mais > mę (mais) > mais ; nōs > nọs > nu (nous) > nous ; mūros > mürs > mür (murs) ; cŏrpus > cǫrs > kǫr (cors) > k̨̄or (corps) ; căntūs > chanz > chans > ʃã (chans) > ʃɔ̃ (chants) ; căbăllos > chevals > chevaus > ʃevau > ʃᵉvọ, ʃfvọ (chevau) ; fŏcos > fọus > feus > fọ̈ (feus, auch fex, dann feux) > fọ̈ (feux)
+]
+[s] > []
+	{
+	Zeit: 1201--1600
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_2, !K_latAuslaut_4, !K_latAuslaut_5, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_4
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §760 (I: 286)
+Entwicklung: -c > -
+Beispiel: sīc > si ; dīc > di > dis ; *ĕcce hīc > ici, ci > ici, -ci; nĕc > ne > ni ; ĭllāc > la > là ; *ĕcce hāc > ça > çà ; *ĕcce hŏc > ço > ce ; pro hŏc > poró
+]
+[k] > [] ; <c> > <>
+	{
+	Zeit: -100--300
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_2, !K_latAuslaut_3, !K_latAuslaut_5, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_5
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §763 (I: 287)
+Entwicklung: -r = -r > -R
+Beispiel: cŏr > cuer > cœur ; pĕr > par ; pro > vlat. *por > pour
+]
+[r] > [r]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_2, !K_latAuslaut_3, !K_latAuslaut_4, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Rechter Kontext: [#]
+	Betonung: "_ #
+	}
+	
+[
+Id: K_latAuslaut_5(II)
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §763 (I: 287)
+Entwicklung: -r = -r > -R
+Beispiel: cŏr > cuer > cœur ; pĕr > par ; pro > vlat. *por > pour
+]
+[r] > [R]
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: K_latAuslaut_5
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_2, !K_latAuslaut_3, !K_latAuslaut_4, !K_latAuslaut_6, !K_latAuslaut_7, !K_vlat_2, !R_1
+	Rechter Kontext: [#]
+	Betonung: "_
+	}
+
+[
+Id: K_latAuslaut_6(II)
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §763 (I: 288)
+Entwicklung: -r > -r̥ > -re > -Rᵉ > -Ṛ (> -)
+Beispiel: păter > *p̨̄edr̥ > pedre > pere > père ; măior > *mair̥ > maire ; quăttŭor > quáttor > *quatr̥ > quatre
+]
+[r=] > [re] ; <r> > <re>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_latAuslaut_6
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_6(III)
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §763 (I: 288)
+Entwicklung: -r > -r̥ > -re > -Rᵉ > -Ṛ (> -)
+Beispiel: păter > *p̨̄edr̥ > pedre > pere > père ; măior > *mair̥ > maire ; quăttŭor > quáttor > *quatr̥ > quatre
+]
+[re] > [R@]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: K_latAuslaut_6(II)
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_6(IV)
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §763 (I: 288)
+Entwicklung: -r > -r̥ > -re > -Rᵉ > -Ṛ (> -)
+Beispiel: păter > *p̨̄edr̥ > pedre > pere > père ; măior > *mair̥ > maire ; quăttŭor > quáttor > *quatr̥ > quatre
+]
+[R@] > [R_0]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: K_latAuslaut_6(III)
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_latAuslaut_7
+Name: Konsonanten im lateinischen Auslaut
+Rheinfelder-Id: §768 (I: 289)
+Entwicklung: -m > ≃n > ≃ = ≃
+Beispiel: mĕum > mien, mon ; rĕm > rien
+]
+[m] > [n] ; <m> > <n>
+	{
+	Zeit: -100--1100
+	Und-Vorbedingung: !K_latAuslaut_1, !K_latAuslaut_2, !K_latAuslaut_3, !K_latAuslaut_4, !K_latAuslaut_5, !K_latAuslaut_6, !K_vlat_2, !R_1
+	Betonung: #"_#
+	Rechter Kontext: [#]
+	}
+
+################################################
+# Konsonanten im französischen Auslaut
+################################################
+
+[
+Id: K_frzAuslaut_1
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §772 (I: 290)
+Entwicklung: zw.vok. -v- > ausl. -f > -f / -
+Beispiel: căput > vlat. *căpu > *cabo > *cavo > chief > chef ; ăpe > *abe > *ave > ef ; trăbe > tref > tre ; bĭbo > beif > boif > bois ; clāve > clef > clef, (spr. klẹ), clé ; nŏvu > nuef > nọ̈ (nuef, neuf) > neuf
+]
+[v] > [f] ; <v> > <f>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: K_zwischenvok_4(III), !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_2
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §776 (I: 292)
+Entwicklung: nachkons. p- / nachkons. b- > ausl. -p > -
+Beispiel: ŏrbu > orp ; cŏrvu > vlat. *corbu > corp
+]
+[b] > [p] ; <b> > <p>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_3
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §776 (I: 292)
+Entwicklung: nachkons. p- / nachkons. b- > ausl. -p > -
+Beispiel: cămpu > champ (ʃɔ̃) ; cŏlăphu > vlat. cólapu > *colpo > colp > coup (spr. ku) ; ŏrbu > orp ; cŏrvu > vlat. *corbu > corp
+]
+[b] > [p]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_3(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §776 (I: 292)
+Entwicklung: nachkons. p- / nachkons. b- > ausl. -p > -
+Beispiel: cămpu > champ (ʃɔ̃) ; cŏlăphu > vlat. cólapu > *colpo > colp > coup (spr. ku) ; ŏrbu > orp ; cŏrvu > vlat. *corbu > corp
+]
+[p] > []
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_4
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §776 (I: 292)
+Entwicklung: nachkons. v- > ausl. -f > -f / -
+Beispiel: sĕrvu > serf (spr. sęrf) ; cĕrvu > cerf (spr. sęr und sęrf) ; nĕrvu > nerf (spr. nęrf und nęr) ; călvu > chalf > chauf
+]
+[u_^] > [f] ; <v> > <f>
+[v] > [f] ; <v> > <f>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_5
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §780 (I: 292)
+Entwicklung: zw.vok. -ᵭ- > ausl. -t (???) > -
+Beispiel: căntātu > *cantádo > *cantáᵭo > chantet > chanté ; nātu > *naᵭo > net > né ; sĭte > *sẹᵭe > seit > soit, soif > soif ; nōdu > *nọᵭo > nout > neu > nœud ; nūdu > *nuᵭo > nut > nu ; pĕde > piet > pied (spr. pχẹ)
+]
+[D] > [t] ; <d> > <t>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_3, !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_5(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §780 (I: 292)
+Entwicklung: zw.vok. -ᵭ- > ausl. -t (???) > -
+Beispiel: căntātu > *cantádo > *cantáᵭo > chantet > chanté ; nātu > *naᵭo > net > né ; sĭte > *sẹᵭe > seit > soit, soif > soif ; nōdu > *nọᵭo > nout > neu > nœud ; nūdu > *nuᵭo > nut > nu ; pĕde > piet > pied (spr. pχẹ)
+]
+[t] > [] ; <t> > <>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_3, !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_6
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §782 (I: 293)
+Entwicklung: nachkons. t- / d- > ausl. -t > -
+Beispiel: vĭrĭde > vert ; frīgĭdu > freit > froit > froid
+]
+[d] > [t]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_7
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §782 (I: 293)
+Entwicklung: nachkons. t- / d- > ausl. -t > -
+Beispiel: tōtu > vlat. tōttu > tot > tout ; sŏrte > sort ; făctu > fait; sănctu > saint ; vĭrĭde > vert ; frīgĭdu > freit > froit > froid
+]
+[t] > []
+	{
+	Zeit: 1201--1300
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [$K_PH, $V_PH_NASAL]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_8
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §785 (I: 294)
+Entwicklung: zw.vok. -s- / nachkons. s- > ausl. -s > -
+Beispiel: nāsu > nes > ne (nes) > nẹ (nez) ; mēnse > vlat. mẹse > meis > mois ; fălsu > fals > faus > faux ; vĕrsu > vers
+]
+[s] > []
+	{
+	Zeit: 1201--1976
+	Und-Vorbedingung: !K_nachkons_9(IV), !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_9
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §787 (I: 295)
+Entwicklung: zw.vok. -ǥ- =  -ǥ- > ausl. -i̯ > ...
+Beispiel: ămīcu > *amigu > *amii̯ > ami ; dīcŭnt > *dii̯ent > dient > disent ; prĕcor > vlat. pŕ̨eco > *pri̯ei̯ > pri > prie ; paucu > poi ; lăcu > lai ; văgu > vai ; Camarācu > Cambrai ; Sabīnĭācu > *Saveñi̯ei̯ > Savegni, Savigni > Savigny
+]
+[G] > [i_^] ; <g> > <i>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_8, K_zwischenvok_10, !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_10
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §790 (I: 295)
+Entwicklung: nachkons. k- (vor u, o) / nachkons. g- (vor u, o) / nachkons. k(u̯)- / nachkons. gu̯ > ausl. -k > -k / -
+Beispiel: trŭncu > tronc ; pŏrcu > porc ; vlat. bĕccu > bec ; ărcu > arc ; spl. *marcu > marc ; Mărcu > Marc (-k) ; spl. saccu > eschac > eschiec > échec ; spl. clēricu > gel. clercu > clerc (-) ; spl. parrĭcu > parc (-k) ; spl. bŭrgu > borc > bourg (-) ; lŏngu > lonc > long (-) ; quīnque > vlat. cinque > cinc > cinq (-k) ; vlat. săngue > sanc > sang (-)
+]
+[k] > [] ; <c> > <>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_11
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §796 (I: 297)
+Entwicklung: zw.vok. -sk > ausl. -i̯s > -i̯ > ...
+Beispiel: dĭscu > deis > dois > dais ; nāscor > vlat. *nāsco > nais ; crēscis > creis > crois ; făsce > fais > faix
+]
+[sk] > [i_^s] ; <sc> > <is>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_11(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §796 (I: 297)
+Entwicklung: zw.vok. -sk > ausl. -i̯s > -i̯ > ...
+]
+[i_^s] > [i_^]
+	{
+	Zeit: 1101--1176
+	Und-Vorbedingung: K_frzAuslaut_12(II), K_frzAuslaut_17, K_nachkons_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_12
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §797 (I: 297)
+Entwicklung: zw.vok. -t͠s- > ausl. -i̯ts > -i̯s > -i̯ > ...
+Beispiel: crŭce > croiz > croix ; pĭce > peiz > poix ; rādīce > *radiz > raïs ; dĕce > *di̯ei̯ts > dis > dix
+]
+[t-\s_j] > [i_^t-\s] ; <sc> > <iz>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_zwischenvok_15, !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_12(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §797 (I: 297)
+Entwicklung: zw.vok. -t͠s- > ausl. -i̯ts > -i̯s > -i̯ > ...
+]
+[i_^t-\s] > [i_^s]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: K_frzAuslaut_12
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_13
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §799 (I: 297)
+Entwicklung: nachkons. -ts = ausl. -ts > -s > -
+Beispiel: călce > chalz > chaus > chaux ; sălĭce > *salz > saus
+]
+[t-\s] > [s] ; <c> > <s>
+	{
+	Zeit: 1101--1976
+	Oder-Vorbedingung: K_Palatal_5, K_frzAuslaut_18
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_13(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §799 (I: 297)
+Entwicklung: nachkons. -ts = ausl. -ts > -s > -
+]
+[s] > []
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: K_frzAuslaut_13
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_14
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §802 (I: 298)
+Entwicklung: zw.vok. -li̯- > ausl. -ɫ > -i̯ > ...
+Beispiel: ālĭu > ail ; spl. trēpālĭu > travail ; ŏcŭlu > ueil > œil ; vlat. vĕtŭlu > vieil
+]
+[li_^] > [l_j]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_14(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §802 (I: 298)
+Entwicklung: zw.vok. -li̯- > ausl. -ɫ > -i̯ > ...
+]
+[l_j] > [i_^]
+	{
+	Zeit: 1100--1976
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_15
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §804 (I: 299)
+Entwicklung: zw.vok. -ni̯- > ausl. *-ñ > -ĩ̯n > ...
+Beispiel: tĕstĭmōnĭu > tesmoin > témoin ; bălnĕu > vlat. bănĕu > bain ; sĭgnu > sein > seing ; lŏnge > loin
+]
+[ni_^] > [J]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_15(II)
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §804 (I: 299)
+Entwicklung: zw.vok. -ni̯- > ausl. *-ñ > -ĩ̯n > ...
+]
+[J] > [i_^n]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: K_frzAuslaut_15(II)
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_16
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §805 (I: 299)
+Entwicklung: zw.vok. -ri̯- > ausl. -i̯r > ...
+Beispiel: vărĭu > vair ; cŏrĭu > *cu̯oi̯r > cuir ; dŏrmītōrĭu > dortoir
+]
+[ri_^] > [i_^r] ; <ri> > <ir>
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_17
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §806, §807 (I: 299)
+Entwicklung: zw.vok. -si̯- > ausl. -i̯s > -i̯ (-i) > ... ; zw.vok. -ti̯- (-sti̯-) > ausl. -i̯s > -i̯ (-i) > ...
+Beispiel: *pĕrtūsĭu > pertuis ; Dĭŏnȳsĭus > vlat. Dĭnīsĭus > Denis ; pălātĭu > palais ; prĕtĭu > *pri̯ei̯s > pris > prix ; ōstĭu > vlat. ūstĭu > uis > huis
+]
+[si_^] > [i_^s]
+[ti_^] > [i_^s]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_nachkons_9, !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_18
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §808 (I: 300)
+Entwicklung: nachkons. -ti̯- > ausl. -ts > -s > -
+Beispiel: Martĭu > marz > mars ; nŭntĭu > noinz ; brăcchĭu > braci̯u > braz > bras ; sōlācĭu > solaz, solas > -- ; lăquĕu > laci̯u > laz, las > lacs
+]
+[ti_^] > [t-\s]
+[ki_^] > [t-\s]
+	{
+	Zeit: 601--1100
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_19a
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §810 (I: 300)
+Entwicklung: -r- = ausl. -r > -R / - (> -R)
+Beispiel: hŏnōre > onour > oneur > honneur ; fīnīre > fenir > feni, fini (finir) > finir
+]
+[r] > [R]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19b, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [$NICHT_e]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_19b
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §810 (I: 300)
+Entwicklung: -r- = ausl. -r > -R / - (> -R)
+Beispiel: căntāre > chanter > ʃãtér > ʃãté (chanter) > ʃɔ̃tẹ́
+]
+[r] > []
+	{
+	Zeit: 1301--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [e, E, i_^-\e]
+	Rechter Kontext: [#]
+	Betonung: %A "_
+	}
+	
+
+[
+Id: K_frzAuslaut_19c
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §810 (I: 300)
+Entwicklung: -r- = ausl. -r > -R / - (> -R)
+Beispiel: căntāre > chanter > ʃãtér > ʃãté (chanter) > ʃɔ̃tẹ́
+]
+[r] > []
+	{
+	Zeit: 1301--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_20, !K_frzAuslaut_21, !R_1
+	Linker Kontext: [e, E, @]
+	Rechter Kontext: [#]
+	Betonung: %A B "_
+	}
+
+[
+Id: K_frzAuslaut_20
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §823 (I: 303)
+Entwicklung: zw.vok. -n- / zw.vok. -m- > ausl. ≃ n > ≃ = ≃
+Beispiel: nōmen > vlat. nọme > nõm > nõn > nõ (nom, non) > n ̃𝔬 (nom) ; ămo > ãim > ãin > ̨̃ei (aim, ain) > aime
+]
+[m] > [n]
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_21, !R_1
+	Spezialfall: K_frzAuslaut_21
+	Rechter Kontext: [#]
+	}
+
+[
+Id: K_frzAuslaut_21
+Name: Konsonanten im französischen Auslaut
+Rheinfelder-Id: §824 (I: 304)
+Entwicklung: nachkons. -n / nachkons. m- = ausl. -n / -m > - (analogisch)
+Beispiel: vĕrme > verm > vers > ver ; fĭrmu > ferm > ferme ; cŏrnu > corn > cor ; īnfĕrnu > enfern > enfer
+]
+[m] > [] ; <m> > <>
+[n] > [] ; <n> > <>
+	{
+	Zeit: 1101--1976
+	Und-Vorbedingung: !K_frzAuslaut_1, !K_frzAuslaut_2, !K_frzAuslaut_3, !K_frzAuslaut_4, !K_frzAuslaut_5, !K_frzAuslaut_6, !K_frzAuslaut_7, !K_frzAuslaut_8, !K_frzAuslaut_9, !K_frzAuslaut_10, !K_frzAuslaut_11, !K_frzAuslaut_12, !K_frzAuslaut_13, !K_frzAuslaut_14, !K_frzAuslaut_15, !K_frzAuslaut_16, !K_frzAuslaut_17, !K_frzAuslaut_18, !K_frzAuslaut_19a, !K_frzAuslaut_19b, !K_frzAuslaut_20, !R_1
+	Linker Kontext: [$K_PH]
+	Rechter Kontext: [#]
+	}
+
+	
+################################################
+############### Spezielle Regeln ###############
+################################################
+
+[
+Id: K_1
+Name: Zäpfchen-r
+Rheinfelder-Id: §373 (I: 153)
+Beispiel: rŭbĕŭ > roge > rouge
+]
+[r] > [R]
+	{
+	Zeit: 1601--1700
+	Spezialfall: K_frzAuslaut_19b
+	}
+
+[
+Id: K_Nasal_1
+Name: Nasalvokal verstummt
+Rheinfelder-Id: §187, §196 (I: 78)
+Beispiel: ú̆mbra > ọ̃mbre > õbre (ombre) > õbrᵉ (ombre) ; nŭmĕrāre > nọ̃mbrér > nõbrér (nombrer) > nõbré (nombrer)
+]
+[$K_PH_NASAL] > []
+	{
+	Zeit: 1101--1300
+	Oder-Vorbedingung: V_Nasal_O_1, V_Nasal_ei_^_1(II), V_Nasal_i_^e_1, V_Nasal_E_1(III), V_Nasal_e_1(II), V_Nasal_O_1(IIb)
+	Und-Vorbedingung: !V_Nasal_o_1(IIb), !V_Nasal_O_1(IIa), !V_Nasal_ei_^_1(III), !V_Nasal_i_^e_1(II)
+	Linker Kontext: [$V_PH_NASAL]
+	}
+	
+[
+Id: K_Nasal_2
+Name: Nasalvokal verstummt in der tonlosen Ultima
+Rheinfelder-Id: §190 (I: 74)
+Beispiel: amant > amet
+]
+[$K_PH_NASAL] > []
+	{
+	Zeit: 901--1976
+	Betonung: _
+	Linker Kontext: [$V_PH_ORAL]
+	Rechter Kontext: [$K_PH]
+	}
+
+[
+Id: R_1
+Name: Verstummen des auslautenden @
+]
+[@] > []
+	{
+	Zeit: 1501--1976
+	Früher: K_nachkons_2(IIa), K_nachkons_2(IIb)
+	Rechter Kontext: [#]
+	Betonung: "A _
+	}
+
+[
+Id: R_2
+Name: Monophtongierungen
+]
+[u_^-\a] > [wa]
+[i_^-\e] > [je]
+[i_^-\E] > [jE]
+[u_^-\E~] > [wE~]
+[i_^-\E~] > [jE~]
+[i_^-\2] > [j2]
+	{
+	Zeit: 1201--1302
+	Oder-Vorbedingung: V_Haupt_e_1(Va), V_Haupt_E_1(II), V_Nasal_i_^e_1, V_Nasal_Oi_^_oi_^_1(III), V_Pal_2(aIII), V_Pal_18, V_Vel_15(II), V_Haupt_einsilbig_3
+	}
+
+[
+Id: R_3
+Name: i_^ -> j
+]
+[i_^] > [j]
+	{
+	Zeit: 1301--1976
+	Oder-Vorbedingung: K_nachkons_2(IIa), K_nachkons_2(IIb), K_vorkons_18(II), V_Vel_15(II)
+	}
+
+[
+Id: R_4
+Name: <t-s> > <z>
+]
+[ts] > [ts] ; <ts> > <z>
+	{
+	Zeit: 601--1100
+	}
+
+
+
+

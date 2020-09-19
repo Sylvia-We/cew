@@ -1,0 +1,61 @@
+# Adverb
+[
+A_bene
+]
+^(.+)$ -> $1 {unflekt}
+
+# Pronomina
+[
+A_ego
+]
+^(.+)$ -> $1 {unflekt}
+
+# Konjunktion
+[
+A_et
+]
+^(.+)$ -> $1 {unflekt}
+
+# Praeposition
+[
+A_ad
+]
+^(.+)$ -> $1 {unflekt}
+
+# Numeral
+[
+A_unus
+]
+^(.+)$ -> $1 {m Nom Sg}
+
+# Gemischt
+[
+A_misc
+]
+^(.+)$ -> $1 {unflekt}
+
+# vlat. und splat. Wörter
+#[
+#A_vlat
+#]
+#^(.+)$ -> $1 {unflekt}
+
+[
+A_esse
+]
+^(.+)$ -> $1 {Inf}
+
+[
+A_sum
+]
+^(.+)$ -> $1 {1 Sg}
+
+[
+A_est
+]
+^(.+)$ -> $1 {3 Sg}
+
+[
+A_fuit
+]
+^(.+)$ -> $1 {3 Sg}

@@ -1,0 +1,65 @@
+﻿# enthält Kategorien, die für eine wohlgeformte Wortform zulässig sind
+
+{m Nom Sg}
+{m Akk Sg}
+{m Nom Pl}
+{m Akk Pl}
+
+{f Nom Sg}
+{f Akk Sg}
+{f Nom Pl}
+{f Akk Pl}
+
+{n Nom Sg}
+{n Akk Sg}
+{n Nom Pl}
+{n Akk Pl}
+
+{mfn Nom Sg}
+{mfn Akk Sg}
+{mfn Nom Pl}
+{mfn Akk Pl}
+
+{mf Nom Sg}
+{mf Akk Sg}
+{mf Nom Pl}
+{mf Akk Pl}
+
+{n NomAkk Sg}
+{m NomAkk Pl}
+{f NomAkk Pl}
+{n NomAkk Pl}
+{mf NomAkk Pl}
+
+{m Akk Sg + n NomAkk Sg}
+{f Nom Sg + n NomAkk Pl}
+{mfn Nom Sg + n Akk Sg}
+{f Nom Sg + f NomAkk Pl}
+
+{pos}
+{komp}
+{super}
+
+{Part m Nom Sg}
+{Part f Akk Sg}
+{Part m Nom Pl}
+{Part f Nom Pl}
+{Part m Akk Pl}
+{Part f Akk Pl}
+{Part mfn Nom Sg + Part n Akk Sg}
+{Part n NomAkk Sg + Part m Akk Sg}
+{Part f Nom Sg + Part n NomAkk Pl}
+{Part mf Akk Sg}
+{Part mf NomAkk Pl}
+{Part n NomAkk Pl}
+
+{1 Sg}
+{2 Sg}
+{3 Sg}
+{1 Pl}
+{2 Pl}
+{3 Pl}
+{23 Sg}
+{Inf}
+
+{unflekt}

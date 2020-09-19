@@ -1,0 +1,93 @@
+# Syntax:
+# 	Graphem -> Phonem (Sampa)
+
+th -> t_h
+Th -> t_h
+ch -> k_h
+Ch -> k_h
+ph -> p_h
+Ph -> p_h
+
+qu -> k_w
+Qu -> k_w
+gu -> g_w
+Gu -> g_w
+
+ae -> a-\e_^
+Ae -> a-\e_^
+oe -> o-\e_^
+Oe -> o-\e_^
+au -> a-\u_^
+Au -> a-\u_^
+
+i -> i_^ {Linker Kontext: <#>; Rechter Kontext: <$V_GR_KLAT>}
+I -> i_^ {Linker Kontext: <#>; Rechter Kontext: <$V_GR_KLAT>}
+i -> i_^ {Linker Kontext: [$V_PH_KLAT]; Rechter Kontext: <$V_GR_KLAT>}
+I -> i_^ {Linker Kontext: [$V_PH_KLAT]; Rechter Kontext: <$V_GR_KLAT>}
+°i -> i_^ {Linker Kontext: <#>; Rechter Kontext: <$V_GR_KLAT>}
+°I -> i_^ {Linker Kontext: <#>; Rechter Kontext: <$V_GR_KLAT>}
+°i -> i_^ {Linker Kontext: [$V_PH_KLAT]; Rechter Kontext: <$V_GR_KLAT>}
+°I -> i_^ {Linker Kontext: [$V_PH_KLAT]; Rechter Kontext: <$V_GR_KLAT>}
+
+=a -> a:
+=A -> a:
+=e -> e:
+=E -> e:
+=i -> i:
+=I -> i:
+=o -> o:
+=O -> o:
+=u -> u:
+=U -> u:
+=y -> y:
+=Y -> y:
+
+°a -> a
+°A -> a
+°e -> e
+°E -> e
+°i -> i
+°I -> i
+°o -> o
+°O -> o
+°u -> u
+°U -> u
+°y -> y
+°Y -> y
+
+b -> b
+B -> b
+c -> k
+C -> k
+d -> d
+D -> d
+f -> f
+F -> f
+g -> g
+G -> g
+h -> h
+H -> h
+j -> i_^
+J -> i_^
+k -> k
+K -> k
+l -> l
+L -> l
+m -> m
+M -> m
+n -> n
+N -> n
+p -> p
+P -> p
+r -> r
+R -> r
+s -> s
+S -> s
+t -> t
+T -> t
+v -> u_^
+V -> u_^
+x -> k.s
+X -> k.s
+z -> z
+Z -> z

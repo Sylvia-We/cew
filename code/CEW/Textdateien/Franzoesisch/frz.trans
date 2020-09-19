@@ -1,0 +1,381 @@
+# Syntax:
+# 	Graphem -> Phon (Sampa)
+
+#--------
+# Vokale
+#--------
+
+#-----------------------
+# a
+aim -> E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+aim -> E~ {Rechter Kontext: <#>}
+ain -> E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+ain -> E~ {Rechter Kontext: <#>}
+ai -> E {Rechter Kontext: <$GR_FRZ_NICHT_L>}
+aî -> E
+am -> A~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+am -> A~ {Rechter Kontext: <#>}
+an -> A~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+an -> A~ {Rechter Kontext: <#>}
+au -> o
+a -> e {Rechter Kontext: <y>}
+a -> a
+â -> A
+à -> a
+
+#-----------------------
+# e
+# e: Graphemkombinationen
+eau -> o
+ein -> E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+ein -> E~ {Rechter Kontext: <#>}
+ei -> E
+en -> E~ {Linker Kontext: <i> ; Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+en -> E~ {Linker Kontext: <i> ; Rechter Kontext: <#>}
+en -> A~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+en -> A~ {Rechter Kontext: <#>}
+em -> A~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+em -> A~ {Rechter Kontext: <#>}
+eû -> 2
+
+# eu: wortauslautende Silbe
+eu -> 2 {Rechter Kontext: <#>}
+eu -> 2 {Rechter Kontext: <x> <#>}
+eu -> 9 {Rechter Kontext: <$K_GR_FRZ> <#>}
+eu -> 9 {Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <#>}
+
+# e: alle anderen Fälle
+eu -> 9 {Rechter Kontext: <i> <l>}
+eu -> 9 {Rechter Kontext: <i> <l> <l>}
+eu -> 2 {Rechter Kontext: <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <f> <l> ; Rechter Kontext: <r> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <p> <l> ; Rechter Kontext: <r> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <g> <u> ; Rechter Kontext: <l> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <p> <a> <s> <t> ; Rechter Kontext: <r> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <j> ; Rechter Kontext: <n> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <c> <r> ; Rechter Kontext: <s> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <p> <n> ; Rechter Kontext: <m> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <m> ; Rechter Kontext: <t> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> <n> ; Rechter Kontext: <r> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> <d> ; Rechter Kontext: <t> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> <ps> ; Rechter Kontext: <d> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> ; Rechter Kontext: <r> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> <l> ; Rechter Kontext: <c> <$V_GR_FRZ>}
+eu -> 2 {Linker Kontext: <#> <a> <l> ; Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+eu -> 9 {Rechter Kontext: <r> <e> <#>}
+eu -> 2 {Rechter Kontext: <s> <e> <#>}
+eu -> 2 {Rechter Kontext: <s> <e> <m> <e> <n> <t> <#>}
+eu -> 2 {Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <m> ; Rechter Kontext: <b> <l> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <p> <l> ; Rechter Kontext: <r> <n> <i> <c> <h> <$V_GR_FRZ>}
+eu -> 9 {Linker Kontext: <p> ; Rechter Kontext: <p> <l> <$V_GR_FRZ>}
+eu -> 9 {Rechter Kontext: <g> <l> <e> <#>}
+eu -> 2 {Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <$V_GR_FRZ>}
+eu -> 9 {Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <$K_GR_FRZ> <$V_GR_FRZ>}
+
+# e: Präfixe
+e -> e {Linker Kontext: <#> <d> ; Rechter Kontext: <s>}
+e -> e {Linker Kontext: <#> ; Rechter Kontext: <s>}
+
+# e: einsilbige Wörter
+e -> @ {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <#>}
+e -> @ {Linker Kontext: <#> <q> <u> ; Rechter Kontext: <#>}
+e -> e {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <s> <#>}
+e -> e {Linker Kontext: <#> <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <s> <#>}
+e -> e {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <z> <#>}
+e -> e {Linker Kontext: <#> <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <z> <#>}
+e -> e {Linker Kontext: <#> ; Rechter Kontext: <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> ; Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> <$K_GR_FRZ_GQ> <u> ; Rechter Kontext: <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <#>}
+e -> E {Linker Kontext: <#> <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <#>}
+
+# e: Doppelkonsonanten
+e -> E {Rechter Kontext: <f> <f> <e> <#>}
+e -> E {Rechter Kontext: <l> <l> <e> <#>}
+e -> E {Rechter Kontext: <r> <r> <e> <#>}
+e -> E {Rechter Kontext: <s> <s> <e> <#>}
+e -> E {Rechter Kontext: <t> <t> <e> <#>}
+e -> e {Rechter Kontext: <c> <c> <$V_GR_FRZ>}
+e -> e {Rechter Kontext: <f> <f> <$V_GR_FRZ>}
+e -> e {Rechter Kontext: <l> <l> <$V_GR_FRZ>}
+e -> E {Rechter Kontext: <r> <r> <$V_GR_FRZ>}
+e -> e {Rechter Kontext: <s> <s> <$V_GR_FRZ>}
+e -> e {Rechter Kontext: <t> <t> <e>}
+
+# e: in allen Positionen
+e -> e {Linker Kontext: <$V_GR_FRZ> ; Rechter Kontext: <r> <#>}
+e ->  {Linker Kontext: <$V_GR_FRZ_NICHT_I>}
+e -> @ {Linker Kontext: <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ_LIQUID>}
+e ->  {Linker Kontext: <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ_LIQUID>}
+e -> E {Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ>}
+e -> E {Rechter Kontext: <x>}
+
+# e: wortinitale Silbe
+e -> @ {Linker Kontext: <#> <$K_GR_FRZ> <$K_GR_FRZ>}
+e -> @ {Linker Kontext: <#> <$K_GR_FRZ>}
+e -> e {Linker Kontext: <#>}
+
+# e: wortauslautende Silbe
+e -> {Rechter Kontext: <#>}
+e -> {Rechter Kontext: <s> <#>}
+e -> e {Rechter Kontext: <$K_GR_FRZ_DRZ> <#>}
+e -> E {Rechter Kontext: <$K_GR_FRZ> <#>}
+
+# e: alle anderen Fälle
+e ->  {Linker Kontext: <g> ; Rechter Kontext: <$V_GR_FRZ_AOU>}
+e -> e {Rechter Kontext: <$V_GR_FRZ>}
+e ->  {Linker Kontext: <$K_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ_LIQUID> <$V_GR_FRZ>}
+e ->  {Linker Kontext: <$V_GR_FRZ> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+e ->  {Linker Kontext: <#> <$K_GR_FRZ> ; Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+e -> @ {Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+e -> @
+
+# e: Diakritika
+é -> e
+è -> E
+ê -> E
+ë -> {Rechter Kontext: <#>}
+ë -> E
+
+#-----------------------
+# i
+im -> E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+im -> E~ {Rechter Kontext: <#>}
+in -> E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+in -> E~ {Rechter Kontext: <#>}
+ill -> j {Linker Kontext: <$V_GR_FRZ>}
+il -> j {Linker Kontext: <$V_GR_FRZ>}
+i -> j {Rechter Kontext: <e> <n>}
+i -> i {Linker Kontext: <$K_GR_FRZ> <$K_GR_FRZ_LIQUID> ; Rechter Kontext: <$V_GR_FRZ>}
+i -> i {Rechter Kontext: <e> <#>}
+i -> j {Rechter Kontext: <$V_GR_FRZ>}
+i -> i
+î -> i
+ï -> j
+
+#-----------------------
+# o
+# o: Graphemkombinationen
+oin -> w.E~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+oin -> w.E~ {Rechter Kontext: <#>}
+oi -> w.a
+oî -> w.a
+oê -> w.a
+om -> O~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+om -> O~ {Rechter Kontext: <#>}
+on -> O~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+on -> O~ {Rechter Kontext: <#>}
+ou -> u
+où -> u
+oû -> u
+
+o -> w.a {Rechter Kontext: <y>}
+ô -> o
+
+# o: am Wortende
+o -> o {Rechter Kontext: <#>}
+o -> o {Rechter Kontext: <$K_GR_FRZ_PST> <#>}
+o -> O {Rechter Kontext: <$K_GR_FRZ> <#>}
+o -> o {Rechter Kontext: <t> <h> <#>}
+o -> O {Rechter Kontext: <$K_GR_FRZ> <$K_GR_FRZ> <#>}
+
+# o: vor einem Vokal
+o -> O {Rechter Kontext: <ï>}
+o -> o {Rechter Kontext: <a>}
+o -> O {Rechter Kontext: <o>}
+o -> O {Linker Kontext: <#> <p> <a> <l> <é> ; Rechter Kontext: <é>}
+o -> O {Linker Kontext: <#> <g> ; Rechter Kontext: <é>}
+o -> o {Linker Kontext: <#> <c> ; Rechter Kontext: <é>}
+o -> o {Linker Kontext: <#> <r> <a> <d> <i> ; Rechter Kontext: <é>}
+o -> o {Linker Kontext: <#> <p> <h> <o> <t> ; Rechter Kontext: <é>}
+
+# o: restliche Umgebungen
+o -> O {Rechter Kontext: <s> <o>}
+o -> o {Rechter Kontext: <s> <$V_GR_FRZ>}
+o -> o {Rechter Kontext: <t> <i> <$V_GR_FRZ_NICHT_E>}
+o -> O
+
+#-----------------------
+# oe
+œu -> 2 {Rechter Kontext: <d> <#>}
+œu -> 2 {Rechter Kontext: <f> <s> <#>}
+œu -> 9
+œ -> 9 {Rechter Kontext: <i>}
+œ -> e {Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+oeu -> 2 {Rechter Kontext: <d> <#>}
+oeu -> 2 {Rechter Kontext: <f> <s> <#>}
+oeu -> 9
+oe -> 9 {Rechter Kontext: <i>}
+oe -> e {Rechter Kontext: <$K_GR_FRZ> <$V_GR_FRZ>}
+
+#-----------------------
+# u
+u -> H {Rechter Kontext: <i>}
+u -> H.i {Rechter Kontext: <y>}
+u -> w {Linker Kontext: <g> ; Rechter Kontext: <a>}
+um -> 9~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+um -> 9~ {Rechter Kontext: <#>}
+un -> 9~ {Rechter Kontext: <$K_GR_FRZ_NICHT_MN>}
+un -> 9~ {Rechter Kontext: <#>}
+u -> y
+û -> y
+
+#--------
+# Konsonanten
+#--------
+
+#-----------------------
+# b
+bb -> b
+b -> b
+B -> b
+
+#-----------------------
+# c
+c -> {Linker Kontext: <x> ; Rechter Kontext: <$V_GR_FRZ_EIY>}
+c -> k {Rechter Kontext: <$V_GR_FRZ_AOU>}
+c -> k {Rechter Kontext: <$K_GR_FRZ>}
+c -> s {Rechter Kontext: <$V_GR_FRZ_EIY>}
+cc -> k.s {Rechter Kontext: <$V_GR_FRZ_EIY>}
+cc -> k {Rechter Kontext: <$V_GR_FRZ_AOU>}
+ch -> k {Rechter Kontext: <$K_GR_FRZ_LIQUID>}
+ch -> S
+cqu -> k
+c -> k
+ç -> s
+
+C -> {Linker Kontext: <x> ; Rechter Kontext: <$V_GR_FRZ_EIY>}
+C -> k {Rechter Kontext: <$V_GR_FRZ_AOU>}
+C -> k {Rechter Kontext: <$K_GR_FRZ>}
+C -> s {Rechter Kontext: <$V_GR_FRZ_EIY>}
+Ch -> k {Rechter Kontext: <$K_GR_FRZ_LIQUID>}
+Ch -> S
+
+#-----------------------
+# d
+dd -> d
+d -> {Rechter Kontext: <#>}
+d -> d
+
+#-----------------------
+# f
+ff -> f
+f -> f
+
+#-----------------------
+# g
+gu -> g {Rechter Kontext: <$V_GR_FRZ_EI>}
+g -> g {Rechter Kontext: <$V_GR_FRZ_AOU>}
+g -> Z {Rechter Kontext: <$V_GR_FRZ_EIY>}
+gn -> J
+gg -> g {Rechter Kontext: <$K_GR_FRZ>}
+g -> g
+
+#-----------------------
+# h
+h -> 
+
+#-----------------------
+# j
+j -> Z
+
+#-----------------------
+# k
+kh -> k
+kk -> k
+k -> k
+
+#-----------------------
+# l
+ll -> j {Linker Kontext: <i>}
+ll -> l
+l -> l
+
+#-----------------------
+# m
+mm -> m
+m -> m
+
+M -> m
+
+#-----------------------
+# n
+nn -> n
+n -> n
+
+#-----------------------
+# p
+ph -> f
+pp -> p
+p -> p
+
+#-----------------------
+# q
+qu -> k
+q -> k
+
+#-----------------------
+# r
+rh -> R
+rr -> R
+r -> R {Linker Kontext: <#> <$K_GR_FRZ> <e> ; Rechter Kontext: <#>}
+r -> {Linker Kontext: <e> ; Rechter Kontext: <#>}
+r -> R
+
+#-----------------------
+# s
+s -> z {Linker Kontext: <$V_GR_FRZ>; Rechter Kontext: <$V_GR_FRZ>}
+sc -> s
+ss -> s
+s -> {Rechter Kontext: <#>}
+s -> s
+
+#-----------------------
+# t
+th -> t
+tt -> t
+t -> {Rechter Kontext: <#>}
+t -> t
+
+#-----------------------
+# v
+v -> v
+V -> v
+
+#-----------------------
+# w
+w -> w
+
+#-----------------------
+# x
+x -> s {Linker Kontext: <s> <i>}
+x -> s {Linker Kontext: <d> <i>}
+x -> k.s {Linker Kontext: <$V_GR_FRZ_AEO> ; Rechter Kontext: <#>}
+x -> k.s {Linker Kontext: <$V_GR_FRZ_IY> <n> ; Rechter Kontext: <#>}
+x -> {Rechter Kontext: <#>}
+x -> g.z {Linker Kontext: <#> <e> ; Rechter Kontext: <$V_GR_FRZ>}
+x -> g.z {Linker Kontext: <#> <e> ; Rechter Kontext: <h>}
+x -> k.s
+
+#-----------------------
+# y
+yn -> E~ {Rechter Kontext: <$K_GR_FRZ>}
+ym -> E~ {Rechter Kontext: <$K_GR_FRZ>}
+yn -> E~ {Rechter Kontext: <#>}
+y -> j {Rechter Kontext: <$V_GR_FRZ>}
+y -> i
+
+#-----------------------
+# z
+zz -> z
+z -> {Rechter Kontext: <#>}
+z -> z
+
+#----------------
+# Weitere Zeichen
+#----------------
+- ->
+

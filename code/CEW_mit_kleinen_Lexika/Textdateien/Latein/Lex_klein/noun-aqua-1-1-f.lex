@@ -1,0 +1,40 @@
+[
+L_aqua
+Wortart: Substantiv
+Dekl./Konjug.: 1
+]
+=al°a, =alae
+°am°a, °amae
+°am=ic°a, °am=icae
+°anc°ill°a, °anc°illae
+°ang°ust°i°a, °ang°ust°iae
+°an°im°a, °an°imae
+°aqu°a, °aquae
+°arc°a, °arcae
+=ar°e°a, =ar°eae
+°arg=ill°a, °arg=illae
+aur°ic°ul°a, aur°ic°ulae
+°av=en°a, °av=enae
+b=ac°a, b=acae
+b=alaen°a, b=alaenae
+B°on=on°i°a, B°on=on°iae
+Br°it°ann°i°a, Br°it°ann°iae
+c°ai°a, c°a°iae
+c°am°er°a, c°am°erae
+c=er°a, c=erae
+c°ist°a, c°istae
+c°ol°umb°a, c°ol°umbae
+f°asc°i°a, f°asc°iae
+f°oss°a, f°ossae
+°inc°ol°a, °inc°olae
+m=ens°a, m=ensae
+°ostr°e°a, °ostr°eae
+p°etr°a, p°etrae
+poen°a, poenae
+p°ort°a, p°ortae
+r=ip°a, r=ipae
+sc=al°a, sc=alae
+sp°ong°i°a, sp°ong°iae
+t°err°a, t°errae
+t=ib°i°a, t=ib°iae
+v°irg°a, v°irgae

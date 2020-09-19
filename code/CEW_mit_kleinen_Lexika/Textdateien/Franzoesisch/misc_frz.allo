@@ -1,0 +1,43 @@
+# Funktionswort
+[
+A_et
+]
+^(.+)$ -> $1 {unflekt}
+
+# Adverb
+[
+A_hier
+]
+^(.+)$ -> $1 {unflekt}
+
+# ------------
+# Ausnahmen
+[
+A_etre
+]
+^(.+)$ -> $1 {inf}
+
+[
+A_suis
+]
+^(.+)$ -> $1 {1 Sg}
+
+[
+A_es
+]
+^(.+)$ -> $1 {2 Sg}
+
+[
+A_vaille
+]
+^(.+)$ -> $1 {3 Sg}
+
+[
+A_jeu
+]
+^(.+)$ -> $1 {m Sg}
+
+[
+A_long
+]
+^(.+)$ -> $1 {m Sg}

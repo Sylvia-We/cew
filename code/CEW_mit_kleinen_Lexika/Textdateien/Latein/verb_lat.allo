@@ -1,0 +1,32 @@
+# 1-1 (a) canto, cantare, cantavi, cantatus
+[
+A_cantare
+]
+^(.+)=o, .+$ 			-> $1 {stamm-praes} # cant
+^.+, .+, (.+)=i, .+$ 	-> $1 {stamm-perf} 	# cantav
+^.+, .+, .+, (.+)°us$ 	-> $1 {stamm-sup} 	# cantat
+
+
+# 2-1 (e)
+[
+A_tenere
+]
+^(.+)°e=o, .+$			-> $1 {stamm-praes}	# ten
+^.+, .+, (.+)=i, .+$ 	-> $1 {stamm-perf}	# tenu
+^.+, .+, .+, (.+)°us$ 	-> $1 {stamm-sup} 	# tent
+
+# 3-1 (kons.)
+[
+A_regere
+]
+^(.+)°i=o, .+$			-> $1 {stamm-praes} # recip
+^(.+[^(°i)])=o, .+$		-> $1 {stamm-praes} # reg
+^.+, .+, (.+)=i, .+$ 	-> $1 {stamm-perf} # rex
+^.+, .+, .+, (.+)°us$ 	-> $1 {stamm-sup} # rect
+
+[
+A_punire
+]
+^(.+)°i=o, .+$			-> $1 {stamm-praes} 		# pun
+^.+, .+, (.+)=i, .+$ 	-> $1 {stamm-perf} 		# puniv
+^.+, .+, .+, (.+)°us$ 	-> $1 {stamm-sup} 		# punit

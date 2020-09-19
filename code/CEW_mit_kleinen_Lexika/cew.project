@@ -1,0 +1,41 @@
+# Enthält die im CEW verwendeten Textdateien
+# lang1 ist die ältere Sprachstufe, lang2 die modernere
+# Syntax:
+#	<Sprache> : <Funktion der Datei> : <Pfad>
+
+# Allgemein
+lang1:	var:		./CEW/Textdateien/Allgemein/
+lang1:	graph:		./CEW/Textdateien/Allgemein/
+
+# Latein
+lang1:	name:		"Latein"
+lang1:	time:		-101
+lang1:	allo:		./CEW/Textdateien/Latein/
+lang1:	flex:		./CEW/Textdateien/Latein/
+lang1:	lex:		./CEW/Textdateien/Latein/Lex_klein/
+lang1:	cat:		./CEW/Textdateien/Latein/
+lang1:	suffix:		./CEW/Textdateien/Latein/
+lang1:	affix:		./CEW/Textdateien/Latein/
+lang1:	trans:		./CEW/Textdateien/Latein/
+
+# Phonetisch-phonologisch
+lang1:	syll:		./CEW/Textdateien/Phonetisch-phonologisch/
+lang1:	acc:		./CEW/Textdateien/Phonetisch-phonologisch/
+lang1:	phon:		./CEW/Textdateien/Allgemein/
+
+
+# Lautentwicklung
+lang1:	rul:		./CEW/Textdateien/Lautentwicklung/
+lang1:	ncat:		./CEW/Textdateien/Lautentwicklung/
+lang1:	match:		./CEW/Textdateien/Lautentwicklung/
+
+# Französisch
+lang2:	name:		"Französisch"
+lang2:	time:		2000
+lang2:	allo:		./CEW/Textdateien/Franzoesisch/
+lang2:	flex:		./CEW/Textdateien/Franzoesisch/
+lang2:	lex:		./CEW/Textdateien/Franzoesisch/Lex_klein/
+lang2:	cat:		./CEW/Textdateien/Franzoesisch/
+lang2:	suffix:		./CEW/Textdateien/Franzoesisch/
+lang2:	affix:		./CEW/Textdateien/Franzoesisch/
+lang2:	trans:		./CEW/Textdateien/Franzoesisch/

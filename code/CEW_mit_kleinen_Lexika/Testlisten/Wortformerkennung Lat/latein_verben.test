@@ -1,0 +1,236 @@
+# Ind. Präs. Akt.
+laud=o
+laud=as
+laud°at
+laud=am°us
+laud=at°is
+laud°ant
+
+# Konj. Präs. Akt.
+laud°em
+laud=es
+laud°et
+laud=em°us
+laud=et°is
+laud°ent
+
+# Inf. Präs. Akt.
+laud=ar°e
+
+# Part. Präs. Akt.
+laud=ans
+laud°ant°em
+laud°ant=es
+laud°ant°i°a
+
+# Ind. Impf. Akt.
+laud=ab°am
+laud=ab=as
+laud=ab°at
+laud=ab=am°us
+laud=ab=at°is
+laud=ab°ant
+
+# Ind. Perf. Akt.
+laud=av=i
+laud=av°ist=i
+laud=av°it
+laud=av°im°us
+laud=av°ist°is
+laud=av=er°unt
+
+# Konj. Pqp. Akt.
+laud=av°iss°em
+laud=av°iss=es
+laud=av°iss°et
+#laud=av°iss=em°us
+#laud=av°iss=et°is
+laud=av°iss°ent
+
+# Part Perf Pass
+laud=at°us
+laud=at°a
+laud=at°um
+laud=at°am
+laud=at=i
+laud=atae
+laud=at=os
+laud=at=as
+
+# Ind. Präs. Akt.
+m°on°e=o
+m°on=es
+m°on°et
+m°on=em°us
+m°on=et°is
+m°on°ent
+
+# Konj. Präs. Akt.
+m°on°e°am
+m°on°e=as
+m°on°e°at
+m°on°e=am°us
+m°on°e=at°is
+m°on°e°ant
+
+# Inf. Präs. Akt.
+m°on=er°e
+
+# Part. Präs. Akt.
+m°on=ens
+m°on°ent°em
+m°on°ent=es
+m°on°ent°i°a
+
+# Ind. Impf. Akt.
+m°on=eb°am
+m°on=eb=as
+m°on=eb°at
+m°on=eb=am°us
+m°on=eb=at°is
+m°on=eb°ant
+
+# Ind. Perf. Akt.
+m°on°u=i
+m°on°u°ist=i
+m°on°u°it
+m°on°u°im°us
+m°on°u°ist°is
+m°on°u=er°unt
+
+# Konj. Pqp. Akt.
+m°on°u°iss°em
+m°on°u°iss=es
+m°on°u°iss°et
+m°on°u°iss=em°us
+m°on°u°iss=et°is
+m°on°u°iss°ent
+
+# Part Perf Pass
+m°on°it°us
+m°on°it°a
+m°on°it°um
+m°on°it°am
+m°on°it=i
+m°on°itae
+m°on°it=os
+m°on°it=as
+
+
+# Ind. Präs. Akt.
+aud°i=o
+aud=is
+aud°it
+aud=im°us
+aud=it°is
+aud°i°unt
+
+# Konj. Präs. Akt.
+aud°i°am
+aud°i=as
+aud°i°at
+aud°i=am°us
+aud°i=at°is
+aud°i°ant
+
+# Inf. Präs. Akt.
+aud=ir°e
+
+# Part. Präs. Akt.
+aud°i=ens
+aud°i°ent°em
+aud°i°ent=es
+aud°i°ent°i°a
+
+# Ind. Impf. Akt.
+aud°i=eb°am
+aud°i=eb=as
+aud°i=eb°at
+aud°i=eb=am°us
+aud°i=eb=at°is
+aud°i=eb°ant
+
+# Ind. Perf. Akt.
+aud=iv=i
+aud=iv°ist=i
+aud=iv°it
+aud=iv°im°us
+aud=iv°ist°is
+aud=iv=er°unt
+
+# Konj. Pqp. Akt.
+aud=iv°iss°em
+aud=iv°iss=es
+aud=iv°iss°et
+aud=iv°iss=em°us
+aud=iv°iss=et°is
+aud=iv°iss°ent
+
+# Part Perf Pass
+aud=it°us
+aud=it°a
+aud=it°um
+aud=it°am
+aud=it=i
+aud=itae
+aud=it=os
+aud=it=as
+
+# Ind. Präs. Akt.
+r°eg=o
+r°eg°is
+r°eg°it
+r°eg°im°us
+r°eg°it°is
+r°eg°unt
+
+# Konj. Präs. Akt.
+r°eg°am
+r°eg=as
+r°eg°at
+r°eg=am°us
+r°eg=at°is
+r°eg°ant
+
+# Inf. Präs. Akt.
+r°eg°er°e
+
+# Part. Präs. Akt.
+r°eg=ens
+r°eg°ent°em
+r°eg°ent=es
+r°eg°ent°i°a
+
+# Ind. Impf. Akt.
+r°eg=eb°am
+r°eg=eb=as
+r°eg=eb°at
+r°eg=eb=am°us
+r°eg=eb=at°is
+r°eg=eb°ant
+
+# Ind. Perf. Akt.
+r=ex=i
+r=ex°ist=i
+r=ex°it
+r=ex°im°us
+r=ex°ist°is
+r=ex=er°unt
+
+# Konj. Pqp. Akt.
+r=ex°iss°em
+r=ex°iss=es
+r=ex°iss°et
+r=ex°iss=em°us
+r=ex°iss=et°is
+r=ex°iss°ent
+
+# Part Perf Pass
+r=ect°us
+r=ect°a
+r=ect°um
+r=ect°am
+r=ect=i
+r=ectae
+r=ect=os
+r=ect=as

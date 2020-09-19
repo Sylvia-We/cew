@@ -1,0 +1,42 @@
+[
+L_species
+Wortart: Substantiv
+Dekl./Konjug.: 5
+]
+°all°uv°i=es, °all°uv°i=e=i
+°am=ar°it°i=es, °am=ar°it°i=e=i
+°am=ic°it°i=es, °am=ic°it°i=e=i
+caes°ar°i=es, caes°ar°i=e=i
+c°alv°it°i=es, c°alv°it°i=e=i
+c°oll°uv°i=es, c°oll°uv°i=e=i
+cr°ass°it°i=es, cr°ass°it°i=e=i
+d=ig°er°i=es, d=ig°er°i=e=i
+d=il°uv°i=es, d=il°uv°i=e=i
+°eff°ig°i=es, °eff°ig°i=e=i
+f°ac°i=es, f°ac°i=e=i
+f°all=ac°i=es, f°all=ac°i=e=i
+f°id=es, f°id=e=i
+gl°ac°i=es, gl°ac°i=e=i
+°ill°uv°i=es, °ill°uv°i=e=i
+°int°emp°er°i=es, °int°emp°er°i=e=i
+m=ac°er°i=es, m=ac°er°i=e=i
+m°ac°i=es, m°ac°i=e=i
+m=at°er°i=es, m=at°er°i=e=i
+m°ur°i=es, m°ur°i=e=i
+paup°er°i=es, paup°er°i=e=i
+p°erm°it°i=es, p°erm°it°i=e=i
+p°ern°ic°i=es, p°ern°ic°i=e=i
+pl=an°it°i=es, pl=an°it°i=e=i
+pr=og°en°i=es, pr=og°en°i=e=i
+pr=ol°uv°i=es, pr=ol°uv°i=e=i
+r°ab°i=es, r°ab°i=e=i
+sp°ec°i=es, sp°ec°i=e=i
+s°up°erf°ic°i=es, s°up°erf°ic°i=e=i
+t°emp°er°i=es, t°emp°er°i=e=i
+tr°ist°it°i=es, tr°ist°it°i=e=i
+v°ast°it°i=es, v°ast°it°i=e=i
+°ac°i=es, °ac°i=e=i
+c°ong°er°i=es, c°ong°er°i=e=i
+°ingl°uv°i=es, °ingl°uv°i=e=i
+r=es, r°e=i
+sp=es, sp=e=i

@@ -1,0 +1,85 @@
+Substantiv -> Substantiv:
+{f Akk Sg} -> {f Sg}
+{f Akk Sg} -> {f SgPl}
+{f Akk Pl} -> {f Pl}
+{f Akk Pl} -> {f SgPl}
+{f NomAkk Sg} -> {f Sg}
+{f NomAkk Pl} -> {f Pl}
+{f Nom Sg + f NomAkk Pl} -> {f Pl}
+{m Akk Sg} -> {m Sg}
+{m Akk Sg} -> {m SgPl}
+{m Akk Pl} -> {m Pl}
+{m Akk Pl} -> {m SgPl}
+{m NomAkk Sg} -> {m Sg}
+
+Adjektiv -> Adjektiv:
+{f Akk Sg} -> {f Sg}
+{f Akk Sg} -> {mf Sg}
+{f Akk Sg} -> {mf SgPl}
+{f Akk Pl} -> {f Pl}
+{f Akk Pl} -> {mf SgPl}
+{m Akk Sg} -> {m Sg}
+{m Akk Sg} -> {mf Sg}
+{m Akk Sg} -> {m SgPl}
+{m Akk Sg} -> {mf SgPl}
+{m Akk Pl} -> {m Pl}
+{m Akk Pl} -> {m SgPl}
+{m Akk Pl} -> {mf SgPl}
+{m Akk Sg + n NomAkk Sg} -> {m Sg}
+{m Akk Sg + n NomAkk Sg} -> {m SgPl}
+{m Akk Sg + n NomAkk Sg} -> {mf Sg}
+{f Nom Sg + n NomAkk Pl} -> {f Sg}
+{mf Akk Sg} -> {m Sg}
+
+Verb -> Verb:
+{Inf} -> {inf}
+{1 Sg} -> {1 Sg}
+{2 Sg} -> {2 Sg}
+{3 Sg} -> {3 Sg}
+{1 Pl} -> {1 Pl}
+{2 Pl} -> {2 Pl}
+{3 Pl} -> {3 Pl}
+{Part f Akk Pl} -> {part pres}
+{Part f Akk Pl} -> {Part f Pl}
+{Part f Akk Sg} -> {part pres}
+{Part f Akk Sg} -> {Part f Sg}
+{Part m Akk Pl} -> {part pres}
+{Part m Akk Pl} -> {Part m Pl}
+{Part n NomAkk Sg + Part m Akk Sg} -> {part pres}
+{Part n NomAkk Sg + Part m Akk Sg} -> {Part m Sg}
+
+Adverb -> Adverb:
+{unflekt} -> {unflekt}
+{pos} -> {unflekt}
+{komp} -> {unflekt}
+{super} -> {unflekt}
+
+Konjunktion -> Funktionswort:
+{unflekt} -> {unflekt}
+
+Numeral -> Funktionswort:
+{unflekt} -> {unflekt}
+{m Nom Sg} -> {unflekt}
+
+Praeposition -> Funktionswort:
+{unflekt} -> {unflekt}
+
+Adverb -> Funktionswort:
+{pos} -> {unflekt}
+{unflekt} -> {unflekt}
+
+Misc -> Funktionswort:
+{unflekt} -> {unflekt}
+
+Misc -> Adjektiv:
+{unflekt} -> {m Sg}
+
+Misc -> Substantiv:
+{unflekt} -> {f Sg}
+
+Verb -> Adjektiv:
+{Part n NomAkk Sg + Part m Akk Sg} -> {m Sg}
+
+Adjektiv -> Funktionswort:
+{m Akk Sg + n NomAkk Sg} -> {unflekt}
+{f Nom Sg + n NomAkk Pl} -> {unflekt}

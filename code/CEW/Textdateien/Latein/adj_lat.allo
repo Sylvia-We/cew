@@ -1,0 +1,32 @@
+# 1-1 (a-/o-)
+[
+A_altus
+]
+^(.+?)°us,.+$ -> $1 {stamm}
+
+# 1-2
+[
+A_pulcher
+]
+^(.+?°er),.+$ -> $1 {m Nom Sg}
+^.+°er?, (.+)°a,? .+$ -> $1 {stamm}
+
+# 3-1 (1-endig)
+[
+A_ferox
+]
+^(.+?),.+$ -> $1 {mfn Nom Sg + n Akk Sg}
+^.+, (.+)°is$ -> $1 {stamm}
+
+# 3-2 (2-endig)
+[
+A_legalis
+]
+^(.+?)°is, .+?°is, .+e$ -> $1 {stamm}
+
+# 3-3 (3-endig)
+[
+A_acer
+]
+^(.+?), .+?°is, .+?$ -> $1 {m Nom Sg}
+^.+?, (.+?)°is, .+?$ -> $1 {stamm}

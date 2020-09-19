@@ -1,0 +1,25 @@
+# Spezielle Zeichen wie "\" müssen escaped werden
+
+"Z
+
+"Y Z
+
+%X "Y Z {Y: ^.*(o-\\e_\^|a-\\e_\^|a-\\u_\^).*$}
+%X "Y Z {Y: ^.*:.*$}
+%X "Y Z {Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|i_\^|u_\^|k_h|p_h|t_h|g_w|k_w)$}
+"X Y Z
+
+%W X "Y Z {Y: ^.*(o-\\e_\^|a-\\e_\^|a-\\u_\^).*$}
+%W X "Y Z {Y: ^.*:.*$}
+%W X "Y Z {Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|i_\^|u_\^|k_h|p_h|t_h|g_w|k_w)$}
+%W "X Y Z
+
+%V W X "Y Z {Y: ^.*(o-\\e_\^|a-\\e_\^|a-\\u_\^).*$}
+%V W X "Y Z {Y: ^.*:.*$}
+%V W X "Y Z {Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|i_\^|u_\^|k_h|p_h|t_h|g_w|k_w)$}
+%V W "X Y Z
+
+%U V W X "Y Z {Y: ^.*(o-\\e_\^|a-\\e_\^|a-\\u_\^).*$}
+%U V W X "Y Z {Y: ^.*:.*$}
+%U V W X "Y Z {Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|i_\^|u_\^|k_h|p_h|t_h|g_w|k_w)$}
+%U V W "X Y Z

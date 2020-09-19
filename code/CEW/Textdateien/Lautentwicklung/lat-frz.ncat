@@ -1,0 +1,22 @@
+# 5 -> 1
+{f Nom Sg + f NomAkk Pl} -> {f Nom Sg}
+{f Nom Sg + f NomAkk Pl} -> {f Nom Pl}
+{f Nom Sg + f NomAkk Pl} -> {f Akk Pl}
+{f Akk Sg} -> {f Akk Sg}
+
+# 2 -> 2 und 4 -> 2
+{n NomAkk Sg} -> {m Nom Sg}
+{n NomAkk Sg} -> {m Akk Sg}
+{n NomAkk Pl} -> {m Nom Pl}
+{n NomAkk Pl} -> {m Akk Pl}
+
+# 4 -> 2
+{m Nom Sg} -> {m Nom Sg}
+{m Akk Sg} -> {m Akk Sg}
+{m NomAkk Pl} -> {m Nom Pl}
+{m NomAkk Pl} -> {m Akk Pl}
+
+{mf NomAkk Pl} -> {mf Nom Pl}
+{mf NomAkk Pl} -> {mf Akk Pl}
+
+{f Nom Sg} -> {m Nom Sg}

@@ -1,0 +1,61 @@
+[
+A_joli / A_aigu
+]
+^(.+)$ -> $1 {m Sg}
+
+[
+A_bon
+]
+^(.+)$    -> $1     {m Sg}
+^(.+)(.)$ -> $1$2$2 {stamm2}
+
+[
+A_digital
+]
+^(.+)$  -> $1  {m Sg}
+^(.+)l$ -> $1u {stamm2}
+
+[
+A_cher
+]
+^(.+)$     -> $1    {m Sg}
+^(.+)e(r)$ -> $1è$2 {stamm2}
+
+[
+A_porteur
+]
+^(.+)$  -> $1  {m Sg}
+^(.+)r$ -> $1s {stamm2}
+
+[
+A_pensif
+]
+^(.+)$  -> $1  {m Sg}
+^(.+)f$ -> $1v {stamm2}
+
+[
+A_adorateur
+]
+^(.+)$    -> $1   {m Sg}
+^(.+)eur$ -> $1ric {stamm2}
+
+[
+A_docile
+]
+^(.+)$ -> $1 {mf Sg}
+
+[
+A_douteux
+]
+^(.+)$  -> $1  {m SgPl}
+^(.+)x$ -> $1s {stamm2}
+
+[
+A_abstrus
+]
+^(.+)$ -> $1 {m SgPl}
+
+[
+A_albinos
+]
+^(.+)$ -> $1 {mf SgPl}

@@ -1,0 +1,32 @@
+# 1 Silbe
+s°ub # "Z
+
+# 2 Silben
+m=ens°a # "Y Z
+
+# 3 Silben
+b=alaen°a # %X "Y Z 	{Y: ^.*(o-\\e|a-\\e|a-\\u).*$}
+°am=ic°us # %X "Y Z 	{Y: ^.*:.*$}
+c°ol°umb°a # %X "Y Z 	{Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|j|w|k_h|p_h|t_h|g_w|k_w)$}
+°an°im°us # "X Y Z
+
+# 4 Silben
+°in°amoen°us # %W X "Y Z 	{Y: ^.*(o-\\e|a-\\e|a-\\u).*$}
+s°ubv°en=ir°e # %W X "Y Z {Y: ^.*:.*$}
+c°er°eb°ell°um # %W X "Y Z 	{Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|j|w|k_h|p_h|t_h|g_w|k_w)$}
+°ep°isc°op°us # %W "X Y Z
+
+# 5 Silben
+°abr°od°iaet°us # %V W X "Y Z 	{Y: ^.*(o-\\e|a-\\e|a-\\u).*$}
+°ant°ec°ess=or°em # %V W X "Y Z 	{Y: ^.*:.*$}
+t°emp°er=am°ent°um # %V W X "Y Z 	{Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|j|w|k_h|p_h|t_h|g_w|k_w)$}
+d°orm=it=or°i°um # %V W "X Y Z
+
+# 6 Silben
+# %U V W X "Y Z 	{Y: ^.*(o-\\e|a-\\e|a-\\u).*$}
+n°um°er=os°it=at°em # %U V W X "Y Z 	{Y: ^.*:.*$}
+s°up°er°inc°id°ent°em # %U V W X "Y Z 	{Y: ^.*(b|d|f|g|h|k|l|m|n|p|r|s|t|z|j|w|k_h|p_h|t_h|g_w|k_w)$}
+°an°im°adv°ert°er°e # %U V W "X Y Z
+
+
+

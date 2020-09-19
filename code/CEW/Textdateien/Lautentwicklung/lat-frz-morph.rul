@@ -1,0 +1,305 @@
+# Regeln aus Rheinfelder I
+# ohne Rheinfelders Anmerkungen
+
+################################################
+# Periodisierung
+
+# bei Rheinfelder:
+# Vlat.: -100--600
+# Entwicklungen links: 601--1100
+# Entwicklungen rechts: 1101--1976
+
+# im 20. Jh.: 1901 bis 2000
+# 1. Jh. v. Chr. = 100 - 1
+# "Ende des 18. Jh." : 1790
+
+################################################
+#################### Vokale ####################
+################################################
+
+################################################
+# im Vulgärlatein (-100 - 600)
+################################################
+
+[
+Id: MORPH_Dekl_1
+Name: Wechsel der Deklinationsklasse
+Beschreibung: [es] > [a] und [em] > [a]
+Rheinfelder-Id: 20 (II: 11)
+Beispiel: klat. mātĕrĭēs > mātĕrĭă
+]
+Tabelle: aqua ; Dekl./Konjug.: 1
+	{
+	Zeit: -99--600
+	Tabelle: species
+	Dekl./Konjug.: 5
+	}
+
+[
+Id: MORPH_Genus_1
+Name: Genuswechsel
+Beschreibung: [um] > [us]
+Rheinfelder-Id: 21 (II: 12)
+Beispiel: klat. vīnum > vīnus
+]
+Tabelle: circus
+	{
+	Zeit: -99--600
+	Tabelle: templum
+	}
+
+[
+Id: MORPH_Genus_2_sg
+Name: Genuswechsel
+Beschreibung: 
+Rheinfelder-Id: 23 (II: 12-13)
+Beispiel: klat. mare n > mare f
+]
+Gram. Kat.: f NomAkk Sg
+	{
+	Zeit: -99--600
+	Tabelle: mare
+	Gram. Kat.: n NomAkk Sg
+	}
+
+[
+Id: MORPH_Genus_2_pl
+Name: Genuswechsel
+Beschreibung: 
+Rheinfelder-Id: 23 (II: 12-13)
+Beispiel: klat. maria n > maria f
+]
+Gram. Kat.: f NomAkk Pl
+	{
+	Zeit: -99--600
+	Tabelle: mare
+	Gram. Kat.: n NomAkk Pl
+	}
+
+[
+Id: MORPH_Genus_3_sg
+Name: Genuswechsel
+Rheinfelder-Id: 24 (II: 13)
+Beispiel: klat. tempus n > tempus m
+]
+Gram. Kat.: m NomAkk Sg
+	{
+	Zeit: -99--600
+	Tabelle: tempus
+	Gram. Kat.: n NomAkk Sg
+	}
+
+[
+Id: MORPH_Genus_3_pl
+Name: Genuswechsel
+Rheinfelder-Id: 24 (II: 13)
+Beispiel: klat. tempus n > tempus m
+]
+Gram. Kat.: m NomAkk Pl
+	{
+	Zeit: -99--600
+	Tabelle: tempus
+	Gram. Kat.: n NomAkk Pl
+	}
+	
+[
+Id: MORPH_Genus_4
+Name: Genuswechsel
+Rheinfelder-Id: 21 (II: 12)
+Beispiel: klat. myrtus f > myrtus m
+]
+Tabelle: circus
+	{
+	Zeit: -99--600
+	Tabelle: myrtus
+	}
+
+[
+Id: MORPH_Dekl_3
+Name: Wechsel der Deklinationsklasse
+Beschreibung: [u] > [us]
+Rheinfelder-Id: 22 (II: 12)
+Beispiel: klat. cŏrnu > cŏrnus
+]
+Tabelle: circus ; Dekl./Konjug.: 2
+	{
+	Zeit: -99--600
+	Tabelle: cornu
+	Dekl./Konjug.: 4
+	}
+
+[
+Id: MORPH_Dekl_4
+Name: Wechsel der Deklinationsklasse
+Rheinfelder-Id: 22 (II: 12)
+Beispiel: klat. căntūs > căntōs
+]
+Tabelle: circus ; Dekl./Konjug.: 2
+	{
+	Zeit: -99--600
+	Tabelle: passus
+	Dekl./Konjug.: 4
+	}
+	
+[
+Id: MORPH_Analog_M1_1
+Name: Nom. Pl. analogisch
+Rheinfelder-Id: 36 (II: 21)
+Beispiel: klat. pānēs > vlat. panes, pani > afrz. pain
+]
+[es] > [i] ; <es> > <i>
+	{
+	Zeit: -100--600
+	Spezialfall: MORPH_Analog_M2_1
+	Tabelle: miles
+	Dekl./Konjug.: 3
+	Gram. Kat.: m Nom Pl
+	Rechter Kontext: [#]
+	}
+	
+[
+Id: MORPH_Ersatz_1
+Name: Ersatz der Pluralformen
+Rheinfelder-Id: 37 (II: 21)
+Beispiel: klat. tĕmpŏră > vlat. tempora, tempos > afrz. tens
+]
+[Ora] > [os] ; <ora> > <os>
+	{
+	Zeit: -100--600
+	Tabelle: tempus
+	Dekl./Konjug.: 3
+	Rechter Kontext: [#]
+	}
+
+[
+Id: MORPH_Analog_F1_2
+Name: Nom. Pl. analogisch
+Rheinfelder-Id: 41 (II: 23)
+Beispiel: klat. pŏrtăe > vlat. portas > afrz. portes
+]
+[a-\e] > [as] ; <ae> > <as>
+[E] > [as] ; <e> > <as>
+	{
+	Zeit: -100--600
+	Tabelle: aqua
+	Gram. Kat.: f Nom Pl
+	Rechter Kontext: [#]
+	}
+	
+	
+################################################
+# im Altfranzösischen (601 - 1100)
+################################################
+
+[
+Id: MORPH_Assim_1
+Name: Assimilation von ss
+Rheinfelder-Id: 34 (II: 20)
+Beispiel: klat. ŭrsus > ors
+]
+[ss] > [s] ; <ss> > <s>
+	{
+	Zeit: 601--1100
+	Tabelle: circus
+	Dekl./Konjug.: 2
+	}
+
+[
+Id: MORPH_Analog_M2_1
+Name: Nom. Pl. analogisch
+Rheinfelder-Id: 41 (II: 23)
+Beispiel: klat. pătrēs > vlat. patre(s) > afrz. pedre
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: -100--700
+	Tabelle: miles
+	Dekl./Konjug.: 3
+	Gram. Kat.: m Nom Pl
+	Linker Kontext: [tre]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: MORPH_Analog_F1_1
+Name: Nom. Sg. analogisch
+Rheinfelder-Id: 52 (II: 29)
+Beispiel: klat. pŭlvis (m) > vlat. polvere(s) > afrz. poldre
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: -100--700
+	Tabelle: soror
+	Dekl./Konjug.: 3
+	Gram. Kat.: f Nom Sg
+	Linker Kontext: [e]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: MORPH_Analog_M3_1
+Name: Nom. Pl. analogisch
+Rheinfelder-Id: 42 (II: 24)
+Beispiel: klat. cŏmĭtēs > vlat. cometes > afrz. conte
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: -100--700
+	Tabelle: miles
+	Dekl./Konjug.: 3
+	Gram. Kat.: m Nom Pl
+	Rechter Kontext: [#]
+	}
+
+################################################
+# im Mittel- und Neufranzösischen (1101 - 1976)
+################################################
+
+[
+Id: MORPH_Analog_M2_2
+Name: Nom. Sg. analogisch
+Rheinfelder-Id: 61 (II: 33)
+Beispiel: afrz. gendre > afrz. gendres
+]
+[] > [s] ; <> > <s>
+	{
+	Zeit: 1101--1300
+	Tabelle: puer
+	Dekl./Konjug.: 2
+	Gram. Kat.: m Nom Sg
+	Rechter Kontext: [#]
+	}
+
+[
+Id: MORPH_Analog_M3_2
+Name: Nom. Sg. analogisch
+Rheinfelder-Id: 61 (II: 34)
+Beispiel: afrz. uem > afrz. uens
+]
+[] > [s] ; <> > <s>
+	{
+	Zeit: 1101--1300
+	Und-Vorbedingung: !MORPH_Analog_M3_2
+	Tabelle: miles
+	Dekl./Konjug.: 3
+	Gram. Kat.: m Nom Sg
+	Linker Kontext: [$NICHT_s]
+	Rechter Kontext: [#]
+	}
+
+[
+Id: MORPH_Analog_F2_1
+Name: Nom. Sg. analogisch
+Rheinfelder-Id: 69 (II: 37)
+Beispiel: afrz. fin(s) > afrz. fin
+]
+[s] > [] ; <s> > <>
+	{
+	Zeit: 1101--1300
+	Tabelle: bos
+	Dekl./Konjug.: 3
+	Gram. Kat.: mf Nom Sg
+	Rechter Kontext: [#]
+	}
+
+

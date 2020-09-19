@@ -1,0 +1,167 @@
+
+##### 1 Präsensstamm #####
+
+[
+A_chanter
+]
+^(.+)er$ -> $1 {stamm-pr4} 		# chant(e)
+
+[
+A_rompre
+]
+^(.+)re$ -> $1 {stamm-pr4}  		# romp(s)
+
+[
+A_vendre
+]
+^(.+)re$ -> $1 {stamm-pr4}  		# vend(s)
+^(.+)re$ -> $1 {3 Sg}
+
+##### 2 Präsensstämme #####
+
+# Opposition 1,2,3,6 - 4,5 #
+
+[
+A_appeler
+]
+^(.+)(.)er$ -> $1$2$2 {stamm-pr1} 		# appell(e)
+^(.+)er$ -> $1 {stamm-pr4} 		# appel(ons)
+
+[
+A_appuyer
+]
+^(.+)yer$ -> $1i {stamm-pr1} 		# appui(e)
+^(.+)er$ -> $1 {stamm-pr4} 		# appuy(ons)
+
+[
+A_lever
+]
+^(.+)e(.*?)er$ -> $1è$2 {stamm-pr1}	 	# lèv(e)
+^(.+)er$ -> $1 {stamm-pr4} 			# lev(ons)
+
+[
+A_preferer
+]
+^(.+)é(.*?)er$ -> $1è$2 {stamm-pr1} 	# préfèr(e)
+^(.+)er$ -> $1 {stamm-pr4} 			# préfèr(ons), préfèr(ons)
+
+
+# Opposition 1,2,3 - 4,5,6 #
+
+[
+A_sortir
+]
+^(.+)tir$ -> $1 {stamm-pr1} 		# sor(s)
+^(.+)ir$ -> $1 {stamm-pr4} 		# sort(ons)
+
+[
+A_battre
+]
+^(.+)tre$ -> $1 {stamm-pr1} # bat(s)
+^(.+)re$ -> $1 {stamm-pr4} # batt(ons)
+^(.+)tre$ -> $1 {3 Sg}
+
+
+# Opposition 1,2,3,5,6 - 4 #
+
+[
+A_changer
+]
+^(.+)er$ -> $1 {stamm-pr1} 	# chang(e)
+^(.+)r$ -> $1 {stamm-pr4} 	# change(ais), change(ai)
+
+[
+A_commencer
+]
+^(.+)er$ -> $1 {stamm-pr1} 		# commenc(e)
+^(.+)cer$ -> $1ç {stamm-pr4} 	# commenç(ons)
+
+
+##### 3 Präsensstämme #####
+
+# Opposition 1,2,3,6 - 4 - 5 #
+
+[
+A_assieger
+]
+^(.+)é(.)er$ -> $1è$2 {stamm-pr1} 	# assièg(e)
+^(.+)r$ -> $1 {stamm-pr4} 			# assiége(ons) 
+^(.+)er$ -> $1 {stamm-pr5} 	    # assiég(ez)
+
+[
+A_apiecer
+]
+^(.+)é(.)er$ -> $1è$2 {stamm-pr1} 	# apièc(e)
+^(.+)cer$ -> $1ç {stamm-pr4} 		# apiéç(ons)
+^(.+)er$ -> $1 {stamm-pr5} 			# apiéc(ez)
+
+
+##### andere #####
+
+# 3 Stämme: enver-r-a oder enve-rr-a
+
+[
+A_apercevoir
+]
+^(.+)cev(oi)r$ -> $1ç$2 {stamm-pr1} 	# aperçoi(s)
+^(.+)oir$ -> $1 {stamm-pr4} 			# apercev(ons)
+^(.+)cevoir$ -> $1çoiv {stamm-pr6} 	# aperçoiv(ent)
+^(.+)cevoir$ -> $1ç {stamm-ps} 		# aperç(us)
+
+[
+A_prendre
+]
+^(.+)re$ -> $1 {stamm-pr1} 	# prend(s)
+^(.+)dre$ -> $1 {stamm-pr4} 	# pren(ons)
+^(.+)dre$ -> $1n {stamm-pr6} 	# prenn(ent)
+^(.+)endre$ -> $1i {stamm-part}# pr(is)
+^(.+)endre$ -> $1 {stamm-ps} 	# pr(is)
+^(.+)re$ -> $1 {3 Sg}
+
+[
+A_conduire
+]
+^(.+)re$ -> $1 {stamm-pr1} 	# condui(s)
+^(.+)re$ -> $1s {stamm-pr4} 	# conduis(ons)
+
+[
+A_coudre
+]
+^(.+)re$ -> $1 {stamm-pr1} 	# coud(s)
+^(.+)dre$ -> $1s {stamm-pr4} 	# cous(ons)
+^(.+)re$ -> $1 {3 Sg}
+
+[
+A_accroitre
+]
+^(.+)ître$ -> $1i {stamm-pr1} # accroi(s)
+^(.+)tre$ -> $1 {stamm-pr3} # accroî(t)
+^(.+)ître$ -> $1iss {stamm-pr4} # accroiss(ons)
+^(.+)re$ -> $1 {stamm-fut} # accroît(rai)
+^(.+)[ao]ître$ -> $1 {stamm-ps} # accr(us)
+
+[
+A_atteindre
+]
+^(.+)dre$ -> $1 {stamm-pr1} 	# attein(s)
+^(.+)ndre$ -> $1gn {stamm-pr4} # atteign(ais), atteign(is)
+^(.+)re$ -> $1 {stamm-fut} 	# atteind(rai)
+
+[
+A_croire
+]
+^(.+)re$ -> $1 {stamm-pr1} 	# croi(s)
+^(.+)ire$ -> $1y {stamm-pr4} 	# croy(ons)
+^(.+)[ao]ire$ -> $1 {stamm-ps} # cr(us)
+
+[
+A_ouvrir
+]
+^(.+)ir$ -> $1 {stamm-pr4} 		# ouvr(e)
+^(.+)rir$ -> $1er {stamm-part}		# ouver(t)
+
+
+[
+A_agir
+]
+^(.+)ir$ -> $1 {stamm-pr4} 		# ag(is)

@@ -1,0 +1,22 @@
+[
+L_accroitre
+Wortart: Verb
+]
+accroître
+apparaître
+comparaître
+connaître
+disparaître
+décroître
+méconnaître
+naître
+paraître
+paître
+reconnaître
+recroître
+renaître
+reparaître
+repaître
+réapparaître
+surcroître
+transparaître

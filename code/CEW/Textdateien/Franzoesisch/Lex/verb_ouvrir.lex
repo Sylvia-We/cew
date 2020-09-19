@@ -1,0 +1,21 @@
+[
+L_ouvrir
+Wortart: Verb
+]
+accueillir
+assaillir
+couvrir
+cueillir
+découvrir
+défaillir
+entr'ouvrir
+entrouvrir
+mésoffrir
+offrir
+ouvrir
+recouvrir
+recueillir
+redécouvrir
+rouvrir
+souffrir
+tressaillir

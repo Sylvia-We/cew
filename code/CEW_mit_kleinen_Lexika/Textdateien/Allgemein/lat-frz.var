@@ -1,0 +1,182 @@
+# Syntax:
+# 	Variable : Grapheme/Sampa
+
+###############################
+# Nuklei
+###############################
+
+$V : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+###############################
+# für die Transkription
+###############################
+
+# ---
+# graphisch
+
+$V_GR_KLAT : =a, °a, =A, °A, ae, Ae, au, Au, =e, °e, =E, °E, =i, °i, =I, °I, =o, °o, =O, °O, oe, Oe, =u, °u, =U, °U, =y, °y, =Y, °Y
+
+$K_GR_KLAT : b, c, d, f, g, h, k, l, m, n, p, q, r, s, t, v, x, z, B, C, D, F, G, H, K, L, M, N, P, Q, R, S, T, V, X, Z
+
+
+$GR_FRZ : a, â, à, e, é, è, ê, i, î, ï, o, ô, œ, u, û, b, c, ç, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, y, z
+
+$GR_FRZ_NICHT_L : a, â, à, e, é, è, ê, i, î, ï, o, ô, œ, u, û, b, c, ç, d, f, g, h, j, k, m, n, p, q, r, s, t, v, x, y, z
+
+
+$K_GR_FRZ : b, c, ç, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, y, z
+
+$K_GR_FRZ_GESPROCHEN : c, l
+
+$K_GR_LIQUIDA : l, r
+
+$K_GR_FRZ_DRZ : d, r, z
+
+$K_GR_FRZ_PST : p, s, t
+
+$K_GR_FRZ_LIQUID : l, r
+
+$K_GR_FRZ_GQ : g, q
+
+$K_GR_FRZ_NICHT_MN : b, c, ç, d, f, g, h, j, k, l, p, q, r, s, t, v, x, y, z
+
+$K_GR_FRZ_NICHT_LR : b, c, ç, d, f, g, h, j, k, m, n, p, q, s, t, v, x, y, z
+
+
+$V_GR_FRZ : a, â, à, e, é, è, ê, i, î, ï, o, ô, œ, u, û
+
+$V_GR_FRZ_IY : i, î, ï, y
+
+$V_GR_FRZ_EIY : e, é, è, ê, i,î, ï,  y
+
+$V_GR_FRZ_EI : e, é, è, ê, ê, i, î, ï
+
+$V_GR_FRZ_AOU : a, â, à, o, ô, u, û
+
+$V_GR_FRZ_AEO : a, â, à, e, é, è, ê, o, ô
+
+$V_GR_FRZ_NICHT_E : a, â, à, i, î, ï, o, ô, œ, u, û
+
+$V_GR_FRZ_NICHT_I : a, â, à, e, é, è, ê, o, ô, œ, u, û
+
+
+# ---
+# phonologisch (Sampa)
+
+$V_PH_KLAT : a, a:, a-\e_^, a-\u_^, e, e:, i, i:, o, o:, o-\e_^, u, u:, y, y:
+
+
+
+###############################
+# für die Silbentrennung
+###############################
+
+######
+# klat.
+
+# ---
+# phonologisch (Sampa)
+
+$V_PH_KLAT_2 : a, a:, a-\e_^, a-\u_^, e, e:, i, i:, o, o:, o-\e_^, u, u:, y, y:
+
+$K_PH_KLAT : b, d, f, g, g_w, h, i_^, k, k_h, k_w, l, m, n, p, p_h, r, s, t, t_h, u_^, z
+
+$K_PH_KLAT_2 : b, d, f, g, g_w, h, i_^, k, k_h, k_w, l, m, n, p, p_h, r, s, t, t_h, u_^, z
+
+$K_PH_KLAT_3 : b, d, f, g, g_w, h, i_^, k, k_h, k_w, l, m, n, p, p_h, r, s, t, t_h, u_^, z
+
+$K_PH_KLAT_4 : b, d, f, g, g_w, h, i_^, k, k_h, k_w, l, m, n, p, p_h, r, s, t, t_h, u_^, z
+
+$K_PH_KLAT_MUTA : p, b, t, d, k, g, k_h, p_h, t_h
+
+$K_PH_KLAT_LIQUIDA : l, r
+
+######
+# alle
+
+$V_PH : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+$V_PH_2 : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+
+$K_PH : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_2 : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_3 : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_4 : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_MUTA : p, b, t, d, k, g, k_h, p_h, t_h
+
+$K_PH_LIQUIDA : l, r
+
+###############################
+# für die Lautentwicklungen
+###############################
+
+#---
+
+$PH : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~, b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$NICHT_e : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e:, e~, e-\i_^, e-\u_^, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~, b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$NICHT_ORAL : 2~, 3~, a~-\i_^~, A~, e~, E~, E~-\i_^~, i~, i_^-\E~, o~, o~-\i_^~, O~, u_^-\e~, u_^-\E~, u_^-\o~, y~, y~-\i_^~, b, B, C, d, d-\Z, d-\z,  d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$NICHT_s : @, 2, 2~, 3~, 9, a, a:, A, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~, b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, w, z, z_j, Z
+
+#---
+
+$V_PH_ORAL : @, 2, 9, a, a:, A, a-\e_^, a-\i_^, a-\u_^, e, e:, e-\i_^, e-\u_^, E, E-\i_^, H, i, i:, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\Ei_^, i-\u_^, o, o:, o-\e_^, o-\E, o-\i_^, o-\u_^, O, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\eu_^, u_^-\E, u_^-\o, u_^-\O, y, y:, y-\i_^
+
+$V_PH_eEi : e, E, i
+
+$V_PH_NASAL : 2~, 3~, a~-\i_^~, A~, e~, E~, E~-\i_^~, i~, i_^-\E~, o~, o~-\i_^~, O~, u_^-\e~, u_^-\E~, u_^-\o~, y~, y~-\i_^~
+
+$V_PH_NICHT_a : @, 2, 2~, 3~, 9, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+$V_PH_NICHT_e : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i~, i, i:, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+$V_PH_NICHT_i : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+$V_PH_NICHT_iy : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u, u:, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y~, y-\i_^, y~-\i_^~
+
+$V_PH_NICHT_u : @, 2, 2~, 3~, 9, a, a:, A, A~, a-\e_^, a-\i_^, a~-\i_^~, a-\u_^, e, e:, e~, e-\i_^, e-\u_^, E, E~, E-\i_^, E~-\i_^~, H, i, i:, i~, i_^-\e, i_^-\ei_^, i_^-\E, i_^-\E:, i_^-\E~, i_^-\Ei_^, i-\u_^, o, o:, o~, o-\e_^, o-\E, o-\i_^, o~-\i_^~, o-\u_^, O, O~, O-\i_^, O-\u_^, u_^-\a, u_^-\e, u_^-\e~, u_^-\eu_^, u_^-\E, u_^-\E~, u_^-\o, u_^-\o~, u_^-\O, y, y:, y~, y-\i_^, y~-\i_^~
+
+$V_PH_OU : o, u
+
+#---
+
+$K_PH_NICHT_ln : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, J, k, k_h, k_w, l_j, m, N, p, p_h, r, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_NICHT_lnr : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l_j, m, N, p, p_h, r_j, r=, R, R_0, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_NICHT_lr : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, J, k, k_h, k_w, l_j, m, n, N, p, p_h, r_j, s, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_NICHT_rsSZ : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r_j, R, s_j, s_j:, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j
+
+$K_PH_NICHT_s : b, B, C, d, d-\Z, d-\z, d-\z_j, D, f, g, g_w, G, h, i_^, j, J, k, k_h, k_w, l, l_j, m, n, N, p, p_h, r, r_j, r=, R, R_0, s_j, s_j:, S, t, t_h, t-\s, t-\s_j, t-\S, u_^, v, z, z_j, Z
+
+$K_PH_DENTAL : s, t
+
+$K_PH_LABIAL : b, B, f, m, p, v
+
+$K_PH_LATERAL : l
+
+$K_PH_NASAL : m, n, J
+
+$K_PH_PALATAL : d-\Z, i_^, j, l_j, S, t-\s, t-\s_j, t-\S, Z
+
+$K_PH_STIMMH : b, d, g, j, l, m, n, v, z
+
+$K_PH_STIMML : C, f, k, p, s, S, t, t-\S
+
+#---
+
+$V_GR : a, =a, °a, =A, °A, ae, Ae, au, Au, e, =e, °e, =E, °E, i, =i, °i, =I, °I, o, =o, °o, =O, °O, oe, Oe, u, =u, °u, =U, °U, =y, °y, =Y, °Y
+
+$V_GR_NICHT_a : ae, Ae, au, Au, e, =e, °e, =E, °E, i, =i, °i, =I, °I, o, =o, °o, =O, °O, oe, Oe, u, =u, °u, =U, °U, =y, °y, =Y, °Y
+
+
+$K_GR_NICHT_lnr : b, c, d, f, g, h, k, l, m, n, p, q, r, s, t, v, x, z, B, C, D, F, G, H, K, L, M, N, P, Q, R, S, T, V, X, Z
+

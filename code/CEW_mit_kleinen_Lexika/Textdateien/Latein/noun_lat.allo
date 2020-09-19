@@ -1,0 +1,90 @@
+# -------mask---------------
+
+[
+A_poeta
+]
+^(.+)°a, .+$ -> $1 {nom-stamm}
+^.+, (.+)ae$ -> $1 {stamm}
+
+[
+A_circus
+]
+^(.+)°us, .+$ -> $1 {nom-stamm}
+^.+, (.+)=i$ -> $1 {stamm}
+
+[
+A_puer
+]
+^(.+), .+$ -> $1 {m Nom Sg}
+^.+, (.+)=i$ -> $1 {stamm}
+
+[
+A_miles
+]
+^(.+), .+$ -> $1 {m Nom Sg}
+^.+, (.+)°is$ -> $1 {stamm}
+
+[
+A_passus
+]
+^(.+)°us, .+$ -> $1 {nom-stamm}
+^.+, (.+)=us$ -> $1 {stamm}
+
+
+# -------fem---------------
+
+[
+A_aqua
+]
+^(.+)°a, .+$ -> $1 {nom-stamm}
+^.+, (.+)ae$ -> $1 {stamm}
+
+[
+A_myrtus
+]
+^(.+)°us, .+$ -> $1 {nom-stamm}
+^.+, (.+)=i$ -> $1 {stamm}
+
+[
+A_soror / A_turris
+]
+^(.+), .+$ -> $1 {f Nom Sg}
+^.+, (.+)°is$ -> $1 {stamm}
+
+[
+A_manus
+]
+^(.+)°us, .+$ -> $1 {nom-stamm}
+^.+, (.+)=us$ -> $1 {stamm}
+
+[
+A_species
+]
+^(.+)=es, .+$ -> $1 {nom-stamm}
+^.+, (.+)[°=]e=i$ -> $1 {stamm}
+
+# -------neut---------------
+
+[
+A_templum
+]
+^(.+)°um, .+$ -> $1 {nom-stamm}
+^.+, (.+)=i$ -> $1 {stamm}
+
+[
+A_tempus
+]
+^(.+), .+$ -> $1 {n NomAkk Sg}
+^.+, (.+)°is$ -> $1 {stamm}
+
+[
+A_mare
+]
+^(.+), .+$ -> $1 {n NomAkk Sg}
+^.+, (.+)°is$ -> $1 {stamm}
+
+[
+A_cornu
+]
+^(.+)=u, .+$ -> $1 {nom-stamm}
+^.+, (.+)=us$ -> $1 {stamm}

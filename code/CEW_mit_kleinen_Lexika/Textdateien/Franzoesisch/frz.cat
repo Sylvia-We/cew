@@ -1,0 +1,25 @@
+# enthält Kategorien, die für eine wohlgeformte Wortform zulässig sind
+
+{m Sg}
+{m Pl}
+{f Sg}
+{f Pl}
+{mf Sg}
+{m SgPl}
+{f SgPl}
+{mf SgPl}
+
+{1 Sg}
+{2 Sg}
+{3 Sg}
+{1 Pl}
+{2 Pl}
+{3 Pl}
+{inf}
+{part pres}
+{Part m Sg}
+{Part f Sg}
+{Part m Pl}
+{Part f Pl}
+
+{unflekt}

@@ -1,0 +1,37 @@
+# Kommentar
+
+[
+A_entrailles
+]
+^(.+)$ -> $1 {f Pl}
+
+[
+A_femme / A_apnee
+]
+^(.+)$ -> $1 {f Sg}
+
+[
+A_voix
+]
+^(.+)$ -> $1 {f SgPl}
+
+[
+A_cheval
+]
+^(.+)$ -> $1 {m Sg}
+^(.+)l$ -> $1u {stamm2}
+
+[
+A_chateau / A_coin / A_bien-etre
+]
+^(.+)$ -> $1 {m Sg}
+
+[
+A_gens
+]
+^(.+)$ -> $1 {m Pl}
+
+[
+A_codex
+]
+^(.+)$ -> $1 {m SgPl}
